@@ -1,6 +1,6 @@
 import requests
 
-server_url = "http://69.141.168.165:8000"
+server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
 
