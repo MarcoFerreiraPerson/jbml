@@ -3,6 +3,10 @@ from chain import LLM_Chain
 import time
 import json
 import translate as ts
+import summary
+
+#Maximum desired chain length in characters
+MAX_CHAIN_LENGTH = 2048
 
 st.set_page_config(
     page_title="JBML Chat"
@@ -66,6 +70,22 @@ def get_citation(metadata):
 
     return citation
     
+def clear_history():
+   st.session_state.messages = [
+        {"role": "assistant", "content": "How may I help you today?"}]
+   st.session_state['llm_chain'] = create_chain(system_prompt)
+
+def summarize_chain(text):
+    filtered_text = text.replace(system_prompt,"")
+    response = summary.get_summary(filtered_text)
+    result = response.json()
+    if response.status_code == 200:
+        return result[0]
+    else:
+        print("Error During Summarization Code:" + response.status_code)
+        return -1
+
+
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
@@ -77,6 +97,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
+    st.button("Clear History", on_click=clear_history)
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
@@ -158,4 +179,11 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
             ai_response += char
             box.write(ai_response)
             time.sleep(0.01)
+    
+    if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
+        summary = summarize_chain(st.session_state['llm_chain'].chain)
+        if not summary == -1:
+            st.session_state['llm_chain'] = create_chain(system_prompt)
+            st.session_state['llm_chain'].chain += f"[INST]Use the following as a summary of previous conversation: \n{summary} [End of summary][/INST]"
+            print(summary)
 
