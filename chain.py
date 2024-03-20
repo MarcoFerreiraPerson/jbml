@@ -61,4 +61,3 @@ def get_rag_prompt(prompt):
         print("Error:", context.status_code, context.text)
         context, metadata = 'An error has occured', {}
     return context, metadata
-
