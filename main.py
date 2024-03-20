@@ -164,9 +164,12 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
         translated_response = ts.translate_to(response, st.session_state['language'])
     else:
         translated_response = response
-
-    response_char_list = [char for char in translated_response]
-
+    try: 
+        response_char_list = [char for char in translated_response]
+    except:
+        response_char_list = [char for char in response]
+        translated_response = response
+        print(translated_response)
     # Add the response to the session state
     st.session_state.messages.append(
         {"role": "assistant", "content": translated_response}
