@@ -183,10 +183,10 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
             box.write(ai_response)
             time.sleep(0.01)
     
-    if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
-        summary = summarize_chain(st.session_state['llm_chain'].chain)
-        if not summary == -1:
-            st.session_state['llm_chain'] = create_chain(system_prompt)
-            st.session_state['llm_chain'].chain += f"[INST]Use the following as a summary of previous conversation: \n{summary} [End of summary][/INST]"
-            print(summary)
+    # if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
+    #     summary = summarize_chain(st.session_state['llm_chain'].chain)
+    #     if not summary == -1:
+    #         st.session_state['llm_chain'] = create_chain(system_prompt)
+    #         st.session_state['llm_chain'].chain += f"[INST]Use the following as a summary of previous conversation: \n{summary} [End of summary][/INST]"
+    #         print(summary)
 
