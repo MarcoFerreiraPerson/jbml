@@ -1,8 +1,10 @@
 import requests
+import re
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
+summary_endpoint = '/summarize/'
 
 class LLM_Chain:
     def __init__(self, system_prompt) -> None:
@@ -46,6 +48,25 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         yield result
+
+    def summarize_chain(self,MAX_CHAIN_LENGTH):
+        responces = list()
+        responces = re.split("\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
+        for i in range(3,len(responces)):
+            summary_responce = get_summary(responces[i])
+            if summary_responce.status_code == 200:
+                summary = str(summary_responce.json()[0])
+                #self.chain.replace(responces[i],summary[0])
+                print(responces[i]+"\n")
+                summary = summary.lstrip("{'summary_text': '")
+                summary = summary.rstrip("'}")
+        if len(self.chain) > MAX_CHAIN_LENGTH:
+            return False
+        else:
+            return True
+            
+
+
 def get_rag_prompt(prompt):
     system_prompt = "You are an AI designed to take apart the important part of the prompt for Retrieval Search. Return the phrase or words that are unknown to you or you need more information about."
     retrieval = f"<s>[INST]{system_prompt}[/INST] Model answer</s> [INST] Follow-up instruction [/INST]"
@@ -61,3 +82,7 @@ def get_rag_prompt(prompt):
         print("Error:", context.status_code, context.text)
         context, metadata = 'An error has occured', {}
     return context, metadata
+
+def get_summary(text):
+        response = requests.get(f"{server_url}{summary_endpoint}?prompt={text}")
+        return response
