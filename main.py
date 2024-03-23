@@ -5,7 +5,7 @@ import json
 import translate as ts
 
 #Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 500
+MAX_CHAIN_LENGTH = 2048
 
 st.set_page_config(
     page_title="JBML Chat"
@@ -105,7 +105,8 @@ if "input_state" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
+if st.session_state.input_state:
+    st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.input_state):
@@ -177,8 +178,8 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             time.sleep(0.01)
     
     if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
-        if not st.session_state['llm_chain'].summarize_chain(MAX_CHAIN_LENGTH):
-            st.warning("You have reached the end of this conversation. Please clear chat to continue.")
+        if  st.session_state['llm_chain'].summarize_chain(MAX_CHAIN_LENGTH):
             st.session_state.input_state = True
             st.rerun()
+
    
