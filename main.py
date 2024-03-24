@@ -188,7 +188,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
         for char in response_char_list:
             ai_response += char
             box.write(ai_response)
-            time.sleep(0.01)
+            time.sleep(0.007)
     
     # if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
     #     summary = summarize_chain(st.session_state['llm_chain'].chain)
