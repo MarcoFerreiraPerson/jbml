@@ -1,63 +1,563 @@
 {
-    "qtp24-3-l275": {
-        "product_number": "qtp24-3-l275",
-        "product_title": "R-11 Mobile Fuel Vehicles",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l275/qtp24-3-l275.pdf"
+    "JTR": {
+        "product_number": "N/A",
+        "product_title": "THE JOINT TRAVEL REGULATIONS",
+        "url": "https://media.defense.gov/2022/Jan/04/2002917147/-1/-1/1/JTR.PDF"
     },
-    "qtp24-3-l287": {
-        "product_number": "qtp24-3-l287",
-        "product_title": "JOINT LIGHT TACTICAL VEHICLE (JLTV) TRAINING PACKAGE",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l287/qtp24-3-l287.pdf"
+    "afh23-123v2pt1_amcsup": {
+        "product_number": "afh23-123v2p1_amcsup",
+        "product_title": "ILS-S, MATERIAL MANAGEMENT OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afh23-123v2p1_amcsup/afh23-123v2pt1_amcsup.pdf"
     },
-    "qtp24-3-l350": {
-        "product_number": "qtp24-3-l350",
-        "product_title": "Aircraft Tow Vehicle Training Package",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l350/qtp24-3-l350.pdf"
+    "afh23-123v2pt2_amcsup": {
+        "product_number": "afh23-123v2pt2_amcsup",
+        "product_title": "INTEGRATED LOGISTICS SYSTEM-SUPPLY (ILS-S), STANDARD BASE SUPPLY SYSTEM OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afh23-123v2pt2_amcsup/afh23-123v2pt2_amcsup.pdf"
     },
-    "qtp24-3-l426": {
-        "product_number": "qtp24-3-l426",
-        "product_title": "M-Series Dolly Vehicle Training Package",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l426/qtp24-3-l426.pdf"
+    "afi10-208_amcsup_i": {
+        "product_number": "afi10-208_amcsup_i",
+        "product_title": "Air Force Continuity of Operations (COOP) Program",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi10-208_amcsup_i/afi10-208_amcsup_i.pdf"
     },
-    "qtp24-3-l530": {
-        "product_number": "qtp24-3-l530",
-        "product_title": "High Mobility Multipurpose Wheeled Vehicle (HMMWV) Vehicle Training Package",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l530/qtp24-3-l530.pdf"
+    "afi11-202v2_amcsup": {
+        "product_number": "afi11-202v2_amcsup",
+        "product_title": "AIRCREW STANDARDIZATION AND EVALUATION PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi11-202v2_amcsup/afi11-202v2_amcsup.pdf"
     },
-    "qtp24-3-ptlhk": {
-        "product_number": "qtp24-3-ptlhk",
-        "product_title": "Pintle Hook Vehicle Training Package",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-ptlhk/qtp24-3-ptlhk.pdf"
+    "afi11-209_amcsup_i": {
+        "product_number": "afi11-209_amcsup_i",
+        "product_title": "AERIAL EVENT POLICY AND PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi11-209_amcsup_i/afi11-209_amcsup_i.pdf"
     },
-    "qtp43ax-1": {
-        "product_number": "qtp43ax-1",
-        "product_title": "Reduced Oxygen Breathing Device & Hypoxia Familiarization Trainer",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp43ax-1/qtp43ax-1.pdf"
+    "afi11-215_amcsup": {
+        "product_number": "afi11-215_amcsup",
+        "product_title": "FLIGHT MANUALS PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi11-215_amcsup/afi11-215_amcsup.pdf"
     },
-    "etc/physical": {
-        "product_number": "ic.e-publishing.af.mil",
-        "product_title": "BOOK OF WORSHIP US FORCES (SPIRAL BOUND)",
-        "url": "https://static.e-publishing.af.mil/etc/physical.pdf"
+    "afi11-301v1_amcsup": {
+        "product_number": "afi11-301v1_amcsup",
+        "product_title": "AIRCREW FLIGHT EQUIPMENT PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi11-301v1_amcsup/afi11-301v1_amcsup.pdf"
     },
-    "qtp4b051-1": {
-        "product_number": "qtp4b051-1",
-        "product_title": "PROGRAM MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-1/qtp4b051-1.pdf"
+    "afi13-213_amcsup": {
+        "product_number": "afi13-213_amcsup",
+        "product_title": "AIRFIELD DRIVING",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi13-213_amcsup/afi13-213_amcsup.pdf"
     },
-    "qtp4b051-10": {
-        "product_number": "qtp4b051-10",
-        "product_title": "Air Force Specialty Code 4B051 Bioenvironment Engineering Biological Health Hazards",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-10/qtp4b051-10.pdf"
+    "afi14-404_amcsup": {
+        "product_number": "afi14-404_amcsup",
+        "product_title": "Intelligence Oversight",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi14-404_amcsup/afi14-404_amcsup.pdf"
+    },
+    "afi16-1301_amcsup": {
+        "product_number": "afi16-1301_amcsup",
+        "product_title": "SURVIVAL, EVASION, RESISTANCE, AND ESCAPE (SERE) PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi16-1301_amcsup/afi16-1301_amcsup.pdf"
+    },
+    "afi23-101_amcsup": {
+        "product_number": "afi23-101_amcsup",
+        "product_title": "AIR FORCE MATERIAL MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi23-101_amcsup/afi23-101_amcsup.pdf"
+    },
+    "afi25-301_amcsup": {
+        "product_number": "afi25-301_amcsup",
+        "product_title": "ACQUISITION AND CROSS-SERVICING AGREEMENTS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi25-301_amcsup/afi25-301_amcsup.pdf"
+    },
+    "for_official_use_only": {
+        "product_number": "dodm5200.08v3_afman31-101v3_amcsup",
+        "product_title": "INSTALLATION PERIMETER ACCESS CONTROL (FOUO)",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dodm5200.08v3_afman31-101v3_amcsup/for_official_use_only.pdf"
+    },
+    "afi36-2650_amcsup": {
+        "product_number": "afi36-2650_amcsup",
+        "product_title": "MAINTENANCE TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi36-2650_amcsup/afi36-2650_amcsup.pdf"
+    },
+    "dafi36-2903_amcsup": {
+        "product_number": "afi36-2903_amcsup",
+        "product_title": "DRESS AND PERSONAL APPEARANCE OF UNITED STATES AIR FORCE AND UNITED STATES SPACE FORCE PERSONNEL",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi36-2903_amcsup/dafi36-2903_amcsup.pdf"
+    },
+    "afi63-125_amcsup": {
+        "product_number": "afi63-125_amcsup",
+        "product_title": "NUCLEAR CERTIFICATION PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi63-125_amcsup/afi63-125_amcsup.pdf"
+    },
+    "afi90-201_amcsup": {
+        "product_number": "afi90-201_amcsup",
+        "product_title": "THE AIR FORCE INSPECTION SYSTEM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi90-201_amcsup/afi90-201_amcsup.pdf"
+    },
+    "afi90-802_amcsup": {
+        "product_number": "afi90-802_amcsup",
+        "product_title": "RISK MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi90-802_amcsup/afi90-802_amcsup.pdf"
+    },
+    "afi91-101_amcsup": {
+        "product_number": "afi91-101_amcsup",
+        "product_title": "AIR FORCE NUCLEAR WEAPONS SURETY PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi91-101_amcsup/afi91-101_amcsup.pdf"
+    },
+    "afi91-202_amcsup": {
+        "product_number": "afi91-202_amcsup",
+        "product_title": "THE US AIR FORCE MISHAP PREVENTION PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afi91-202_amcsup/afi91-202_amcsup.pdf"
+    },
+    "afman10-206_amcsup": {
+        "product_number": "afman10-206_amcsup",
+        "product_title": "OPERATIONAL REPORTING",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman10-206_amcsup/afman10-206_amcsup.pdf"
+    },
+    "afman10-207_amcsup": {
+        "product_number": "afman10-207_amcsup",
+        "product_title": "COMMAND POSTS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman10-207_amcsup/afman10-207_amcsup.pdf"
+    },
+    "afman11-202v3__amcsup": {
+        "product_number": "afman11-202v3_amcsup",
+        "product_title": "FLIGHT OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman11-202v3_amcsup/afman11-202v3__amcsup.pdf"
+    },
+    "afman11-502_amcsup": {
+        "product_number": "afman11-502_amcsup",
+        "product_title": "SMALL UNMANNED AIRCRAFT SYSTEMS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman11-502_amcsup/afman11-502_amcsup.pdf"
+    },
+    "afman13-204v1__amcsup": {
+        "product_number": "afman13-204v1_amcsup",
+        "product_title": "MANAGEMENT OF AIRFIELD OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman13-204v1_amcsup/afman13-204v1__amcsup.pdf"
+    },
+    "afman13-204v2_amcsup": {
+        "product_number": "afman13-204v2_amcsup",
+        "product_title": "AIRFIELD MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman13-204v2_amcsup/afman13-204v2_amcsup.pdf"
+    },
+    "afman13-204v3_amcsup": {
+        "product_number": "afman13-204v3_amcsup",
+        "product_title": "AIR TRAFFIC CONTROL",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman13-204v3_amcsup/afman13-204v3_amcsup.pdf"
+    },
+    "afman23-122_amcsup": {
+        "product_number": "afman23-122_amcsup",
+        "product_title": "MATERIAL MANAGEMENT PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman23-122_amcsup/afman23-122_amcsup.pdf"
+    },
+    "afman91-224_amcsup": {
+        "product_number": "afman91-224_amcsup",
+        "product_title": "GROUND SAFETY INVESTIGATION AND HAZARD REPORTING",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/afman91-224_amcsup/afman91-224_amcsup.pdf"
+    },
+    "restricted_access": {
+        "product_number": "amcpam10-260",
+        "product_title": "CIVIL RESERVE AIR FLEET (CRAF) AIRCREW CHEMICAL-BIOLOGICAL (CB) WARFARE DEFENSE PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcpam10-260/restricted_access.pdf"
+    },
+    "amci10-202v7": {
+        "product_number": "amci10-202v7",
+        "product_title": "DIRECTOR OF MOBILITY FORCES (DIRMOBFOR) AND AIR FORCES TRANSPORTATION LIAISON OFFICER (AFTRANS LNO) POLICY AND PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-202v7/amci10-202v7.pdf"
+    },
+    "amci10-208v1": {
+        "product_number": "amci10-208v1",
+        "product_title": "CRISIS BATTLE STAFF",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-208v1/amci10-208v1.pdf"
+    },
+    "amci10-210": {
+        "product_number": "amci10-210",
+        "product_title": "STAGE MANAGEMENT OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-210/amci10-210.pdf"
+    },
+    "amci10-2101": {
+        "product_number": "amci10-2101",
+        "product_title": "JOINT AIRBORNE/AIR TRANSPORTABILITY TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-2101/amci10-2101.pdf"
+    },
+    "amci10-2102v1": {
+        "product_number": "amci10-2102v1",
+        "product_title": "ROLES, RESPONSIBILITIES, RELATIONSHIPS, AND AUTHORITIES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-2102v1/amci10-2102v1.pdf"
+    },
+    "amci10-2102v6": {
+        "product_number": "amci10-2102v6",
+        "product_title": "MISSION MANAGEMENT AND RELIABILITY REPORTING SYSTEM (MMRRS)",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-2102v6/amci10-2102v6.pdf"
+    },
+    "amci10-402": {
+        "product_number": "amci10-402",
+        "product_title": "CIVIL RESERVE AIR FLEET",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-402/amci10-402.pdf"
+    },
+    "amci10-403": {
+        "product_number": "amci10-403",
+        "product_title": "AIR MOBILITY COMMAND FORCE DEPLOYMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci10-403/amci10-403.pdf"
+    },
+    "amci11-207": {
+        "product_number": "amci11-207",
+        "product_title": "WEAPONS AND TACTICS PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci11-207/amci11-207.pdf"
+    },
+    "amci11-208": {
+        "product_number": "amci11-208",
+        "product_title": "MOBILITY AIR FORCES MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci11-208/amci11-208.pdf"
+    },
+    "amci11-211": {
+        "product_number": "amci11-211",
+        "product_title": "DESTINATION AIRFIELD SUITABILITY ANALYSIS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci11-211/amci11-211.pdf"
+    },
+    "amci11-270": {
+        "product_number": "amci11-270",
+        "product_title": "MOBILITY AIR FORCES ELECTRONIC FLIGHT BAG PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci11-270/amci11-270.pdf"
+    },
+    "amci14-1020": {
+        "product_number": "amci14-1020",
+        "product_title": "AIR MOBILITY INTELLIGENCE MISSION AND RESPONSIBILITIES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci14-1020/amci14-1020.pdf"
+    },
+    "amci15-101": {
+        "product_number": "amci15-101",
+        "product_title": "WEATHER OPERATIONS AND SUPPORT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci15-101/amci15-101.pdf"
+    },
+    "amci16-1401": {
+        "product_number": "amci16-1401",
+        "product_title": "INFORMATION PROTECTION",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci16-1401/amci16-1401.pdf"
+    },
+    "amci16-1404": {
+        "product_number": "amci16-1404",
+        "product_title": "TOP SECRET CONTROL",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci16-1404/amci16-1404.pdf"
+    },
+    "generic_fouo": {
+        "product_number": "amcva24-6",
+        "product_title": "NOT A JOKING MATTER",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcva24-6/generic_fouo.pdf"
+    },
+    "amci21-105": {
+        "product_number": "amci21-105",
+        "product_title": "FABRICATION PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci21-105/amci21-105.pdf"
+    },
+    "amci21-108": {
+        "product_number": "amci21-108",
+        "product_title": "LOGISTICS SUPPORT OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci21-108/amci21-108.pdf"
+    },
+    "amci23-102": {
+        "product_number": "amci23-102",
+        "product_title": "EXPEDITIOUS MOVEMENT OF AMC MICAP/VVIP ASSETS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci23-102/amci23-102.pdf"
+    },
+    "amci24-6051v1": {
+        "product_number": "amci24-6051v1",
+        "product_title": "AMC AERIAL PORT EXPEDITOR (APEX) AIRCRAFT LOADING PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci24-6051v1/amci24-6051v1.pdf"
+    },
+    "amci24-6051v11_cl1": {
+        "product_number": "amci24-6051v11_cl-1",
+        "product_title": "C-17 AERIAL PORT EXPEDITOR (APEX) LOAD DIRECTOR INTERIM CHECKLIST",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci24-6051v11_cl-1/amci24-6051v11_cl1.pdf"
+    },
+    "amci24-6051v11_cl-2": {
+        "product_number": "amci24-6051v11_cl-2",
+        "product_title": "C-5 AERIAL PORT EXPEDITOR (APEX) LOAD DIRECTOR CHECKLIST",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci24-6051v11_cl-2/amci24-6051v11_cl-2.pdf"
+    },
+    "amci24-9": {
+        "product_number": "amci24-9",
+        "product_title": "CIVIL AIRLIFT PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci24-9/amci24-9.pdf"
+    },
+    "amci36-2607": {
+        "product_number": "amci36-2607",
+        "product_title": "U.S. AIR FORCE EXPEDITIONARY OPERATIONS SCHOOL COURSE DEVELOPMENT AND OWNERSHIP PROCESS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci36-2607/amci36-2607.pdf"
+    },
+    "amci36-2806": {
+        "product_number": "amci36-2806",
+        "product_title": "AWARD PROGRAM MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci36-2806/amci36-2806.pdf"
+    },
+    "amci36-2808_ic1": {
+        "product_number": "amci36-2808",
+        "product_title": "AIR MOBILITY COMMAND DISTINGUISHED PERSONNEL AWARDS PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci36-2808/amci36-2808_ic1.pdf"
+    },
+    "amci63-101": {
+        "product_number": "amci63-101",
+        "product_title": "Modification Management",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci63-101/amci63-101.pdf"
+    },
+    "amci90-102": {
+        "product_number": "amci90-102",
+        "product_title": "GLOBAL REACH PLANNING CENTER (GRPC) POLICY AND PROCEDURE",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci90-102/amci90-102.pdf"
+    },
+    "amci90-903": {
+        "product_number": "amci90-903",
+        "product_title": "AVIATION OPERATIONAL RISK MANAGEMENT (AVORM) PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci90-903/amci90-903.pdf"
+    },
+    "amci91-205": {
+        "product_number": "amci91-205",
+        "product_title": "THE AMC ENROUTE MISHAP PREVENTION PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci91-205/amci91-205.pdf"
+    },
+    "amci99-101": {
+        "product_number": "amci99-101",
+        "product_title": "TEST AND EVALUATION POLICY AND PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amci99-101/amci99-101.pdf"
+    },
+    "amcmd7-711": {
+        "product_number": "amcmd7-711",
+        "product_title": "UNITED STATES AIR FORCE EXPEDITIONARY CENTER",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcmd7-711/amcmd7-711.pdf"
+    },
+    "amcmd702": {
+        "product_number": "amcmd702",
+        "product_title": "EIGHTEENTH AIR FORCE",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcmd702/amcmd702.pdf"
+    },
+    "amcmd704_draft": {
+        "product_number": "amcmd704",
+        "product_title": "43d AIR MOBILITY OPERATIONS GROUP",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcmd704/amcmd704_draft.pdf"
+    },
+    "amcpam10-402v1": {
+        "product_number": "amcpam10-402v1",
+        "product_title": "DOD CONTRACTED AIRLIFT LOAD PLANNING INFORMATION",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcpam10-402v1/amcpam10-402v1.pdf"
+    },
+    "amcpam11-3": {
+        "product_number": "amcpam11-3",
+        "product_title": "BIRDS FLY FREE, AMC DOESN'T",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcpam11-3/amcpam11-3.pdf"
+    },
+    "amcpam36-2801": {
+        "product_number": "amcpam36-2801",
+        "product_title": "AMC SECURITY FORCES ORDER OF THE BAYONET",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/amcpam36-2801/amcpam36-2801.pdf"
+    },
+    "dafi20-112_amcsup": {
+        "product_number": "dafi20-112_amcsup",
+        "product_title": "LOGISTICS READINESS QUALITY ASSURANCE PROGRAM (LR QA)",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafi20-112_amcsup/dafi20-112_amcsup.pdf"
+    },
+    "dafi21-101_amcsup": {
+        "product_number": "dafi21-101_amcsup",
+        "product_title": "AIRCRAFT AND EQUIPMENT MAINTENANCE MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafi21-101_amcsup/dafi21-101_amcsup.pdf"
+    },
+    "dafi21-103_amcsup": {
+        "product_number": "dafi21-103_amcsup",
+        "product_title": "EQUIPMENT INVENTORY, STATUS AND UTILIZATION REPORTING",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafi21-103_amcsup/dafi21-103_amcsup.pdf"
+    },
+    "dafi91-204_amcsup": {
+        "product_number": "dafi91-204_amcsup",
+        "product_title": "SAFETY INVESTIGATIONS AND REPORTS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafi91-204_amcsup/dafi91-204_amcsup.pdf"
+    },
+    "dafi91-212_amcsup": {
+        "product_number": "dafi91-212_amcsup",
+        "product_title": "BIRD/WILDLIFE AIRCRAFT STRIKE HAZARD (BASH) MANAGEMENT PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafi91-212_amcsup/dafi91-212_amcsup.pdf"
+    },
+    "dafi91-225_amcsup": {
+        "product_number": "dafi91-225_amcsup",
+        "product_title": "AVIATION SAFETY PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafi91-225_amcsup/dafi91-225_amcsup.pdf"
+    },
+    "dafman11-401_amcsup": {
+        "product_number": "dafman11-401_amcsup",
+        "product_title": "AVIATION MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafman11-401_amcsup/dafman11-401_amcsup.pdf"
+    },
+    "dafman36-2806_amcsup": {
+        "product_number": "dafman36-2806_amcsup",
+        "product_title": "MILITARY AWARDS: CRITERIA AND PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafman36-2806_amcsup/dafman36-2806_amcsup.pdf"
+    },
+    "dafman91-223_amcsup": {
+        "product_number": "dafman91-223_amcsup",
+        "product_title": "AVIATION SAFETY INVESTIGATIONS AND REPORTS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dafman91-223_amcsup/dafman91-223_amcsup.pdf"
+    },
+    "desr6055.09_afman91-201_amcsup": {
+        "product_number": "desr6055.09_afman91-201_amcsup",
+        "product_title": "EXPLOSIVES SAFETY STANDARDS",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/desr6055.09_afman91-201_amcsup/desr6055.09_afman91-201_amcsup.pdf"
+    },
+    "dodm5100.76_afman31-101v2_amcsup": {
+        "product_number": "dodm5100.76_afman31-101v2_amcsup",
+        "product_title": "PHYSICAL SECURITY OF SENSITIVE CONVENTIONAL ARMS, AMMUNITION & EXPLOSIVES (AA&E)",
+        "url": "https://static.e-publishing.af.mil/production/1/amc/publication/dodm5100.76_afman31-101v2_amcsup/dodm5100.76_afman31-101v2_amcsup.pdf"
+    },
+    "621crwi15-101": {
+        "product_number": "621crwi15-101",
+        "product_title": "Weather Support Instruction",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/621crwi15-101/621crwi15-101.pdf"
+    },
+    "621crwi21-101": {
+        "product_number": "621crwi21-101",
+        "product_title": "Aircraft and Equipment Maintenance Management",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/621crwi21-101/621crwi21-101.pdf"
+    },
+    "restricted_access": {
+        "product_number": "621crwi36-101",
+        "product_title": "Training Management",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/621crwi36-101/restricted_access.pdf"
+    },
+    "621crwi91-101": {
+        "product_number": "621crwi91-101",
+        "product_title": "CLOSE COMBAT MISSION CAPABILITY KIT",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/621crwi91-101/621crwi91-101.pdf"
+    },
+    "afi11-215_amcsup_i_jbmcguire-dix-lakehurstsup": {
+        "product_number": "afi11-215_amcsup_i_jbmguire-dix-lakehurstsup",
+        "product_title": "USAF FLIGHT MANUALS PROGRAM (FMP)",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/afi11-215_amcsup_i_jbmguire-dix-lakehurstsup/afi11-215_amcsup_i_jbmcguire-dix-lakehurstsup.pdf"
+    },
+    "afi21-101_amcsup_jbmdlsup": {
+        "product_number": "afi21-101_amcsup_jbmdlsup",
+        "product_title": "AIRCRAFT AND EQUIPMENT MAINTENANCE MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/afi21-101_amcsup_jbmdlsup/afi21-101_amcsup_jbmdlsup.pdf"
+    },
+    "afi32-6000_jbmcguire-dix-lakehurstsup": {
+        "product_number": "afi32-6000_jbmcguire-dix-lakehurstsup",
+        "product_title": "Housing Management",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/afi32-6000_jbmcguire-dix-lakehurstsup/afi32-6000_jbmcguire-dix-lakehurstsup.pdf"
+    },
+    "afi32-6001_jbmcguire-dix-lakehurstsup_i": {
+        "product_number": "afi32-6001_jbmcguire-dix-lakehurstsup_i",
+        "product_title": "FAMILY HOUSING MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/afi32-6001_jbmcguire-dix-lakehurstsup_i/afi32-6001_jbmcguire-dix-lakehurstsup_i.pdf"
+    },
+    "afi90-801_87abwsup": {
+        "product_number": "afi90-801_87abwsup",
+        "product_title": "ENVIRONMENT, SAFETY, AND OCCUPATIONAL HEALTH COUNCILS",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/afi90-801_87abwsup/afi90-801_87abwsup.pdf"
+    },
+    "jbmcguire-dix-lakehursti10-2501": {
+        "product_number": "jbmcguire-dix-lakehursti10-2501",
+        "product_title": "Office of Emergency Management",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti10-2501/jbmcguire-dix-lakehursti10-2501.pdf"
+    },
+    "jbmcguire-dix-lakehursti24-602v2": {
+        "product_number": "jbmcguire-dix-lakehursti24-602v2",
+        "product_title": "HANDLING, PROCESSING, STORING, AND TRANSPORTING EXPLOSIVES",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti24-602v2/jbmcguire-dix-lakehursti24-602v2.pdf"
+    },
+    "jb_mcguire-dix-lakehurst_i32-1": {
+        "product_number": "jbmcguire-dix-lakehursti32-1",
+        "product_title": "Qualified Recycling Program (QRP)",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti32-1/jb_mcguire-dix-lakehurst_i32-1.pdf"
+    },
+    "jbmcguire-dix-lakehursti32-1001": {
+        "product_number": "jbmcguire-dix-lakehursti32-1001",
+        "product_title": "Load Testing of Generators",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti32-1001/jbmcguire-dix-lakehursti32-1001.pdf"
+    },
+    "jbmcguire-dix-lakehursti32-2001": {
+        "product_number": "jbmcguire-dix-lakehursti32-2001",
+        "product_title": "Fire Prevention/Protection Program",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti32-2001/jbmcguire-dix-lakehursti32-2001.pdf"
+    },
+    "jbmcguire-dix-lakehursti32-9008": {
+        "product_number": "jbmcguire-dix-lakehursti32-9008",
+        "product_title": "Facility Manager Program",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti32-9008/jbmcguire-dix-lakehursti32-9008.pdf"
+    },
+    "jbmcguire-dix-lakehursti36-2502": {
+        "product_number": "jbmcguire-dix-lakehursti36-2502",
+        "product_title": "Senior Airman Below-The-Zone Procedures",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti36-2502/jbmcguire-dix-lakehursti36-2502.pdf"
+    },
+    "jbmcguire-dix-lakehursti36-2801": {
+        "product_number": "jbmcguire-dix-lakehursti36-2801",
+        "product_title": "RESOURCE ADVISOR AWARDS PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti36-2801/jbmcguire-dix-lakehursti36-2801.pdf"
+    },
+    "jbmcguire-dix-lakehursti48-148": {
+        "product_number": "jbmcguire-dix-lakehursti48-148",
+        "product_title": "Ionizing Radiation Protection",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti48-148/jbmcguire-dix-lakehursti48-148.pdf"
+    },
+    "jbmcguire-dix-lakehursti65-101": {
+        "product_number": "jbmcguire-dix-lakehursti65-101",
+        "product_title": "Vicinity Travel",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehursti65-101/jbmcguire-dix-lakehursti65-101.pdf"
+    },
+    "jbmcguire-dix-lakehurstva36-2706": {
+        "product_number": "jbmcguire-dix-lakehurstva36-2706",
+        "product_title": "87TH AIR BASE WING EQUAL OPPORTUNITY OFFICE",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehurstva36-2706/jbmcguire-dix-lakehurstva36-2706.pdf"
+    },
+    "jbmcguire-dix-lakehurstva51-1201": {
+        "product_number": "jbmcguire-dix-lakehurstva51-1201",
+        "product_title": "JB MDL Alternative Dispute Resolution Program",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmcguire-dix-lakehurstva51-1201/jbmcguire-dix-lakehurstva51-1201.pdf"
+    },
+    "jbmdli10-2501": {
+        "product_number": "jbmdli10-2501",
+        "product_title": "Office of Emergency Management",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/jbmdli10-2501/jbmdli10-2501.pdf"
+    },
+    "305amwi10-2501": {
+        "product_number": "305amwi10-2501",
+        "product_title": "Control Center & Accountability Guidelines",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/305amwi10-2501/305amwi10-2501.pdf"
+    },
+    "305amwi13-204": {
+        "product_number": "305amwi13-204",
+        "product_title": "AIRFIELD OPERATIONS AND FLYING PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/305amwi13-204/305amwi13-204.pdf"
+    },
+    "305amwi13-213": {
+        "product_number": "305amwi13-213",
+        "product_title": "AIRFIELD DRIVING",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/305amwi13-213/305amwi13-213.pdf"
+    },
+    "305amwi15-101": {
+        "product_number": "305amwi15-101",
+        "product_title": "WEATHER SUPPORT PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/305amwi15-101/305amwi15-101.pdf"
+    },
+    "305amwi91-203": {
+        "product_number": "305amwi91-203",
+        "product_title": "HANGAR DOOR OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/305amwi91-203/305amwi91-203.pdf"
+    },
+    "305amwva90-201": {
+        "product_number": "305amwva90-201",
+        "product_title": "Air Force Inspection System Cultural Change Poster",
+        "url": "https://static.e-publishing.af.mil/production/1/jbmcguire-dix-lakehurst/publication/305amwva90-201/305amwva90-201.pdf"
+    },
+    "afi11-2c-17v3_305amwsup": {
+        "product_number": "afi11-2c-17v3_305amwsup",
+        "product_title": "C-17 OPERATIONS PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/afi11-2c-17v3_305amwsup/afi11-2c-17v3_305amwsup.pdf"
+    },
+    "afi11-2kc-10v2_305amwsup_i_": {
+        "product_number": "afi11-2kc-10v2_305amwsup_i",
+        "product_title": "KC-10 AIRCREW EVALUATION CRITERIA",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/afi11-2kc-10v2_305amwsup_i/afi11-2kc-10v2_305amwsup_i_.pdf"
+    },
+    "jbmcguire-dix-lakehursti21-101": {
+        "product_number": "jbmcguire-dix-lakehursti21-101",
+        "product_title": "CRASHED, DAMAGED, OR DISABLED AIRCRAFT RECOVERY (CDDAR) PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/305amw/publication/jbmcguire-dix-lakehursti21-101/jbmcguire-dix-lakehursti21-101.pdf"
     },
     "qtp4b051-11": {
         "product_number": "qtp4b051-11",
-        "product_title": "Confined Spaces",
+        "product_title": "AIR FORCE SPECIALTY CODE 4B051 BIOENVIRONMENTAL ENGINEERING IONIZING RADIATION",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-11/qtp4b051-11.pdf"
-    },
-    "qtp4b051-12": {
-        "product_number": "qtp4b051-12",
-        "product_title": "Air Force Specialty Code 4B051 Bioenvironmental Engineering Ionizing Radiation",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-12/qtp4b051-12.pdf"
     },
     "qtp4b051-13": {
         "product_number": "qtp4b051-13",
@@ -66,13 +566,8 @@
     },
     "qtp4b051-14": {
         "product_number": "qtp4b051-14",
-        "product_title": "USAF Personnel Dosimetry Program",
+        "product_title": "AIR FORCE SPECIALTY CODE 4B051 BIOENVIRONMENTAL ENGINEERING ELECTRO-MAGNETIC FREQUENCY (EMF)",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-14/qtp4b051-14.pdf"
-    },
-    "qtp4b051-15": {
-        "product_number": "qtp4b051-15",
-        "product_title": "Air Force Specialty Code 4B051 Bioenvironmental Engineering Electro-Magnetic Frequency (EMF)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-15/qtp4b051-15.pdf"
     },
     "qtp4b051-16": {
         "product_number": "qtp4b051-16",
@@ -86,23 +581,13 @@
     },
     "qtp4b051-18": {
         "product_number": "qtp4b051-18",
-        "product_title": "AIR FORCE SPECIALTY CODE 4B051 BIOENVIRONVIRONMENTAL ENGINEERING MECHANICAL VENTILATION SYSTEMS",
+        "product_title": "RESPIRATORY PROTECTION",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-18/qtp4b051-18.pdf"
-    },
-    "qtp4b051-19": {
-        "product_number": "qtp4b051-19",
-        "product_title": "Respiratory Protection",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-19/qtp4b051-19.pdf"
     },
     "qtp4b051-2": {
         "product_number": "qtp4b051-2",
-        "product_title": "BASIC MATHEMATICS",
+        "product_title": "POTABLE WATER PROGRAM",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-2/qtp4b051-2.pdf"
-    },
-    "qtp4b051-20": {
-        "product_number": "qtp4b051-20",
-        "product_title": "Potable Water Program",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-20/qtp4b051-20.pdf"
     },
     "qtp4b051-21": {
         "product_number": "qtp4b051-21",
@@ -146,18 +631,8 @@
     },
     "qtp4b051-8": {
         "product_number": "qtp4b051-8",
-        "product_title": "SOIL/SOLID SAMPLING STRATEGY",
+        "product_title": "AIR FORCE SPECIALTY CODE 4B071 BIOENVIRONMENTAL ENGINEERING OCCUPATIONAL AND ENVIRONMENTAL HEALTH (OEH) PROGRAM OVERVIEW",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-8/qtp4b051-8.pdf"
-    },
-    "qtp4b051-9": {
-        "product_number": "qtp4b051-9",
-        "product_title": "Air Force Specialty Code 4B051 Bioenvironmental Engineering Chemical Health Hazards",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-9/qtp4b051-9.pdf"
-    },
-    "qtp4b071-1": {
-        "product_number": "qtp4b071-1",
-        "product_title": "Air Force Specialty Code 4B071 Bioenvironmental Engineering Occupational and Environmental Health (OEH) Program Overview",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b071-1/qtp4b071-1.pdf"
     },
     "qtp4b071-10": {
         "product_number": "qtp4b071-10",
@@ -231,13 +706,8 @@
     },
     "qtp4b071-6": {
         "product_number": "qtp4b071-6",
-        "product_title": "Soil/Solid Sampling Strategy",
+        "product_title": "AIR FORCE SPECIALTY CODE 4B071 BIOENVIRONMENTAL ENGINEERING CHEMICAL HEALTH HAZARDS",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b071-6/qtp4b071-6.pdf"
-    },
-    "qtp4b071-7": {
-        "product_number": "qtp4b071-7",
-        "product_title": "Air Force Specialty Code 4B071 Bioenvironmental Engineering Chemical Health Hazards",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b071-7/qtp4b071-7.pdf"
     },
     "qtp4b071-8": {
         "product_number": "qtp4b071-8",
@@ -489,51 +959,6 @@
         "product_title": "DENTAL LABORATORY SPECIALTY VOLUME 4. DENTAL LABORATORY ADMINISTRATION",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4y0x2-4/qtp4y0x2-4.pdf"
     },
-    "hafmd1-50": {
-        "product_number": "hafmd1-50",
-        "product_title": "THE AIR FORCE CHIEF SCIENTIST",
-        "url": "https://static.e-publishing.af.mil/production/1/af_st/publication/hafmd1-50/hafmd1-50.pdf"
-    },
-    "hafmd1-52": {
-        "product_number": "hafmd1-52",
-        "product_title": "DIRECTOR OF TEST AND EVALUATION",
-        "url": "https://static.e-publishing.af.mil/production/1/af_te/publication/hafmd1-52/hafmd1-52.pdf"
-    },
-    "hafmd1-54": {
-        "product_number": "hafmd1-54",
-        "product_title": "DEPUTY CHIEF OF STAFF, OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/hafmd1-54/hafmd1-54.pdf"
-    },
-    "hafmd1-56": {
-        "product_number": "hafmd1-56",
-        "product_title": "DEPUTY CHIEF OF STAFF STRATEGIC PLANS AND PROGRAMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a8/publication/hafmd1-56/hafmd1-56.pdf"
-    },
-    "hafmd1-57": {
-        "product_number": "hafmd1-57",
-        "product_title": "Deputy Chief of Staff, Air Force Futures",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a5/publication/hafmd1-57/hafmd1-57.pdf"
-    },
-    "hafmd1-58": {
-        "product_number": "hafmd1-58",
-        "product_title": "DIRECTOR, DEPARTMENT OF THE AIR FORCE STUDIES AND ANALYSIS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_sa/publication/hafmd1-58/hafmd1-58.pdf"
-    },
-    "hafmd1-6": {
-        "product_number": "hafmd1-6",
-        "product_title": "THE ADMINISTRATIVE ASSISTANT TO THE SECRETARY OF THE AIR FORCE",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/hafmd1-6/hafmd1-6.pdf"
-    },
-    "hafmd1-60": {
-        "product_number": "hafmd1-60",
-        "product_title": "DEPUTY CHIEF OF STAFF OF THE AIR FORCE STRATEGIC DETERRENCE AND NUCLEAR INTEGRATION",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a10/publication/hafmd1-60/hafmd1-60.pdf"
-    },
-    "hafmd1-62": {
-        "product_number": "hafmd1-62",
-        "product_title": "HEADQUARTERS AIR FORCE DIRECTOR OF STAFF",
-        "url": "https://static.e-publishing.af.mil/production/1/haf_ds/publication/hafmd1-62/hafmd1-62.pdf"
-    },
     "hafmd1-8": {
         "product_number": "hafmd1-8",
         "product_title": "AUDITOR GENERAL",
@@ -566,13 +991,8 @@
     },
     "hoi23-1": {
         "product_number": "hoi23-1",
-        "product_title": "SUPPLIES AND SUPPLY SERVICES FOR THE HEADQUARTERS (HAF) IN THE NATIONAL CAPITAL REGION (NCR)",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/hoi23-1/hoi23-1.pdf"
-    },
-    "hoi32-9": {
-        "product_number": "hoi32-9",
         "product_title": "Management and Reporting of Air Force Space and Building Services in Headquarters Assigned Facilities in the Washington, DC Area",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/hoi32-9/hoi32-9.pdf"
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/hoi23-1/hoi23-1.pdf"
     },
     "hoi33-10": {
         "product_number": "hoi33-10",
@@ -989,50 +1409,45 @@
         "product_title": "R-12 Mobile Fuel Vehicles",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l271/qtp24-3-l271.pdf"
     },
-    "dafpd90-16": {
-        "product_number": "dafpd90-16",
-        "product_title": "STUDIES AND ANALYSIS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_sa/publication/dafpd90-16/dafpd90-16.pdf"
+    "qtp24-3-l275": {
+        "product_number": "qtp24-3-l275",
+        "product_title": "R-11 Mobile Fuel Vehicles",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l275/qtp24-3-l275.pdf"
     },
-    "dafpd90-18": {
-        "product_number": "dafpd90-18",
-        "product_title": "SMALL BUSINESS PROGRAMS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_sb/publication/dafpd90-18/dafpd90-18.pdf"
+    "qtp24-3-l287": {
+        "product_number": "qtp24-3-l287",
+        "product_title": "JOINT LIGHT TACTICAL VEHICLE (JLTV) TRAINING PACKAGE",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l287/qtp24-3-l287.pdf"
     },
-    "dafpd90-22": {
-        "product_number": "dafpd90-22",
-        "product_title": "AIR FORCE COMMUNITY PARTNERSHIP PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ie/publication/dafpd90-22/dafpd90-22.pdf"
+    "qtp24-3-l350": {
+        "product_number": "qtp24-3-l350",
+        "product_title": "Aircraft Tow Vehicle Training Package",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l350/qtp24-3-l350.pdf"
     },
-    "dafpd90-3": {
-        "product_number": "dafpd90-3",
-        "product_title": "INSPECTOR GENERAL",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ig/publication/dafpd90-3/dafpd90-3.pdf"
+    "qtp24-3-l426": {
+        "product_number": "qtp24-3-l426",
+        "product_title": "M-Series Dolly Vehicle Training Package",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l426/qtp24-3-l426.pdf"
     },
-    "dafpd90-60": {
-        "product_number": "dafpd90-60",
-        "product_title": "SEXUAL ASSAULT PREVENTION AND RESPONSE (SAPR) PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafpd90-60/dafpd90-60.pdf"
+    "qtp24-3-l530": {
+        "product_number": "qtp24-3-l530",
+        "product_title": "High Mobility Multipurpose Wheeled Vehicle (HMMWV) Vehicle Training Package",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-l530/qtp24-3-l530.pdf"
     },
-    "dafpd_99-1": {
-        "product_number": "dafpd99-1",
-        "product_title": "TEST AND EVALUATION",
-        "url": "https://static.e-publishing.af.mil/production/1/af_te/publication/dafpd99-1/dafpd_99-1.pdf"
+    "qtp24-3-ptlhk": {
+        "product_number": "qtp24-3-ptlhk",
+        "product_title": "Pintle Hook Vehicle Training Package",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/qtp24-3-ptlhk/qtp24-3-ptlhk.pdf"
     },
-    "dafpm2021-36-01": {
-        "product_number": "dafpm2021-36-01",
-        "product_title": "Department of the Air Force Policy Memorandum Accessions and In-Service Transition for Persons Identifying as Transgender",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_mr/publication/dafpm2021-36-01/dafpm2021-36-01.pdf"
+    "etc/physical": {
+        "product_number": "ic.e-publishing.af.mil",
+        "product_title": "BOOK OF WORSHIP US FORCES (SPIRAL BOUND)",
+        "url": "https://static.e-publishing.af.mil/etc/physical.pdf"
     },
-    "dafttp3-2.83": {
-        "product_number": "dafttp3-2.83",
-        "product_title": "MULTI-SERVICE TACTICS, TECHNIQUES, AND PROCEDURES FOR EMERGENCY MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafttp3-2.83/dafttp3-2.83.pdf"
-    },
-    "afttp3-42.8": {
-        "product_number": "dafttp3-42.8",
-        "product_title": "EXPEDITIONARY MEDICAL LOGISTICS (EML) SYSTEM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/dafttp3-42.8/afttp3-42.8.pdf"
+    "qtp4b051-1": {
+        "product_number": "qtp4b051-1",
+        "product_title": "AIR FORCE SPECIALTY CODE 4B051 BIOENVIRONMENT ENGINEERING BIOLOGICAL HEALTH HAZARDS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/qtp4b051-1/qtp4b051-1.pdf"
     },
     "dafva11-240": {
         "product_number": "dafva11-240",
@@ -1101,7 +1516,7 @@
     },
     "dodi1322.33_dafi36-2683": {
         "product_number": "dodi1322.33_dafi36-2683",
-        "product_title": "DEPARTMENT OF THE AIR FORCE VOLUNTARY CREDENTIALING PROGRAMS",
+        "product_title": "VOLUNTARY CREDENTIALING PROGRAMS",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dodi1322.33_dafi36-2683/dodi1322.33_dafi36-2683.pdf"
     },
     "dodi1332.35_afi36-3037": {
@@ -1454,55 +1869,50 @@
         "product_title": "AIR FORCE CHIEF DATA OFFICER",
         "url": "https://static.e-publishing.af.mil/production/1/saf_co/publication/hafmd1-5/hafmd1-5.pdf"
     },
-    "dafman34-147": {
-        "product_number": "dafman34-147",
-        "product_title": "FISHER HOUSE PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-147/dafman34-147.pdf"
+    "hafmd1-50": {
+        "product_number": "hafmd1-50",
+        "product_title": "THE AIR FORCE CHIEF SCIENTIST",
+        "url": "https://static.e-publishing.af.mil/production/1/af_st/publication/hafmd1-50/hafmd1-50.pdf"
     },
-    "dafman34-151": {
-        "product_number": "dafman34-151",
-        "product_title": "GAMING OPERATING PROCEDURES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-151/dafman34-151.pdf"
+    "hafmd1-52": {
+        "product_number": "hafmd1-52",
+        "product_title": "DIRECTOR OF TEST AND EVALUATION",
+        "url": "https://static.e-publishing.af.mil/production/1/af_te/publication/hafmd1-52/hafmd1-52.pdf"
     },
-    "dafman34-152": {
-        "product_number": "dafman34-152",
-        "product_title": "AIR FORCE AERO CLUB OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-152/dafman34-152.pdf"
+    "hafmd1-54": {
+        "product_number": "hafmd1-54",
+        "product_title": "DEPUTY CHIEF OF STAFF, OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/hafmd1-54/hafmd1-54.pdf"
     },
-    "dafman35-106": {
-        "product_number": "dafman35-106",
-        "product_title": "MUSIC, CEREMONIES, AND ACCESSIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/dafman35-106/dafman35-106.pdf"
+    "hafmd1-56": {
+        "product_number": "hafmd1-56",
+        "product_title": "DEPUTY CHIEF OF STAFF STRATEGIC PLANS AND PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a8/publication/hafmd1-56/hafmd1-56.pdf"
     },
-    "dafman36-142": {
-        "product_number": "dafman36-142",
-        "product_title": "CIVILIAN CAREER FIELD MANAGEMENT AND CENTRALLY-MANAGED PROGRAMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-142/dafman36-142.pdf"
+    "hafmd1-57": {
+        "product_number": "hafmd1-57",
+        "product_title": "Deputy Chief of Staff, Air Force Futures",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a5/publication/hafmd1-57/hafmd1-57.pdf"
     },
-    "dafman36-2012": {
-        "product_number": "dafman36-2012",
-        "product_title": "RECORD OF DISENROLLMENT FROM OFFICER CANDIDATE-TYPE TRAINING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-2012/dafman36-2012.pdf"
+    "hafmd1-58": {
+        "product_number": "hafmd1-58",
+        "product_title": "DIRECTOR, DEPARTMENT OF THE AIR FORCE STUDIES AND ANALYSIS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_sa/publication/hafmd1-58/hafmd1-58.pdf"
     },
-    "dafman36-203": {
-        "product_number": "dafman36-203",
-        "product_title": "STAFFING CIVILIAN POSITIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-203/dafman36-203.pdf"
+    "hafmd1-6": {
+        "product_number": "hafmd1-6",
+        "product_title": "THE ADMINISTRATIVE ASSISTANT TO THE SECRETARY OF THE AIR FORCE",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/hafmd1-6/hafmd1-6.pdf"
     },
-    "dafman36-2032": {
-        "product_number": "dafman36-2032",
-        "product_title": "MILITARY RECRUITING AND ACCESSIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-2032/dafman36-2032.pdf"
+    "hafmd1-60": {
+        "product_number": "hafmd1-60",
+        "product_title": "DEPUTY CHIEF OF STAFF OF THE AIR FORCE STRATEGIC DETERRENCE AND NUCLEAR INTEGRATION",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a10/publication/hafmd1-60/hafmd1-60.pdf"
     },
-    "dafman36-2102": {
-        "product_number": "dafman36-2102",
-        "product_title": "BASE-LEVEL RELOCATION PROCEDURES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-2102/dafman36-2102.pdf"
-    },
-    "dafman36-2114": {
-        "product_number": "dafman36-2114",
-        "product_title": "MANAGEMENT OF THE AIR FORCE RESERVE INDIVIDUAL RESERVE (IR) AND FULL-TIME SUPPORT (FTS) PROGRAMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_re/publication/dafman36-2114/dafman36-2114.pdf"
+    "hafmd1-62": {
+        "product_number": "hafmd1-62",
+        "product_title": "HEADQUARTERS AIR FORCE DIRECTOR OF STAFF",
+        "url": "https://static.e-publishing.af.mil/production/1/haf_ds/publication/hafmd1-62/hafmd1-62.pdf"
     },
     "dafman36-2136": {
         "product_number": "dafman36-2136",
@@ -1954,70 +2364,55 @@
         "product_title": "COMMITTEE MANAGEMENT PROGRAMS",
         "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafpd90-14/dafpd_90-14.pdf"
     },
-    "dafi36-3006": {
-        "product_number": "dafi36-3006",
-        "product_title": "SURVIVOR BENEFIT PLAN (SBP) (REGULAR, GUARD, RESERVE, AND RETIRED)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3006/dafi36-3006.pdf"
+    "dafpd90-16": {
+        "product_number": "dafpd90-16",
+        "product_title": "STUDIES AND ANALYSIS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_sa/publication/dafpd90-16/dafpd90-16.pdf"
     },
-    "dafi36-3009": {
-        "product_number": "dafi36-3009",
-        "product_title": "MILITARY AND FAMILY READINESS CENTERS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3009/dafi36-3009.pdf"
+    "dafpd90-18": {
+        "product_number": "dafpd90-18",
+        "product_title": "SMALL BUSINESS PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_sb/publication/dafpd90-18/dafpd90-18.pdf"
     },
-    "dafi36-3012": {
-        "product_number": "dafi36-3012",
-        "product_title": "MILITARY ENTITLEMENTS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3012/dafi36-3012.pdf"
+    "dafpd90-22": {
+        "product_number": "dafpd90-22",
+        "product_title": "AIR FORCE COMMUNITY PARTNERSHIP PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ie/publication/dafpd90-22/dafpd90-22.pdf"
     },
-    "dafi36-3013": {
-        "product_number": "dafi36-3013",
-        "product_title": "LACTATION ROOMS AND BREAST MILK STORAGE FOR NURSING MOTHERS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3013/dafi36-3013.pdf"
+    "dafpd90-3": {
+        "product_number": "dafpd90-3",
+        "product_title": "INSPECTOR GENERAL",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ig/publication/dafpd90-3/dafpd90-3.pdf"
     },
-    "dafi36-3026v1": {
-        "product_number": "dafi36-3026v1",
-        "product_title": "IDENTIFICATION CARDS FOR MEMBERS OF THE UNIFORMED SERVICES, THEIR ELIGIBLE FAMILY MEMBERS, AND OTHER ELIGIBLE PERSONNEL",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3026v1/dafi36-3026v1.pdf"
+    "dafpd90-50": {
+        "product_number": "dafpd90-50",
+        "product_title": "INTEGRATED RESILIENCE",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafpd90-50/dafpd90-50.pdf"
     },
-    "dafi36-3026v2": {
-        "product_number": "dafi36-3026v2",
-        "product_title": "COMMON ACCESS CARD (CAC)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3026v2/dafi36-3026v2.pdf"
+    "dafpd90-60": {
+        "product_number": "dafpd90-60",
+        "product_title": "SEXUAL ASSAULT PREVENTION AND RESPONSE (SAPR) PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafpd90-60/dafpd90-60.pdf"
     },
-    "dafi36-3034": {
-        "product_number": "dafi36-3034",
-        "product_title": "REMISSION OF INDEBTEDNESS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_mr/publication/dafi36-3034/dafi36-3034.pdf"
+    "dafpd_99-1": {
+        "product_number": "dafpd99-1",
+        "product_title": "TEST AND EVALUATION",
+        "url": "https://static.e-publishing.af.mil/production/1/af_te/publication/dafpd99-1/dafpd_99-1.pdf"
     },
-    "dafi36-3101": {
-        "product_number": "dafi36-3101",
-        "product_title": "FUNDRAISING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3101/dafi36-3101.pdf"
+    "dafpm2021-36-01": {
+        "product_number": "dafpm2021-36-01",
+        "product_title": "Department of the Air Force Policy Memorandum Accessions and In-Service Transition for Persons Identifying as Transgender",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_mr/publication/dafpm2021-36-01/dafpm2021-36-01.pdf"
     },
-    "dafi36-3107": {
-        "product_number": "dafi36-3107",
-        "product_title": "VOTING ASSISTANCE PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3107/dafi36-3107.pdf"
+    "dafttp3-2.83": {
+        "product_number": "dafttp3-2.83",
+        "product_title": "MULTI-SERVICE TACTICS, TECHNIQUES, AND PROCEDURES FOR EMERGENCY MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafttp3-2.83/dafttp3-2.83.pdf"
     },
-    "dafi36-3111": {
-        "product_number": "dafi36-3111",
-        "product_title": "AIR FORCE AID SOCIETY (AFAS)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3111/dafi36-3111.pdf"
-    },
-    "dafi36-3203": {
-        "product_number": "dafi36-3203",
-        "product_title": "SERVICE RETIREMENTS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3203/dafi36-3203.pdf"
-    },
-    "dafi36-3211": {
-        "product_number": "dafi36-3211",
-        "product_title": "MILITARY SEPARATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3211/dafi36-3211.pdf"
-    },
-    "dafi36-3212": {
-        "product_number": "dafi36-3212",
-        "product_title": "PHYSICAL EVALUATION FOR RETENTION, RETIREMENT AND SEPARATION",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3212/dafi36-3212.pdf"
+    "afttp3-42.8": {
+        "product_number": "dafttp3-42.8",
+        "product_title": "EXPEDITIONARY MEDICAL LOGISTICS (EML) SYSTEM",
+        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/dafttp3-42.8/afttp3-42.8.pdf"
     },
     "dafi36-3501": {
         "product_number": "dafi36-3501",
@@ -2043,6 +2438,11 @@
         "product_number": "dafi36-701",
         "product_title": "LABOR-MANAGEMENT RELATIONS",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-701/dafi36-701.pdf"
+    },
+    "dafi38-401": {
+        "product_number": "dafi38-401",
+        "product_title": "CONTINUOUS PROCESS IMPROVEMENT (CPI)",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_mg/publication/dafi38-401/dafi38-401.pdf"
     },
     "dafi38-402": {
         "product_number": "dafi38-402",
@@ -2139,6 +2539,11 @@
         "product_title": "VICTIM AND WITNESS RIGHTS AND PROCEDURES",
         "url": "https://static.e-publishing.af.mil/production/1/af_ja/publication/dafi51-207/dafi51-207.pdf"
     },
+    "dafi51-403": {
+        "product_number": "dafi51-403",
+        "product_title": "INTERNATIONAL AGREEMENTS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_ja/publication/dafi51-403/dafi51-403.pdf"
+    },
     "dafi51-508": {
         "product_number": "dafi51-508",
         "product_title": "POLITICAL ACTIVITIES, FREE SPEECH AND FREEDOM OF ASSEMBLY OF AIR FORCE PERSONNEL",
@@ -2173,6 +2578,11 @@
         "product_number": "dafi63-101_20-101",
         "product_title": "INTEGRATED LIFE CYCLE MANAGEMENT",
         "url": "https://static.e-publishing.af.mil/production/1/saf_aq/publication/dafi63-101_20-101/dafi63-101_20-101.pdf"
+    },
+    "dafi63-125": {
+        "product_number": "dafi63-125",
+        "product_title": "NUCLEAR CERTIFICATION PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aq/publication/dafi63-125/dafi63-125.pdf"
     },
     "dafi63-138": {
         "product_number": "dafi63-138",
@@ -2449,75 +2859,55 @@
         "product_title": "APPROPRIATED FUND (APF) FOOD SERVICE PROGRAM MANAGEMENT",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-131/dafman34-131.pdf"
     },
-    "cfetpgs0081": {
-        "product_number": "cfetpgs0081",
-        "product_title": "FIRE AND EMERGENCY SERVICES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetpgs0081/cfetpgs0081.pdf"
+    "dafman34-147": {
+        "product_number": "dafman34-147",
+        "product_title": "FISHER HOUSE PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-147/dafman34-147.pdf"
     },
-    "cfetpri9s100": {
-        "product_number": "cfetpri9s100",
-        "product_title": "SCIENTIFIC APPLICATIONS SPECIALIST",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetpri9s100/cfetpri9s100.pdf"
+    "dafman34-151": {
+        "product_number": "dafman34-151",
+        "product_title": "GAMING OPERATING PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-151/dafman34-151.pdf"
     },
-    "dafgm2023-10-01": {
-        "product_number": "dafgm2023-10-01",
-        "product_title": "Establishing Operational Support Team (OST) Execution",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/dafgm2023-10-01/dafgm2023-10-01.pdf"
+    "dafman34-152": {
+        "product_number": "dafman34-152",
+        "product_title": "AIR FORCE AERO CLUB OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman34-152/dafman34-152.pdf"
     },
-    "dafgm2023-16-1410": {
-        "product_number": "dafgm2023-16-1410",
-        "product_title": "Department of the Air Force Enhanced Security Program to Support the DoD Innovation Initiative",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafgm2023-16-1410/dafgm2023-16-1410.pdf"
+    "dafman35-106": {
+        "product_number": "dafman35-106",
+        "product_title": "MUSIC, CEREMONIES, AND ACCESSIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/dafman35-106/dafman35-106.pdf"
     },
-    "dafgm2023-17-01": {
-        "product_number": "dafgm2023-17-01",
-        "product_title": "Department of the Air Force Guidance Memorandum Establishing Policy to Support Telework and Remote Workers",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_cn/publication/dafgm2023-17-01/dafgm2023-17-01.pdf"
+    "dafman36-142": {
+        "product_number": "dafman36-142",
+        "product_title": "CIVILIAN CAREER FIELD MANAGEMENT AND CENTRALLY-MANAGED PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-142/dafman36-142.pdf"
     },
-    "dafgm2023-32-01": {
-        "product_number": "dafgm2023-32-01",
-        "product_title": "Civil Engineer Control System Cybersecurity",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafgm2023-32-01/dafgm2023-32-01.pdf"
+    "dafman36-2012": {
+        "product_number": "dafman36-2012",
+        "product_title": "RECORD OF DISENROLLMENT FROM OFFICER CANDIDATE-TYPE TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-2012/dafman36-2012.pdf"
     },
-    "dafgm2023-32-02": {
-        "product_number": "dafgm2023-32-02",
-        "product_title": "Civil Engineer Enterprise Governance for Information Technology",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafgm2023-32-02/dafgm2023-32-02.pdf"
+    "dafman36-203": {
+        "product_number": "dafman36-203",
+        "product_title": "STAFFING CIVILIAN POSITIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-203/dafman36-203.pdf"
     },
-    "dafgm2023-36-02": {
-        "product_number": "dafgm2023-36-02",
-        "product_title": "BASIC NEEDS ALLOWANCE",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafgm2023-36-02/dafgm2023-36-02.pdf"
+    "dafman36-2032": {
+        "product_number": "dafman36-2032",
+        "product_title": "MILITARY RECRUITING AND ACCESSIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-2032/dafman36-2032.pdf"
     },
-    "dafgm2023-36-03": {
-        "product_number": "dafgm2023-36-03",
-        "product_title": "Suitability/Fitness Adjudication for Civilian Employees",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafgm2023-36-03/dafgm2023-36-03.pdf"
+    "dafman36-2102": {
+        "product_number": "dafman36-2102",
+        "product_title": "BASE-LEVEL RELOCATION PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafman36-2102/dafman36-2102.pdf"
     },
-    "dafh16-1406": {
-        "product_number": "dafh16-1406",
-        "product_title": "NATIONAL INTEREST DETERMINATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafh16-1406/dafh16-1406.pdf"
-    },
-    "dafh33-337": {
-        "product_number": "dafh33-337",
-        "product_title": "THE TONGUE AND QUILL",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_cn/publication/dafh33-337/dafh33-337.pdf"
-    },
-    "dafh34-102": {
-        "product_number": "dafh34-102",
-        "product_title": "GUIDANCE TO SERVICES CONTINGENCY PLANNING: MORTUARY AFFAIRS SEARCH AND RECOVERY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafh34-102/dafh34-102.pdf"
-    },
-    "dafh36-2675": {
-        "product_number": "dafh36-2675",
-        "product_title": "INFORMATION FOR DESIGNERS OF INSTRUCTIONAL SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafh36-2675/dafh36-2675.pdf"
-    },
-    "dafi10-208": {
-        "product_number": "dafi10-208",
-        "product_title": "CONTINUITY OF OPERATIONS (COOP) PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafi10-208/dafi10-208.pdf"
+    "dafman36-2114": {
+        "product_number": "dafman36-2114",
+        "product_title": "MANAGEMENT OF THE AIR FORCE RESERVE INDIVIDUAL RESERVE (IR) AND FULL-TIME SUPPORT (FTS) PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_re/publication/dafman36-2114/dafman36-2114.pdf"
     },
     "dafi10-2501": {
         "product_number": "dafi10-2501",
@@ -2628,6 +3018,11 @@
         "product_number": "dafi20-117",
         "product_title": "REPAIR NETWORK MANAGEMENT",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafi20-117/dafi20-117.pdf"
+    },
+    "dafi20-118": {
+        "product_number": "dafi20-118",
+        "product_title": "INSTRUCTIONS FOR THE INTERSERVICING OF TECHNICAL MANUALS AND RELATED TECHNOLOGY PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aq/publication/dafi20-118/dafi20-118.pdf"
     },
     "dafi21-101": {
         "product_number": "dafi21-101",
@@ -2911,7 +3306,7 @@
     },
     "dafi36-2903": {
         "product_number": "dafi36-2903",
-        "product_title": "DRESS AND PERSONAL APPEARANCE OF UNITED STATES AIR FORCE AND UNITED STATES SPACE FORCE PERSONNEL",
+        "product_title": "DRESS AND PERSONAL APPEARANCE OF DEPARTMENT OF THE AIR FORCE PERSONNEL",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-2903/dafi36-2903.pdf"
     },
     "dafi36-2906": {
@@ -2944,75 +3339,70 @@
         "product_title": "MILITARY LEAVE PROGRAM",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3003/dafi36-3003.pdf"
     },
-    "cfetp2m0x3": {
-        "product_number": "cfetp2m0x3",
-        "product_title": "MISSILE AND SPACE FACILITIES MAINTENANCE",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2m0x3/cfetp2m0x3.pdf"
+    "dafi36-3006": {
+        "product_number": "dafi36-3006",
+        "product_title": "SURVIVOR BENEFIT PLAN (SBP) (REGULAR, GUARD, RESERVE, AND RETIRED)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3006/dafi36-3006.pdf"
     },
-    "cfetp2p0x1": {
-        "product_number": "cfetp2p0x1",
-        "product_title": "PRECISION MEASUREMENT EQUIPMENT LABORATORY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2p0x1/cfetp2p0x1.pdf"
+    "dafi36-3009": {
+        "product_number": "dafi36-3009",
+        "product_title": "MILITARY AND FAMILY READINESS CENTERS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3009/dafi36-3009.pdf"
     },
-    "cfetp2p0x1c1": {
-        "product_number": "cfetp2p0x1c1",
-        "product_title": "Precision Measurement Equipment Laboratory",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2p0x1c1/cfetp2p0x1c1.pdf"
+    "dafi36-3012": {
+        "product_number": "dafi36-3012",
+        "product_title": "MILITARY ENTITLEMENTS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3012/dafi36-3012.pdf"
     },
-    "cfetp2r0x1": {
-        "product_number": "cfetp2r0x1",
-        "product_title": "MAINTENANCE MANAGEMENT ANALYSIS SPECIALTY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2r0x1/cfetp2r0x1.pdf"
+    "dafi36-3013": {
+        "product_number": "dafi36-3013",
+        "product_title": "LACTATION ROOMS AND BREAST MILK STORAGE FOR NURSING MOTHERS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3013/dafi36-3013.pdf"
     },
-    "cfetp2r1x1": {
-        "product_number": "cfetp2r1x1",
-        "product_title": "MAINTENANCE MANAGEMENT PRODUCTION (MAINTENANCE SCHEDULING)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2r1x1/cfetp2r1x1.pdf"
+    "dafi36-3026v1": {
+        "product_number": "dafi36-3026v1",
+        "product_title": "IDENTIFICATION CARDS FOR MEMBERS OF THE UNIFORMED SERVICES, THEIR ELIGIBLE FAMILY MEMBERS, AND OTHER ELIGIBLE PERSONNEL",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3026v1/dafi36-3026v1.pdf"
     },
-    "cfetp2r2x1": {
-        "product_number": "cfetp2r2x1",
-        "product_title": "MAINTENANCE MANAGEMENT CAREER FIELD EDUCATION AND TRAINING PLAN",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2r2x1/cfetp2r2x1.pdf"
+    "dafi36-3026v2": {
+        "product_number": "dafi36-3026v2",
+        "product_title": "COMMON ACCESS CARD (CAC)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3026v2/dafi36-3026v2.pdf"
     },
-    "cfetp2s0xx": {
-        "product_number": "cfetp2s0xx",
-        "product_title": "MATERIEL MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2s0xx/cfetp2s0xx.pdf"
+    "dafi36-3034": {
+        "product_number": "dafi36-3034",
+        "product_title": "REMISSION OF INDEBTEDNESS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_mr/publication/dafi36-3034/dafi36-3034.pdf"
     },
-    "cfetp2t0x1": {
-        "product_number": "cfetp2t0x1",
-        "product_title": "TRAFFIC MANAGEMENT OPERATIONS SPECIALTY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t0x1/cfetp2t0x1.pdf"
+    "dafi36-3101": {
+        "product_number": "dafi36-3101",
+        "product_title": "FUNDRAISING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3101/dafi36-3101.pdf"
     },
-    "cfetp_2t1x1": {
-        "product_number": "cfetp2t1x1",
-        "product_title": "Ground Transportation",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t1x1/cfetp_2t1x1.pdf"
+    "dafi36-3107": {
+        "product_number": "dafi36-3107",
+        "product_title": "VOTING ASSISTANCE PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3107/dafi36-3107.pdf"
     },
-    "cfetp2t2x1": {
-        "product_number": "cfetp2t2x1",
-        "product_title": "AIR TRANSPORTATION SPECIALTY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t2x1/cfetp2t2x1.pdf"
+    "dafi36-3111": {
+        "product_number": "dafi36-3111",
+        "product_title": "AIR FORCE AID SOCIETY (AFAS)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3111/dafi36-3111.pdf"
     },
-    "cfetp2t3x1": {
-        "product_number": "cfetp2t3x1",
-        "product_title": "2T3X1 Vehicle Management Specialties",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t3x1/cfetp2t3x1.pdf"
+    "dafi36-3203": {
+        "product_number": "dafi36-3203",
+        "product_title": "SERVICE RETIREMENTS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3203/dafi36-3203.pdf"
     },
-    "cfetp2t3x1c1": {
-        "product_number": "cfetp2t3x1c1",
-        "product_title": "2T3X1 Vehicle Management Specialties",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t3x1c1/cfetp2t3x1c1.pdf"
+    "dafi36-3211": {
+        "product_number": "dafi36-3211",
+        "product_title": "MILITARY SEPARATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3211/dafi36-3211.pdf"
     },
-    "cfetp2t3x7": {
-        "product_number": "cfetp2t3x7",
-        "product_title": "Career Field Education & Training Plan (CFETP) Air Force Specialty Code (AFSC) 2T3X7 Fleet Management & Analysis",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t3x7/cfetp2t3x7.pdf"
-    },
-    "cfetp2w0x1c1": {
-        "product_number": "cfetp2w0x1c1",
-        "product_title": "MUNITIONS SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2w0x1c1/cfetp2w0x1c1.pdf"
+    "dafi36-3212": {
+        "product_number": "dafi36-3212",
+        "product_title": "PHYSICAL EVALUATION FOR RETENTION, RETIREMENT AND SEPARATION",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafi36-3212/dafi36-3212.pdf"
     },
     "cfetp2w1x1": {
         "product_number": "cfetp2w1x1",
@@ -3083,6 +3473,11 @@
         "product_number": "cfetp3e1x1c1",
         "product_title": "HEATING, VENTILATION, AIR CONDITIONING AND REFRIGERATION",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp3e1x1c1/cfetp3e1x1c1.pdf"
+    },
+    "cfetp3e1x1c2": {
+        "product_number": "cfetp3e1x1c2",
+        "product_title": "HEATING, VENTILATION, AIR CONDITIONING AND REFRIGERATION",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp3e1x1c2/cfetp3e1x1c2.pdf"
     },
     "cfetp3e1x1wg": {
         "product_number": "cfetp3e1x1wg",
@@ -3329,15 +3724,10 @@
         "product_title": "PHARMACY",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/cfetp4p0x1/cfetp4p0x1.pdf"
     },
-    "cfetp4r0x1": {
-        "product_number": "cfetp4r0x1",
-        "product_title": "DIAGNOSTIC IMAGING SPECIALTY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/cfetp4r0x1/cfetp4r0x1.pdf"
-    },
-    "cfetp4r0x1abcc1": {
-        "product_number": "cfetp4r0x1abcc1",
-        "product_title": "DIAGNOSTIC IMAGING SPECIALTY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/cfetp4r0x1abcc1/cfetp4r0x1abcc1.pdf"
+    "cfetp4r0x1abc": {
+        "product_number": "cfetp4r0x1abc",
+        "product_title": "DIAGNOSTIC IMAGING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/cfetp4r0x1abc/cfetp4r0x1abc.pdf"
     },
     "cfetp4t0x1": {
         "product_number": "cfetp4t0x1",
@@ -3444,40 +3834,75 @@
         "product_title": "SDI 8T000/8T100 PROFESSIONAL MILITARY EDUCATION",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/cfetp8t000/cfetp8t000.pdf"
     },
-    "cfetp17x": {
-        "product_number": "cfetp17x",
-        "product_title": "CYBERSPACE OPERATIONS OFFICER",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp17x/cfetp17x.pdf"
+    "cfetpgs0081": {
+        "product_number": "cfetpgs0081",
+        "product_title": "FIRE AND EMERGENCY SERVICES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetpgs0081/cfetpgs0081.pdf"
     },
-    "cfetp1a1xx": {
-        "product_number": "cfetp1a1xx",
-        "product_title": "Career Enlisted Aviator",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/cfetp1a1xx/cfetp1a1xx.pdf"
+    "cfetpri9s100": {
+        "product_number": "cfetpri9s100",
+        "product_title": "SCIENTIFIC APPLICATIONS SPECIALIST",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetpri9s100/cfetpri9s100.pdf"
     },
-    "cfetp1a3x1": {
-        "product_number": "cfetp1a3x1",
-        "product_title": "AFSC 1A3X1 AIRBORNE MISSION SYSTEMS OPERATOR",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/cfetp1a3x1/cfetp1a3x1.pdf"
+    "dafgm2023-10-01": {
+        "product_number": "dafgm2023-10-01",
+        "product_title": "Establishing Operational Support Team (OST) Execution",
+        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/dafgm2023-10-01/dafgm2023-10-01.pdf"
     },
-    "cfetp1a8x1x": {
-        "product_number": "cfetp1a8x1x",
-        "product_title": "AIRBORNE CRYPTOLOGIC LANGUAGE ANALYST (ACLA) SPECIALTY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp1a8x1x/cfetp1a8x1x.pdf"
+    "dafgm2023-16-1410": {
+        "product_number": "dafgm2023-16-1410",
+        "product_title": "Department of the Air Force Enhanced Security Program to Support the DoD Innovation Initiative",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafgm2023-16-1410/dafgm2023-16-1410.pdf"
     },
-    "cfetp1a8x2": {
-        "product_number": "cfetp1a8x2",
-        "product_title": "Airborne Intelligence, Surveillance, and Reconnaissance (A-ISR) Operator Specialty",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp1a8x2/cfetp1a8x2.pdf"
+    "dafgm2023-17-01": {
+        "product_number": "dafgm2023-17-01",
+        "product_title": "Department of the Air Force Guidance Memorandum Establishing Policy to Support Telework and Remote Workers",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_cn/publication/dafgm2023-17-01/dafgm2023-17-01.pdf"
     },
-    "cfetp1b4x1": {
-        "product_number": "cfetp1b4x1",
-        "product_title": "CYBER WARFARE OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp1b4x1/cfetp1b4x1.pdf"
+    "dafgm2023-32-01": {
+        "product_number": "dafgm2023-32-01",
+        "product_title": "Civil Engineer Control System Cybersecurity",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafgm2023-32-01/dafgm2023-32-01.pdf"
     },
-    "cfetpc0x2": {
-        "product_number": "cfetp1c0x2",
-        "product_title": "AFSC 1C0X2 AVIATION RESOURCE MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/cfetp1c0x2/cfetpc0x2.pdf"
+    "dafgm2023-32-02": {
+        "product_number": "dafgm2023-32-02",
+        "product_title": "Civil Engineer Enterprise Governance for Information Technology",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/dafgm2023-32-02/dafgm2023-32-02.pdf"
+    },
+    "dafgm2023-36-02": {
+        "product_number": "dafgm2023-36-02",
+        "product_title": "BASIC NEEDS ALLOWANCE",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafgm2023-36-02/dafgm2023-36-02.pdf"
+    },
+    "dafgm2023-36-03": {
+        "product_number": "dafgm2023-36-03",
+        "product_title": "Suitability/Fitness Adjudication for Civilian Employees",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafgm2023-36-03/dafgm2023-36-03.pdf"
+    },
+    "dafh16-1406": {
+        "product_number": "dafh16-1406",
+        "product_title": "NATIONAL INTEREST DETERMINATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafh16-1406/dafh16-1406.pdf"
+    },
+    "dafh33-337": {
+        "product_number": "dafh33-337",
+        "product_title": "THE TONGUE AND QUILL",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_cn/publication/dafh33-337/dafh33-337.pdf"
+    },
+    "dafh34-102": {
+        "product_number": "dafh34-102",
+        "product_title": "GUIDANCE TO SERVICES CONTINGENCY PLANNING: MORTUARY AFFAIRS SEARCH AND RECOVERY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafh34-102/dafh34-102.pdf"
+    },
+    "dafh36-2675": {
+        "product_number": "dafh36-2675",
+        "product_title": "INFORMATION FOR DESIGNERS OF INSTRUCTIONAL SYSTEMS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/dafh36-2675/dafh36-2675.pdf"
+    },
+    "dafi10-208": {
+        "product_number": "dafi10-208",
+        "product_title": "CONTINUITY OF OPERATIONS (COOP) PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/dafi10-208/dafi10-208.pdf"
     },
     "cfetp1c1x1": {
         "product_number": "cfetp1c1x1",
@@ -3664,21 +4089,6 @@
         "product_title": "AVIONICS BACKSHOP TEST STATION AND COMPONENTS/ELECTRONIC WARFARE SYSTEMS",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a0x1xc3/cfetp2a0x1xc3.pdf"
     },
-    "cfetp2a2x1x": {
-        "product_number": "cfetp2a2x1x",
-        "product_title": "SPECIAL OPERATIONS FORCES/PERSONNEL RECOVERY (SOF/PR) INTEGRATED COMMUNICATION/NAVIGATION/ MISSION SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a2x1x/cfetp2a2x1x.pdf"
-    },
-    "cfetp2a2x2": {
-        "product_number": "cfetp2a2x2",
-        "product_title": "2A2X2 Special Operations Forces/Personnel Recovery (SOF/PR) Integrated Instrument and Flight Control Systems",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a2x2/cfetp2a2x2.pdf"
-    },
-    "cfetp2a2x3": {
-        "product_number": "cfetp2a2x3",
-        "product_title": "CAREER FIELD EDUCATION AND TRAINING PLAN SOF/PR IINTEGRATED ELECTRONIC WARFARE SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a2x3/cfetp2a2x3.pdf"
-    },
     "cfetp2a3x3": {
         "product_number": "cfetp2a3x3",
         "product_title": "TACTICAL AIRCRAFT MAINTENANCE (LEGACY)",
@@ -3836,13 +4246,8 @@
     },
     "cfetp2a6x5c1": {
         "product_number": "cfetp2a6x5c1",
-        "product_title": "AIRCRAFT HYDRAULIC SYSTEMS CHANGE 1",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a6x5c1/cfetp2a6x5c1.pdf"
-    },
-    "cfetp2a6x6": {
-        "product_number": "cfetp2a6x6",
         "product_title": "AIRCRAFT ELECTRICAL AND ENVIRONMENTAL SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a6x6/cfetp2a6x6.pdf"
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a6x5c1/cfetp2a6x5c1.pdf"
     },
     "cfetp2a6x6c1": {
         "product_number": "cfetp2a6x6c1",
@@ -3889,35 +4294,15 @@
         "product_title": "LOW OBSERVABLE AIRCRAFT STRUCTURAL MAINTENANCE",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a7x5c1/cfetp2a7x5c1.pdf"
     },
-    "cfetp2a8x1x": {
-        "product_number": "cfetp2a8x1x",
-        "product_title": "MOBILITY AIR FORCES (MAF) INTEGRATED COMMUNICATION/NAVIGATION/MISSION SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a8x1x/cfetp2a8x1x.pdf"
-    },
-    "cfetp2a8x2x": {
-        "product_number": "cfetp2a8x2x",
-        "product_title": "MOBILITY AIR FORCES (MAF) INTEGRATED INSTRUMENT AND FLIGHT CONTROL SYSTEMS CAREER",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a8x2x/cfetp2a8x2x.pdf"
-    },
-    "cfetp2a9x1x": {
-        "product_number": "cfetp2a9x1x",
-        "product_title": "BOMBER/SPECIAL INTEGRATED COMMUNICATION/ NAVIGATION/ MISSION SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a9x1x/cfetp2a9x1x.pdf"
-    },
-    "cfetp2a9x2x": {
-        "product_number": "cfetp2a9x2x",
-        "product_title": "BOMBER/SPECIAL (B/S) INTERGRATED INSTRUMENT AND FLIGHT CONTROL SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a9x2x/cfetp2a9x2x.pdf"
-    },
-    "cfetp2a9x3x": {
-        "product_number": "cfetp2a9x3x",
-        "product_title": "BOMBER/SPECIAL ELECTRONIC WARFARE AND RADAR SURVEILLANCE INTEGRATED AVIONICS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a9x3x/cfetp2a9x3x.pdf"
-    },
     "cfetp2a9x4x": {
         "product_number": "cfetp2a9x4x",
         "product_title": "HEAVY AIRCRAFT INTEGRATED AVIONICS",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a9x4x/cfetp2a9x4x.pdf"
+    },
+    "cfetp2a9x4xc1": {
+        "product_number": "cfetp2a9x4xc1",
+        "product_title": "HEAVY AIRCRAFT INTEGRATED AVIONICS CHANGE 1",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2a9x4xc1/cfetp2a9x4xc1.pdf"
     },
     "cfetp2f0x1": {
         "product_number": "cfetp2f0x1",
@@ -3939,45 +4324,80 @@
         "product_title": "Missile and Space Systems Maintenance",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2m0x2/cfetp2m0x2.pdf"
     },
-    "afttp3-32.33v3": {
-        "product_number": "afttp3-32.33v3",
-        "product_title": "EXPEDIENT STRUCTURAL AND UTILITIES REPAIR",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.33v3/afttp3-32.33v3.pdf"
+    "cfetp2m0x3": {
+        "product_number": "cfetp2m0x3",
+        "product_title": "MISSILE AND SPACE FACILITIES MAINTENANCE",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2m0x3/cfetp2m0x3.pdf"
     },
-    "afttp3-32.34v1": {
-        "product_number": "afttp3-32.34v1",
-        "product_title": "CIVIL ENGINEER BARE BASE DEVELOPMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v1/afttp3-32.34v1.pdf"
+    "cfetp2p0x1": {
+        "product_number": "cfetp2p0x1",
+        "product_title": "PRECISION MEASUREMENT EQUIPMENT LABORATORY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2p0x1/cfetp2p0x1.pdf"
     },
-    "afttp3-32.34v3": {
-        "product_number": "afttp3-32.34v3",
-        "product_title": "Civil Engineer Expeditionary Force Protection",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v3/afttp3-32.34v3.pdf"
+    "cfetp2p0x1c1": {
+        "product_number": "cfetp2p0x1c1",
+        "product_title": "Precision Measurement Equipment Laboratory",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2p0x1c1/cfetp2p0x1c1.pdf"
     },
-    "afttp3-32.34v4": {
-        "product_number": "afttp3-32.34v4",
-        "product_title": "CONTINGENCY WATER SYSTEM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v4/afttp3-32.34v4.pdf"
+    "cfetp2r0x1": {
+        "product_number": "cfetp2r0x1",
+        "product_title": "MAINTENANCE MANAGEMENT ANALYSIS SPECIALTY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2r0x1/cfetp2r0x1.pdf"
     },
-    "afttp3-32.34v5": {
-        "product_number": "afttp3-32.34v5",
-        "product_title": "CONTINGENCY ELECTRICAL POWER PRODUCTION AND DISTRIBUTION SYSTEMS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v5/afttp3-32.34v5.pdf"
+    "cfetp2r1x1": {
+        "product_number": "cfetp2r1x1",
+        "product_title": "MAINTENANCE MANAGEMENT PRODUCTION (MAINTENANCE SCHEDULING)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2r1x1/cfetp2r1x1.pdf"
     },
-    "afttp3-32.41": {
-        "product_number": "afttp3-32.41",
-        "product_title": "CONTINGENCY FIREFIGHTING OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.41/afttp3-32.41.pdf"
+    "cfetp2r2x1": {
+        "product_number": "cfetp2r2x1",
+        "product_title": "MAINTENANCE MANAGEMENT CAREER FIELD EDUCATION AND TRAINING PLAN",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2r2x1/cfetp2r2x1.pdf"
     },
-    "afttp3-32.5v10": {
-        "product_number": "afttp3-32.5v10",
-        "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) RAPID AIRFIELD DAMAGE RECOVERY (RADR) AND EXPLOSIVE HAZARDS MITIGATION (EHM)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v10/afttp3-32.5v10.pdf"
+    "cfetp2s0xx": {
+        "product_number": "cfetp2s0xx",
+        "product_title": "MATERIEL MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2s0xx/cfetp2s0xx.pdf"
     },
-    "afttp3-32.5v2": {
-        "product_number": "afttp3-32.5v2",
-        "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) AEROSPACE SYSTEMS AND VEHICLES OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v2/afttp3-32.5v2.pdf"
+    "cfetp2t0x1": {
+        "product_number": "cfetp2t0x1",
+        "product_title": "TRAFFIC MANAGEMENT OPERATIONS SPECIALTY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t0x1/cfetp2t0x1.pdf"
+    },
+    "cfetp_2t1x1": {
+        "product_number": "cfetp2t1x1",
+        "product_title": "Ground Transportation",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t1x1/cfetp_2t1x1.pdf"
+    },
+    "cfetp2t2x1": {
+        "product_number": "cfetp2t2x1",
+        "product_title": "AIR TRANSPORTATION SPECIALTY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t2x1/cfetp2t2x1.pdf"
+    },
+    "cfetp2t3x1": {
+        "product_number": "cfetp2t3x1",
+        "product_title": "2T3X1 Vehicle Management Specialties",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t3x1/cfetp2t3x1.pdf"
+    },
+    "cfetp2t3x1c1": {
+        "product_number": "cfetp2t3x1c1",
+        "product_title": "2T3X1 Vehicle Management Specialties",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t3x1c1/cfetp2t3x1c1.pdf"
+    },
+    "cfetp2t3x7": {
+        "product_number": "cfetp2t3x7",
+        "product_title": "Career Field Education & Training Plan (CFETP) Air Force Specialty Code (AFSC) 2T3X7 Fleet Management & Analysis",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2t3x7/cfetp2t3x7.pdf"
+    },
+    "cfetp2w0x1c1": {
+        "product_number": "cfetp2w0x1c1",
+        "product_title": "MUNITIONS SYSTEMS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp2w0x1c1/cfetp2w0x1c1.pdf"
+    },
+    "afttp3-32.5v3": {
+        "product_number": "afttp3-32.5v3",
+        "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) IMPROVISED EXPLOSIVE DEVICE (IED) OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v3/afttp3-32.5v3.pdf"
     },
     "afttp3-32.5v4-o": {
         "product_number": "afttp3-32.5v4-o",
@@ -3998,6 +4418,11 @@
         "product_number": "afttp3-32.5v7",
         "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) RANGE OPERATIONS",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v7/afttp3-32.5v7.pdf"
+    },
+    "afttp3-32.5v8": {
+        "product_number": "afttp3-32.5v8",
+        "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) OPERATIONS INVOLVING HUMAN REMAINS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v8/afttp3-32.5v8.pdf"
     },
     "afttp3-4": {
         "product_number": "afttp3-4",
@@ -4329,6 +4754,11 @@
         "product_title": "ENGINEER/ARCHITECT",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp0801_0808_0810_0819_0830_0850/cfetp0801_0808_0810_0819_0830_0850.pdf"
     },
+    "cfetp0802-0809-0817": {
+        "product_number": "cfetp0802-0809-0817",
+        "product_title": "ENGINEERING TECHNICIAN/CONSTRUCTION CONTROL INSPECTOR/SURVEY TECHNICIAN",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/cfetp0802-0809-0817/cfetp0802-0809-0817.pdf"
+    },
     "cfetp1102": {
         "product_number": "cfetp1102",
         "product_title": "CONTRACTING",
@@ -4364,40 +4794,40 @@
         "product_title": "INSTRUCTIONAL SYSTEMS SERIES",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/cfetp1750/cfetp1750.pdf"
     },
-    "afpd33-3": {
-        "product_number": "afpd33-3",
-        "product_title": "INFORMATION MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_cio_a6/publication/afpd33-3/afpd33-3.pdf"
+    "cfetp17x": {
+        "product_number": "cfetp17x",
+        "product_title": "CYBERSPACE OPERATIONS OFFICER",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp17x/cfetp17x.pdf"
     },
-    "afpd34-12": {
-        "product_number": "afpd34-12",
-        "product_title": "AIR FORCE PROTOCOL",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ds/publication/afpd34-12/afpd34-12.pdf"
+    "cfetp1a1xx": {
+        "product_number": "cfetp1a1xx",
+        "product_title": "Career Enlisted Aviator",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/cfetp1a1xx/cfetp1a1xx.pdf"
     },
-    "afpd34-3": {
-        "product_number": "afpd34-3",
-        "product_title": "NONAPPROPRIATED FUNDS PERSONNEL MANAGEMENT AND ADMINISTRATION",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd34-3/afpd34-3.pdf"
+    "cfetp1a3x1": {
+        "product_number": "cfetp1a3x1",
+        "product_title": "AFSC 1A3X1 AIRBORNE MISSION SYSTEMS OPERATOR",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/cfetp1a3x1/cfetp1a3x1.pdf"
     },
-    "afpd36-27": {
-        "product_number": "afpd36-27",
-        "product_title": "EQUAL OPPORTUNITY (EO)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd36-27/afpd36-27.pdf"
+    "cfetp1a8x1x": {
+        "product_number": "cfetp1a8x1x",
+        "product_title": "AIRBORNE CRYPTOLOGIC LANGUAGE ANALYST (ACLA) SPECIALTY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp1a8x1x/cfetp1a8x1x.pdf"
     },
-    "afpd36-37": {
-        "product_number": "afpd36-37",
-        "product_title": "SPACE PROFESSIONAL DEVELOPMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd36-37/afpd36-37.pdf"
+    "cfetp1a8x2": {
+        "product_number": "cfetp1a8x2",
+        "product_title": "Airborne Intelligence, Surveillance, and Reconnaissance (A-ISR) Operator Specialty",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp1a8x2/cfetp1a8x2.pdf"
     },
-    "afpd36-70": {
-        "product_number": "afpd36-70",
-        "product_title": "DIVERSITY & INCLUSION",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_di/publication/afpd36-70/afpd36-70.pdf"
+    "cfetp1b4x1": {
+        "product_number": "cfetp1b4x1",
+        "product_title": "CYBER WARFARE OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/cfetp1b4x1/cfetp1b4x1.pdf"
     },
-    "afpd36-9": {
-        "product_number": "afpd36-9",
-        "product_title": "SENIOR EXECUTIVE RESOURCE MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd36-9/afpd36-9.pdf"
+    "cfetpc0x2": {
+        "product_number": "cfetp1c0x2",
+        "product_title": "AFSC 1C0X2 AVIATION RESOURCE MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/cfetp1c0x2/cfetpc0x2.pdf"
     },
     "afpd38-4": {
         "product_number": "afpd38-4",
@@ -4538,11 +4968,6 @@
         "product_number": "afpd90-4",
         "product_title": "RELATIONS WITH CONGRESS",
         "url": "https://static.e-publishing.af.mil/production/1/saf_ll/publication/afpd90-4/afpd90-4.pdf"
-    },
-    "afpd90-50": {
-        "product_number": "afpd90-50",
-        "product_title": "Integrated Resilience",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd90-50/afpd90-50.pdf"
     },
     "afpd90-6": {
         "product_number": "afpd90-6",
@@ -4854,45 +5279,45 @@
         "product_title": "EXPEDIENT ROADS, DRAINAGE, AND PROTECTIVE STRUCTURES",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.33v2/afttp3-32.33v2.pdf"
     },
-    "afmd11": {
-        "product_number": "afmd11",
-        "product_title": "AIR FORCE RESERVE COMMAND (AFRC)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_re/publication/afmd11/afmd11.pdf"
+    "afttp3-32.33v3": {
+        "product_number": "afttp3-32.33v3",
+        "product_title": "EXPEDIENT STRUCTURAL AND UTILITIES REPAIR",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.33v3/afttp3-32.33v3.pdf"
     },
-    "afmd12": {
-        "product_number": "afmd12",
-        "product_title": "UNITED STATES AIR FORCE ACADEMY",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afmd12/afmd12.pdf"
+    "afttp3-32.34v1": {
+        "product_number": "afttp3-32.34v1",
+        "product_title": "CIVIL ENGINEER BARE BASE DEVELOPMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v1/afttp3-32.34v1.pdf"
     },
-    "afmd13": {
-        "product_number": "afmd13",
-        "product_title": "AIR FORCE DISTRICT OF WASHINGTON (AFDW)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_cv/publication/afmd13/afmd13.pdf"
+    "afttp3-32.34v3": {
+        "product_number": "afttp3-32.34v3",
+        "product_title": "Civil Engineer Expeditionary Force Protection",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v3/afttp3-32.34v3.pdf"
     },
-    "afmd14": {
-        "product_number": "afmd14",
-        "product_title": "AIR FORCE OPERATIONAL TEST AND EVALUATION CENTER (AFOTEC)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_te/publication/afmd14/afmd14.pdf"
+    "afttp3-32.34v4": {
+        "product_number": "afttp3-32.34v4",
+        "product_title": "CONTINGENCY WATER SYSTEM",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v4/afttp3-32.34v4.pdf"
     },
-    "afmd16": {
-        "product_number": "afmd16",
-        "product_title": "AIR FORCE MORTUARY AFFAIRS OPERATIONS (AFMAO)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afmd16/afmd16.pdf"
+    "afttp3-32.34v5": {
+        "product_number": "afttp3-32.34v5",
+        "product_title": "CONTINGENCY ELECTRICAL POWER PRODUCTION AND DISTRIBUTION SYSTEMS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.34v5/afttp3-32.34v5.pdf"
     },
-    "afmd17": {
-        "product_number": "afmd17",
-        "product_title": "AIR FORCE AUDIT AGENCY (AFAA)",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ag/publication/afmd17/afmd17.pdf"
+    "afttp3-32.41": {
+        "product_number": "afttp3-32.41",
+        "product_title": "CONTINGENCY FIREFIGHTING OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.41/afttp3-32.41.pdf"
     },
-    "afmd2": {
-        "product_number": "afmd2",
-        "product_title": "AIR COMBAT COMMAND (ACC)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afmd2/afmd2.pdf"
+    "afttp3-32.5v10": {
+        "product_number": "afttp3-32.5v10",
+        "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) RAPID AIRFIELD DAMAGE RECOVERY (RADR) AND EXPLOSIVE HAZARDS MITIGATION (EHM)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v10/afttp3-32.5v10.pdf"
     },
-    "afmd23": {
-        "product_number": "afmd23",
-        "product_title": "AIR FORCE OPERATIONS GROUP",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afmd23/afmd23.pdf"
+    "afttp3-32.5v2": {
+        "product_number": "afttp3-32.5v2",
+        "product_title": "EXPLOSIVE ORDNANCE DISPOSAL (EOD) AEROSPACE SYSTEMS AND VEHICLES OPERATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afttp3-32.5v2/afttp3-32.5v2.pdf"
     },
     "afmd24": {
         "product_number": "afmd24",
@@ -5103,6 +5528,11 @@
         "product_number": "afpam34-1202",
         "product_title": "GUIDE TO PROTOCOL",
         "url": "https://static.e-publishing.af.mil/production/1/saf_ds/publication/afpam34-1202/afpam34-1202.pdf"
+    },
+    "afpam36-2692": {
+        "product_number": "afpam36-2692",
+        "product_title": "ENLISTED INDUCTION AND CHANGE OF RESPONSIBILITY CEREMONIES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_cc/publication/afpam36-2692/afpam36-2692.pdf"
     },
     "afpam36-2801v1": {
         "product_number": "afpam36-2801v1",
@@ -5349,35 +5779,40 @@
         "product_title": "ENVIRONMENTAL CONSIDERATIONS IN AIR FORCE PROGRAMS AND ACTIVITIES",
         "url": "https://static.e-publishing.af.mil/production/1/saf_ie/publication/afpd32-70/afpd32-70.pdf"
     },
-    "afman14-403": {
-        "product_number": "afman14-403",
-        "product_title": "Sensitive Compartmented Information Security and Intelligence, Surveillance, and Reconnaissance Systems Cybersecurity and Governance",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/afman14-403/afman14-403.pdf"
+    "afpd33-3": {
+        "product_number": "afpd33-3",
+        "product_title": "INFORMATION MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_cio_a6/publication/afpd33-3/afpd33-3.pdf"
     },
-    "afman14-405": {
-        "product_number": "afman14-405",
-        "product_title": "MULTI-INTELLIGENCE",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/afman14-405/afman14-405.pdf"
+    "afpd34-12": {
+        "product_number": "afpd34-12",
+        "product_title": "AIR FORCE PROTOCOL",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ds/publication/afpd34-12/afpd34-12.pdf"
     },
-    "afman15-111": {
-        "product_number": "afman15-111",
-        "product_title": "SURFACE WEATHER OBSERVATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman15-111/afman15-111.pdf"
+    "afpd34-3": {
+        "product_number": "afpd34-3",
+        "product_title": "NONAPPROPRIATED FUNDS PERSONNEL MANAGEMENT AND ADMINISTRATION",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd34-3/afpd34-3.pdf"
     },
-    "afman15-124": {
-        "product_number": "afman15-124",
-        "product_title": "METEOROLOGICAL CODES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman15-124/afman15-124.pdf"
+    "afpd36-27": {
+        "product_number": "afpd36-27",
+        "product_title": "EQUAL OPPORTUNITY (EO)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd36-27/afpd36-27.pdf"
     },
-    "afman16-101": {
-        "product_number": "afman16-101",
-        "product_title": "SECURITY COOPERATION (SC) AND SECURITY ASSISTANCE (SA) MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ia/publication/afman16-101/afman16-101.pdf"
+    "afpd36-37": {
+        "product_number": "afpd36-37",
+        "product_title": "SPACE PROFESSIONAL DEVELOPMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd36-37/afpd36-37.pdf"
     },
-    "afman16-114": {
-        "product_number": "afman16-114",
-        "product_title": "PARTICIPATION IN INTERNATIONAL ARMAMENTS COOPERATION (IAC) PROGRAMS",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ia/publication/afman16-114/afman16-114.pdf"
+    "afpd36-70": {
+        "product_number": "afpd36-70",
+        "product_title": "DIVERSITY & INCLUSION",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_di/publication/afpd36-70/afpd36-70.pdf"
+    },
+    "afpd36-9": {
+        "product_number": "afpd36-9",
+        "product_title": "SENIOR EXECUTIVE RESOURCE MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afpd36-9/afpd36-9.pdf"
     },
     "afman17-1301": {
         "product_number": "afman17-1301",
@@ -5639,10 +6074,10 @@
         "product_title": "MANPOWER AND ORGANIZATION STANDARD WORK PROCESSES AND PROCEDURES",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afman38-102/afman38-102.pdf"
     },
-    "afman40-201": {
+    "dafman40-201": {
         "product_number": "afman40-201",
         "product_title": "RADIOACTIVE MATERIALS (RAM) MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afman40-201/afman40-201.pdf"
+        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afman40-201/dafman40-201.pdf"
     },
     "dha-msr_6025.02_afman40-401": {
         "product_number": "afman40-401",
@@ -5658,11 +6093,6 @@
         "product_number": "afman41-111",
         "product_title": "STANDARDS FOR BLOOD BANKS AND TRANSFUSION SERVICES - 23RD EDITION (RESTRICTED TO MEDICAL SERVICES ONLY)",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afman41-111/afman41-111.pdf"
-    },
-    "afman41-120": {
-        "product_number": "afman41-120",
-        "product_title": "MEDICAL RESOURCE MANAGEMENT OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afman41-120/afman41-120.pdf"
     },
     "afman41-209": {
         "product_number": "afman41-209",
@@ -5829,40 +6259,45 @@
         "product_title": "ORGANIZATION AND FUNCTIONS OF NATIONAL GUARD BUREAU",
         "url": "https://static.e-publishing.af.mil/production/1/saf_mr/publication/afmd10/afmd10.pdf"
     },
-    "afman11-2hc-130jv1": {
-        "product_number": "afman11-2hc-130jv1",
-        "product_title": "HC-130J--AIRCREW TRAINING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv1/afman11-2hc-130jv1.pdf"
+    "afmd11": {
+        "product_number": "afmd11",
+        "product_title": "AIR FORCE RESERVE COMMAND (AFRC)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_re/publication/afmd11/afmd11.pdf"
     },
-    "afman11-2hc-130jv2": {
-        "product_number": "afman11-2hc-130jv2",
-        "product_title": "HC -130J--AIRCREW EVALUATION CRITERIA",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv2/afman11-2hc-130jv2.pdf"
+    "afmd12": {
+        "product_number": "afmd12",
+        "product_title": "UNITED STATES AIR FORCE ACADEMY",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afmd12/afmd12.pdf"
     },
-    "afman11-2hc-130jv3": {
-        "product_number": "afman11-2hc-130jv3",
-        "product_title": "HC -130J--OPERATIONS PROCEDURES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv3/afman11-2hc-130jv3.pdf"
+    "afmd13": {
+        "product_number": "afmd13",
+        "product_title": "AIR FORCE DISTRICT OF WASHINGTON (AFDW)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_cv/publication/afmd13/afmd13.pdf"
     },
-    "afman11-2hc-130vj3_addenda-a": {
-        "product_number": "afman11-2hc-130jv3_addenda-a",
-        "product_title": "RESCUE HC-130J CONFIGURATION/MISSION PLANNING GUIDE",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv3_addenda-a/afman11-2hc-130vj3_addenda-a.pdf"
+    "afmd14": {
+        "product_number": "afmd14",
+        "product_title": "AIR FORCE OPERATIONAL TEST AND EVALUATION CENTER (AFOTEC)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_te/publication/afmd14/afmd14.pdf"
     },
-    "afman11-2hh-60gv1": {
-        "product_number": "afman11-2hh-60gv1",
-        "product_title": "HH-60G AIRCREW TRAINING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hh-60gv1/afman11-2hh-60gv1.pdf"
+    "afmd16": {
+        "product_number": "afmd16",
+        "product_title": "AIR FORCE MORTUARY AFFAIRS OPERATIONS (AFMAO)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afmd16/afmd16.pdf"
     },
-    "afman11-2hh-60gv2": {
-        "product_number": "afman11-2hh-60gv2",
-        "product_title": "HH-60G AIRCREW EVALUATION CRITERIA",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hh-60gv2/afman11-2hh-60gv2.pdf"
+    "afmd17": {
+        "product_number": "afmd17",
+        "product_title": "AIR FORCE AUDIT AGENCY (AFAA)",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ag/publication/afmd17/afmd17.pdf"
     },
-    "afman11-2hh-60gv3": {
-        "product_number": "afman11-2hh-60gv3",
-        "product_title": "HH-60G--OPERATIONS PROCEDURES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hh-60gv3/afman11-2hh-60gv3.pdf"
+    "afmd2": {
+        "product_number": "afmd2",
+        "product_title": "AIR COMBAT COMMAND (ACC)",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afmd2/afmd2.pdf"
+    },
+    "afmd23": {
+        "product_number": "afmd23",
+        "product_title": "AIR FORCE OPERATIONS GROUP",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afmd23/afmd23.pdf"
     },
     "afman11-2hh-60gv3cl-1": {
         "product_number": "afman11-2hh-60v3cl-1",
@@ -6324,25 +6759,35 @@
         "product_title": "AIRFIELD OPERATIONS CHARTS AND INSTRUMENT PROCEDURES SUPPORT",
         "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-215v2/afman13-215v2.pdf"
     },
-    "afman11-2apv2": {
-        "product_number": "afman11-2apv2",
-        "product_title": "COMBAT CAMERA EVALUATION CRITERIA",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/afman11-2apv2/afman11-2apv2.pdf"
+    "afman14-403": {
+        "product_number": "afman14-403",
+        "product_title": "Sensitive Compartmented Information Security and Intelligence, Surveillance, and Reconnaissance Systems Cybersecurity and Governance",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/afman14-403/afman14-403.pdf"
     },
-    "afman11-2apv3": {
-        "product_number": "afman11-2apv3",
-        "product_title": "COMBAT CAMERA OPERATIONAL PROCEDURES",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/afman11-2apv3/afman11-2apv3.pdf"
+    "afman14-405": {
+        "product_number": "afman14-405",
+        "product_title": "MULTI-INTELLIGENCE",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a2_6/publication/afman14-405/afman14-405.pdf"
     },
-    "afman11-2b-1v1": {
-        "product_number": "afman11-2b-1v1",
-        "product_title": "B-1 AIRCREW TRAINING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2b-1v1/afman11-2b-1v1.pdf"
+    "afman15-111": {
+        "product_number": "afman15-111",
+        "product_title": "SURFACE WEATHER OBSERVATIONS",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman15-111/afman15-111.pdf"
     },
-    "afman11-2b-1v2": {
-        "product_number": "afman11-2b-1v2",
-        "product_title": "B-1 AIRCREW EVALUATION CRITERIA",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2b-1v2/afman11-2b-1v2.pdf"
+    "afman15-124": {
+        "product_number": "afman15-124",
+        "product_title": "METEOROLOGICAL CODES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman15-124/afman15-124.pdf"
+    },
+    "afman16-101": {
+        "product_number": "afman16-101",
+        "product_title": "SECURITY COOPERATION (SC) AND SECURITY ASSISTANCE (SA) MANAGEMENT",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ia/publication/afman16-101/afman16-101.pdf"
+    },
+    "afman16-114": {
+        "product_number": "afman16-114",
+        "product_title": "PARTICIPATION IN INTERNATIONAL ARMAMENTS COOPERATION (IAC) PROGRAMS",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ia/publication/afman16-114/afman16-114.pdf"
     },
     "afman11-2b-1v3": {
         "product_number": "afman11-2b-1v3",
@@ -6664,21 +7109,6 @@
         "product_title": "E-4B OPERATIONS PROCEDURES",
         "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2e-4bv3/afman11-2e-4v3.pdf"
     },
-    "afman11-2e-8v1": {
-        "product_number": "afman11-2e-8v1",
-        "product_title": "E-8C AIRCREW TRAINING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2e-8v1/afman11-2e-8v1.pdf"
-    },
-    "afman11-2e-8v2": {
-        "product_number": "afman11-2e-8v2",
-        "product_title": "E-8 AIRCREW EVALUATION CRITERIA",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2e-8v2/afman11-2e-8v2.pdf"
-    },
-    "afman11-2e-8v3": {
-        "product_number": "afman11-2e-8v3",
-        "product_title": "E-8 OPERATIONS PROCEDURES",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2e-8v3/afman11-2e-8v3.pdf"
-    },
     "afman11-2eav1": {
         "product_number": "afman11-2eav1",
         "product_title": "EXECUTIVE AIRLIFT (EA) AIRCREW TRAINING",
@@ -6819,25 +7249,40 @@
         "product_title": "FLIGHT TEST OPERATIONS PROCEDURES",
         "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2ftv3/afman11-2ftv3.pdf"
     },
-    "afi84-103": {
-        "product_number": "afi84-103",
-        "product_title": "DEPARTMENT OF THE AIR FORCE HERITAGE PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_ho/publication/afi84-103/afi84-103.pdf"
+    "afman11-2hc-130jv1": {
+        "product_number": "afman11-2hc-130jv1",
+        "product_title": "HC-130J--AIRCREW TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv1/afman11-2hc-130jv1.pdf"
     },
-    "afi84-104": {
-        "product_number": "afi84-104",
-        "product_title": "ART PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/afi84-104/afi84-104.pdf"
+    "afman11-2hc-130jv2_": {
+        "product_number": "afman11-2hc-130jv2",
+        "product_title": "HC -130J--AIRCREW EVALUATION CRITERIA",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv2/afman11-2hc-130jv2_.pdf"
     },
-    "afi90-1001": {
-        "product_number": "afi90-1001",
-        "product_title": "TOTAL FORCE ASSOCIATIONS (TFAs)",
-        "url": "https://static.e-publishing.af.mil/production/1/haf_ds/publication/afi90-1001/afi90-1001.pdf"
+    "afman11-2hc-130jv3": {
+        "product_number": "afman11-2hc-130jv3",
+        "product_title": "HC -130J--OPERATIONS PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv3/afman11-2hc-130jv3.pdf"
     },
-    "afi90-1702": {
-        "product_number": "afi90-1702",
-        "product_title": "OPERATIONAL ENERGY",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_ie/publication/afi90-1702/afi90-1702.pdf"
+    "afman11-2hc-130vj3_addenda-a": {
+        "product_number": "afman11-2hc-130jv3_addenda-a",
+        "product_title": "RESCUE HC-130J CONFIGURATION/MISSION PLANNING GUIDE",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hc-130jv3_addenda-a/afman11-2hc-130vj3_addenda-a.pdf"
+    },
+    "afman11-2hh-60gv1": {
+        "product_number": "afman11-2hh-60gv1",
+        "product_title": "HH-60G AIRCREW TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hh-60gv1/afman11-2hh-60gv1.pdf"
+    },
+    "afman11-2hh-60gv2": {
+        "product_number": "afman11-2hh-60gv2",
+        "product_title": "HH-60G AIRCREW EVALUATION CRITERIA",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hh-60gv2/afman11-2hh-60gv2.pdf"
+    },
+    "afman11-2hh-60gv3": {
+        "product_number": "afman11-2hh-60gv3",
+        "product_title": "HH-60G--OPERATIONS PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2hh-60gv3/afman11-2hh-60gv3.pdf"
     },
     "afi90-1801": {
         "product_number": "afi90-1801",
@@ -7309,6 +7754,26 @@
         "product_title": "COMBAT CAMERA AIRCREW TRAINING",
         "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/afman11-2apv1/afman11-2apv1.pdf"
     },
+    "afman11-2apv2": {
+        "product_number": "afman11-2apv2",
+        "product_title": "COMBAT CAMERA EVALUATION CRITERIA",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/afman11-2apv2/afman11-2apv2.pdf"
+    },
+    "afman11-2apv3": {
+        "product_number": "afman11-2apv3",
+        "product_title": "COMBAT CAMERA OPERATIONAL PROCEDURES",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_pa/publication/afman11-2apv3/afman11-2apv3.pdf"
+    },
+    "afman11-2b-1v1": {
+        "product_number": "afman11-2b-1v1",
+        "product_title": "B-1 AIRCREW TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2b-1v1/afman11-2b-1v1.pdf"
+    },
+    "afman11-2b-1v2": {
+        "product_number": "afman11-2b-1v2",
+        "product_title": "B-1 AIRCREW EVALUATION CRITERIA",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman11-2b-1v2/afman11-2b-1v2.pdf"
+    },
     "afi36-2909": {
         "product_number": "afi36-2909",
         "product_title": "AIR FORCE PROFESSIONAL RELATIONSHIPS AND CONDUCT",
@@ -7359,11 +7824,6 @@
         "product_title": "ADDITIONAL DUTY MANAGEMENT",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afi38-206/afi38-206.pdf"
     },
-    "dafi38-401": {
-        "product_number": "afi38-401",
-        "product_title": "CONTINUOUS PROCESS IMPROVEMENT (CPI)",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_mg/publication/afi38-401/dafi38-401.pdf"
-    },
     "afi40-701": {
         "product_number": "afi40-701",
         "product_title": "MEDICAL SUPPORT TO FAMILY MEMBER RELOCATION AND EXCEPTIONAL FAMILY MEMBER PROGRAM (EFMP)",
@@ -7398,11 +7858,6 @@
         "product_number": "afi41-126",
         "product_title": "DEPARTMENT OF DEFENSE/VETERANS AFFAIRS HEALTH CARE RESOURCE SHARING PROGRAM",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afi41-126/afi41-126.pdf"
-    },
-    "afi41-200": {
-        "product_number": "afi41-200",
-        "product_title": "HEALTH INSURANCE PORTABILITY AND ACCOUNTABILITY ACT (HIPAA)",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afi41-200/afi41-200.pdf"
     },
     "afi41-201": {
         "product_number": "afi41-201",
@@ -7444,10 +7899,10 @@
         "product_title": "OPHTHALMIC SERVICES",
         "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afi44-117/afi44-117.pdf"
     },
-    "daf44-119_dafgm2023-01": {
+    "afi44-119": {
         "product_number": "afi44-119",
         "product_title": "MEDICAL QUALITY OPERATIONS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afi44-119/daf44-119_dafgm2023-01.pdf"
+        "url": "https://static.e-publishing.af.mil/production/1/af_sg/publication/afi44-119/afi44-119.pdf"
     },
     "dafi44-121": {
         "product_number": "afi44-121",
@@ -7639,11 +8094,6 @@
         "product_title": "INTERNATIONAL LAW",
         "url": "https://static.e-publishing.af.mil/production/1/af_ja/publication/afi51-402/afi51-402.pdf"
     },
-    "afi51-403": {
-        "product_number": "afi51-403",
-        "product_title": "INTERNATIONAL AGREEMENTS",
-        "url": "https://static.e-publishing.af.mil/production/1/af_ja/publication/afi51-403/afi51-403.pdf"
-    },
     "afi51-505": {
         "product_number": "afi51-505",
         "product_title": "Complaints of Wrongs Under Article 138, Uniform Code of Military Justice",
@@ -7703,11 +8153,6 @@
         "product_number": "afi63-110",
         "product_title": "JOINT OPERATING PROCEDURES MANAGEMENT AND STANDARDIZATIONOF MOBILE ELECTRIC POWER GENERATING SOURCES",
         "url": "https://static.e-publishing.af.mil/production/1/saf_aq/publication/afi63-110/afi63-110.pdf"
-    },
-    "afi63-125": {
-        "product_number": "afi63-125",
-        "product_title": "NUCLEAR CERTIFICATION PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aq/publication/afi63-125/afi63-125.pdf"
     },
     "afi63-145": {
         "product_number": "afi63-145",
@@ -7808,6 +8253,26 @@
         "product_number": "afi71-101v4",
         "product_title": "COUNTERINTELLIGENCE",
         "url": "https://static.e-publishing.af.mil/production/1/saf_ig/publication/afi71-101v4/afi71-101v4.pdf"
+    },
+    "afi84-103": {
+        "product_number": "afi84-103",
+        "product_title": "DEPARTMENT OF THE AIR FORCE HERITAGE PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/af_ho/publication/afi84-103/afi84-103.pdf"
+    },
+    "afi84-104": {
+        "product_number": "afi84-104",
+        "product_title": "ART PROGRAM",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_aa/publication/afi84-104/afi84-104.pdf"
+    },
+    "afi90-1001": {
+        "product_number": "afi90-1001",
+        "product_title": "TOTAL FORCE ASSOCIATIONS (TFAs)",
+        "url": "https://static.e-publishing.af.mil/production/1/haf_ds/publication/afi90-1001/afi90-1001.pdf"
+    },
+    "afi90-1702": {
+        "product_number": "afi90-1702",
+        "product_title": "OPERATIONAL ENERGY",
+        "url": "https://static.e-publishing.af.mil/production/1/saf_ie/publication/afi90-1702/afi90-1702.pdf"
     },
     "afi15-157": {
         "product_number": "afi15-157",
@@ -7961,13 +8426,8 @@
     },
     "afi20-110": {
         "product_number": "afi20-110",
-        "product_title": "NUCLEAR WEAPONS-RELATED MATERIEL MANAGEMENT",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afi20-110/afi20-110.pdf"
-    },
-    "afi20-118": {
-        "product_number": "afi20-118",
         "product_title": "INSTRUCTIONS FOR THE INTERSERVICING OF TECHNICAL MANUALS AND RELATED TECHNOLOGY PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/saf_aq/publication/afi20-118/afi20-118.pdf"
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afi20-110/afi20-110.pdf"
     },
     "afi21-115_adminchange": {
         "product_number": "afi21-115",
@@ -8229,11 +8689,6 @@
         "product_title": "JOINT OFFICER MANAGEMENT",
         "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2135/afi36-2135.pdf"
     },
-    "afi36-2230": {
-        "product_number": "afi36-2230",
-        "product_title": "INTER-SERVICE TRAINING",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2230/afi36-2230.pdf"
-    },
     "afi36-2406": {
         "product_number": "afi36-2406",
         "product_title": "OFFICER AND ENLISTED EVALUATIONS SYSTEMS",
@@ -8284,10 +8739,15 @@
         "product_title": "MAINTENANCE TRAINING",
         "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afi36-2650/afi36-2650.pdf"
     },
-    "afi36-2654": {
+    "dafi36-2654": {
         "product_number": "afi36-2654",
         "product_title": "COMBAT ARMS PROGRAM",
-        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afi36-2654/afi36-2654.pdf"
+        "url": "https://static.e-publishing.af.mil/production/1/af_a4/publication/afi36-2654/dafi36-2654.pdf"
+    },
+    "dafi36-2657": {
+        "product_number": "afi36-2657",
+        "product_title": "INTER-SERVICE TRAINING",
+        "url": "https://static.e-publishing.af.mil/production/1/af_a1/publication/afi36-2657/dafi36-2657.pdf"
     },
     "afh1": {
         "product_number": "afh1",

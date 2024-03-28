@@ -6,7 +6,7 @@ import translate as ts
 import summary
 
 #Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 2048
+MAX_CHAIN_LENGTH = 9000
 
 st.set_page_config(
     page_title="JBML Chat"
@@ -55,7 +55,6 @@ def remove_pdf_suffix(string):
 def get_citation(metadata):
     pubs = get_pubs()
     citation = []
-    metadata = [metadata]
     for i, meta in enumerate(metadata):
         try:
             filename = remove_pdf_suffix(meta['file_name'])
@@ -152,10 +151,18 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
         case 'Chat':
             response = st.session_state['llm_chain'].call(translated_user_prompt)
         case 'Chat with JBML Documents!':
-            response, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
+            response = ''
+            airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
             citation = get_citation(metadata)
             sources = ''.join(citation)
-            response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"
+            response = f"Quoted text:\n\n"
+            for c in context:
+                response += f"\n\n \"{c}\"\n\n"
+            
+            response +=  "Sources: \n"
+            
+            response += f"\n{sources} \n\n"
+            response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
         case _:
             response = 'An error has occured, please select a type of chat you would like'
     
@@ -181,7 +188,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
         for char in response_char_list:
             ai_response += char
             box.write(ai_response)
-            time.sleep(0.01)
+            time.sleep(0.007)
     
     # if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
     #     summary = summarize_chain(st.session_state['llm_chain'].chain)
