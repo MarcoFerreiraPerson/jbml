@@ -60,11 +60,9 @@ class LLM_Chain:
             summary_responce = get_summary(responces[i])
             if summary_responce.status_code == 200:
                 summary = str(summary_responce.json()[0])
-                print(responces[i]+"\n")
                 summary = summary.lstrip("{'summary_text': '")
                 summary = summary.rstrip("'}")
                 self.chain.replace(responces[i],summary[0])
-        print(self.chain)
         if len(self.chain) > MAX_CHAIN_LENGTH:
             return True
         else:
