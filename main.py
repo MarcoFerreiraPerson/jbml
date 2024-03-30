@@ -44,7 +44,7 @@ if 'llm_chain' not in st.session_state:
     st.session_state['llm_chain'] = create_chain(system_prompt)
 
 if 'language' not in st.session_state:
-    st.session_state['language'] = 'en'
+    st.session_state['language'] = 'English'
 
 def remove_pdf_suffix(string):
     if string.endswith('.pdf'):
@@ -82,7 +82,7 @@ with st.sidebar:
         key="chat_choice",
         horizontal=True,
     )
-    language = st.selectbox(
+    st.session_state['language'] = st.selectbox(
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
@@ -109,19 +109,6 @@ if st.session_state.input_state:
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.input_state):
-
-    def set_language(language):
-        if language == "English":
-            st.session_state['language'] = "en"
-        if language == "Espanol":
-            st.session_state['language'] = "es"
-        if language == "Français":
-            st.session_state['language'] = "fr"
-        if language == "Deutsch":
-            st.session_state['language'] = "de"
-        if language == "Português":
-            st.session_state['language'] = "pt"
-    
     
     # Add our input to the session state
     st.session_state.messages.append(
@@ -135,8 +122,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
     response = ''
     
     # Translate user prompt to English before calling model
-    set_language(language)
-    if not language == "English":
+    if not st.session_state['language'] == "English":
         translated_user_prompt = ts.translate_from(user_prompt, st.session_state['language'])
     else:
         translated_user_prompt = user_prompt
@@ -161,7 +147,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             response = 'An error has occured, please select a type of chat you would like'
     
     # Translate back to selected language after calling model
-    if not language == "English":
+    if not st.session_state['language'] == "English":
         translated_response = ts.translate_to(response, st.session_state['language'])
     else:
         translated_response = response
