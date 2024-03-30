@@ -3,9 +3,11 @@ from chain import LLM_Chain
 import time
 import json
 import translate as ts
+from transformers import AutoTokenizer
 
 #Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 9000
+MAX_CHAIN_LENGTH = 4000
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
 st.set_page_config(
     page_title="JBML Chat"
@@ -170,8 +172,9 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             box.write(ai_response)
             time.sleep(0.007)
     
-    if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
-        if  st.session_state['llm_chain'].summarize_chain(MAX_CHAIN_LENGTH):
+    if len(tokenizer(st.session_state['llm_chain'])['input_ids']) > MAX_CHAIN_LENGTH: 
+        st.session_state['llm_chain'].summarize_chain()
+        if len(tokenizer(st.session_state['llm_chain'])['input_ids']) > MAX_CHAIN_LENGTH:
             st.session_state.input_state = True
             st.rerun()
 

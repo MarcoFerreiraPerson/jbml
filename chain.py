@@ -1,6 +1,7 @@
 import requests
 import re
-
+from transformers import AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
@@ -53,7 +54,7 @@ class LLM_Chain:
             result = None
         yield result
 
-    def summarize_chain(self,MAX_CHAIN_LENGTH):
+    def summarize_chain(self):
         responces = list()
         responces = re.split("\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
         for i in range(3,len(responces)):
@@ -63,11 +64,8 @@ class LLM_Chain:
                 summary = summary.lstrip("{'summary_text': '")
                 summary = summary.rstrip("'}")
                 self.chain.replace(responces[i],summary[0])
-        if len(self.chain) > MAX_CHAIN_LENGTH:
-            return True
-        else:
-            return False
-            
+            else:
+                print("Summarization Error: " + summary_responce.status_code)
 
 
 def get_rag_prompt(prompt):
