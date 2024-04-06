@@ -1,6 +1,7 @@
 import requests
 import re
 from transformers import AutoTokenizer
+import time
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
@@ -58,11 +59,15 @@ class LLM_Chain:
         responces = list()
         responces = re.split("\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
         for i in range(3,len(responces)):
+            start = time.time()
             summary_responce = get_summary(responces[i])
+            end = time.time()
+            print(f"Summary Time: {end-start}")
             if summary_responce.status_code == 200:
                 summary = str(summary_responce.json()[0])
                 summary = summary.lstrip("{'summary_text': '")
                 summary = summary.rstrip("'}")
+                print("\n" + summary[0] + "\n")
                 self.chain.replace(responces[i],summary[0])
             else:
                 print("Summarization Error: " + summary_responce.status_code)
