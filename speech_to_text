@@ -1,0 +1,20 @@
+import streamlit as st
+from streamlit_mic_recorder import speech_to_text
+
+# audio = mic_recorder(
+#     start_prompt="Start recording",
+#     stop_prompt="Stop recording",
+#     just_once=False,
+#     use_container_width=False,
+#     format="wav",
+#     callback=None,
+#     args=(),
+#     kwargs={},
+#     key=None
+# )
+
+audio = speech_to_text()
+
+
+st.title("Speech to Text Converter")
+st.write(audio)
