@@ -172,10 +172,10 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             box.write(ai_response)
             time.sleep(0.007)
     
-    if len(tokenizer(st.session_state['llm_chain'])['input_ids']) > MAX_CHAIN_LENGTH: 
+    if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH: 
         print("Summarizing Chain: \n")
         st.session_state['llm_chain'].summarize_chain()
-        if len(tokenizer(st.session_state['llm_chain'])['input_ids']) > MAX_CHAIN_LENGTH:
+        if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH:
             print("Chain Too Long - Ending Session")
             st.session_state.input_state = True
             st.rerun()

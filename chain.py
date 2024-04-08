@@ -56,21 +56,31 @@ class LLM_Chain:
         yield result
 
     def summarize_chain(self):
-        responces = list()
-        responces = re.split("\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
-        for i in range(3,len(responces)):
+        responses = list()
+        responses = re.split(r"\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
+        for i in range(3,len(responses)):
+            
             start = time.time()
-            summary_responce = get_summary(responces[i])
+            summary_response = get_summary(responses[i])
             end = time.time()
+            
+            #Summary Time
             print(f"Summary Time: {end-start}")
-            if summary_responce.status_code == 200:
-                summary = str(summary_responce.json()[0])
-                summary = summary.lstrip("{'summary_text': '")
-                summary = summary.rstrip("'}")
-                print("\n" + summary[0] + "\n")
-                self.chain.replace(responces[i],summary[0])
+            
+            if summary_response.status_code == 200:
+                summary = str(summary_response.json())
+                replaced = responses[i].replace("\\n","\n")
+                
+                #Original-Summary Comparison
+                print("Original: " + replaced)
+                print("\nSummary: " + summary + "\n")
+
+                self.chain = self.chain.replace(replaced, summary)
             else:
-                print("Summarization Error: " + summary_responce.status_code)
+                print("Summarization Error: " + summary_response.status_code)
+        
+        #Shortened Chain
+        print("New Chain: " + self.chain)
 
 
 def get_rag_prompt(prompt):
@@ -101,5 +111,6 @@ def get_rag_prompt(prompt):
     return context, metadata
 
 def get_summary(text):
-        response = requests.get(f"{server_url}{summary_endpoint}?prompt={text}")
+        encoded_text = requests.utils.quote(text)
+        response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
         return response
