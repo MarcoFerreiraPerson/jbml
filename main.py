@@ -92,7 +92,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
     ]
-=======
+
 def clear_history():
    st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}]
@@ -124,7 +124,7 @@ with st.sidebar:
     st.button("Clear History", on_click=clear_history)
 
 
-=======
+
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
