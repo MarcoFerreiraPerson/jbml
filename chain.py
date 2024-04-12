@@ -63,31 +63,32 @@ class LLM_Chain:
         for i in range(3,len(responses)):
             
             #Check length of responce and summarize if neccessary
-            if responses[i] > MIN_SUM_LENGTH:
+            if len(tokenizer(responses[i])['input_ids']) > MIN_SUM_LENGTH:
                 start = time.time()
                 summary_response = get_summary(responses[i])
                 end = time.time()
+                
+                #Checking summarization status before inserting summary into chain:
+                if summary_response.status_code == 200:
+                    summary = str(summary_response.json())
+                    replaced = responses[i].replace("\\n","\n")
+                
+                    #Summary Time
+                    print(f"Summary Time: {end-start}")
+                    
+                    #Original-Summary Comparison
+                    print("Original: " + replaced)
+                    print("\nSummary: " + summary + "\n")
+
+                    self.chain = self.chain.replace(replaced, summary)
+            
+                    #Printing error code if summarization fails
+                else:
+                    print("Summarization Error: " + summary_response.status_code)
+            
             else:
                 print("Responce is below minimum summarization threshold: Continuing to next response\n")
 
-            #Summary Time
-            print(f"Summary Time: {end-start}")
-            
-            #Checking summarization status before inserting summary into chain
-            if summary_response.status_code == 200:
-                summary = str(summary_response.json())
-                replaced = responses[i].replace("\\n","\n")
-                
-                #Original-Summary Comparison
-                print("Original: " + replaced)
-                print("\nSummary: " + summary + "\n")
-
-                self.chain = self.chain.replace(replaced, summary)
-            
-            #Printing error code if summarization fails
-            else:
-                print("Summarization Error: " + summary_response.status_code)
-        
         #Print shortened Chain
         print("New Chain: " + self.chain)
 

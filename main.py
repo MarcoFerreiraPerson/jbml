@@ -8,7 +8,7 @@ from transformers import AutoTokenizer
 #Maximum desired chain length in characters
 MAX_CHAIN_LENGTH = 4000
 #Minimum prompt length to allow summarization
-MIN_SUM_LENGTH = 25
+MIN_SUM_LENGTH = 100
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
 system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
@@ -74,8 +74,8 @@ st.header("JBML Chat")
 if "current_response" not in st.session_state:
     st.session_state.current_response = ""
 
-if "input_state" not in st.session_state:
-    st.session_state.input_state = False
+if "disabled" not in st.session_state:
+    st.session_state.disabled = False
 
 if 'language' not in st.session_state:
     st.session_state['language'] = 'English'
@@ -109,11 +109,11 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 #Push warning message to screen if chain length can no longer be shortened 
-if st.session_state.input_state:
+if st.session_state.disabled:
     st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.input_state):
+if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
     
     # Add our input to the session state
     st.session_state.messages.append(
@@ -186,7 +186,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             
             print("Chain Too Long - Ending Session")
             #Disable chat input
-            st.session_state.input_state = True
+            st.session_state.disabled = True
             st.rerun()
 
    
