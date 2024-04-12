@@ -3,10 +3,14 @@ from chain import LLM_Chain
 import time
 import json
 import translate as ts
+
 from transformers import AutoTokenizer
 
+import summary
+
+
 #Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 4000
+MAX_CHAIN_LENGTH = 8000
 #Minimum prompt length to allow summarization
 MIN_SUM_LENGTH = 100
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
@@ -60,6 +64,7 @@ def get_pubs():
         print(f"Error: Unable to parse JSON from '{file_path}'.")
         return {}
     
+
 def remove_pdf_suffix(string):
     if string.endswith('.pdf'):
         return string[:-len('.pdf')]
@@ -87,6 +92,23 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
     ]
+=======
+def clear_history():
+   st.session_state.messages = [
+        {"role": "assistant", "content": "How may I help you today?"}]
+   st.session_state['llm_chain'] = create_chain(system_prompt)
+
+def summarize_chain(text):
+    filtered_text = text.replace(system_prompt,"")
+    response = summary.get_summary(filtered_text)
+    result = response.json()
+    if response.status_code == 200:
+        return result[0]
+    else:
+        print("Error During Summarization Code:" + response.status_code)
+        return -1
+
+
 
 with st.sidebar:
     st.radio(
@@ -102,11 +124,22 @@ with st.sidebar:
     st.button("Clear History", on_click=clear_history)
 
 
+=======
+if "messages" not in st.session_state:
+    st.session_state.messages = [
+        {"role": "assistant", "content": "How may I help you today?"}
+    ]
+
+if "current_response" not in st.session_state:
+    st.session_state.current_response = ""
+
+
 # We loop through each message in the session state and render it as
 # a chat message.
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+
 
 #Push warning message to screen if chain length can no longer be shortened 
 if st.session_state.disabled:
@@ -114,6 +147,24 @@ if st.session_state.disabled:
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
+
+
+# We take questions/instructions from the chat input to pass to the LLM
+if user_prompt := st.chat_input("Your message here", key="user_input"):
+
+    def set_language(language):
+        if language == "English":
+            st.session_state['language'] = "en"
+        if language == "Espanol":
+            st.session_state['language'] = "es"
+        if language == "Français":
+            st.session_state['language'] = "fr"
+        if language == "Deutsch":
+            st.session_state['language'] = "de"
+        if language == "Português":
+            st.session_state['language'] = "pt"
+    
+
     
     # Add our input to the session state
     st.session_state.messages.append(
@@ -175,6 +226,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             box.write(ai_response)
             time.sleep(0.007)
     
+
     #Check to see if the chain exceeds the maximum length
     if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH: 
         
@@ -189,4 +241,11 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             st.session_state.disabled = True
             st.rerun()
 
-   
+    # if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
+    #     summary = summarize_chain(st.session_state['llm_chain'].chain)
+    #     if not summary == -1:
+    #         st.session_state['llm_chain'] = create_chain(system_prompt)
+    #         st.session_state['llm_chain'].chain += f"[INST]Use the following as a summary of previous conversation: \n{summary} [End of summary][/INST]"
+    #         print(summary)
+
+

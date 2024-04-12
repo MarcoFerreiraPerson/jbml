@@ -1,12 +1,15 @@
 import requests
+
 import re
 from transformers import AutoTokenizer
 import time
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
+
+
+
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
-summary_endpoint = '/summarize/'
 
 class LLM_Chain:
     def __init__(self, system_prompt) -> None:
@@ -55,6 +58,7 @@ class LLM_Chain:
             result = None
         yield result
 
+
     def summarize_chain(self,MIN_SUM_LENGTH):
         responses = list()
         responses = re.split(r"\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
@@ -93,6 +97,7 @@ class LLM_Chain:
         print("New Chain: " + self.chain)
 
 
+
 def get_rag_prompt(prompt):
     system_prompt = "You are an AI designed to take apart the important part of the prompt for Retrieval Search. Simplify the prompt given into a phrase used for search. Do not asnwer the question but simply rewrite them in an easier way for search"
     retrieval = f"<s>[INST]{system_prompt}[/INST] Model answer</s> [INST] Follow-up instruction [/INST]"
@@ -120,7 +125,9 @@ def get_rag_prompt(prompt):
         context, metadata = 'An error has occured', {}
     return context, metadata
 
+
 def get_summary(text):
         encoded_text = requests.utils.quote(text)
         response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
         return response
+
