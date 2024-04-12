@@ -55,18 +55,25 @@ class LLM_Chain:
             result = None
         yield result
 
-    def summarize_chain(self):
+    def summarize_chain(self,MIN_SUM_LENGTH):
         responses = list()
         responses = re.split(r"\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
+        
+        #Cycle through parsed LLM Responces
         for i in range(3,len(responses)):
             
-            start = time.time()
-            summary_response = get_summary(responses[i])
-            end = time.time()
-            
+            #Check length of responce and summarize if neccessary
+            if responses[i] > MIN_SUM_LENGTH:
+                start = time.time()
+                summary_response = get_summary(responses[i])
+                end = time.time()
+            else:
+                print("Responce is below minimum summarization threshold: Continuing to next response\n")
+
             #Summary Time
             print(f"Summary Time: {end-start}")
             
+            #Checking summarization status before inserting summary into chain
             if summary_response.status_code == 200:
                 summary = str(summary_response.json())
                 replaced = responses[i].replace("\\n","\n")
@@ -76,10 +83,12 @@ class LLM_Chain:
                 print("\nSummary: " + summary + "\n")
 
                 self.chain = self.chain.replace(replaced, summary)
+            
+            #Printing error code if summarization fails
             else:
                 print("Summarization Error: " + summary_response.status_code)
         
-        #Shortened Chain
+        #Print shortened Chain
         print("New Chain: " + self.chain)
 
 
