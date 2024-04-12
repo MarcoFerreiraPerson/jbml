@@ -146,7 +146,6 @@ if st.session_state.disabled:
     st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
 
  def set_language(language):
         if language == "English":
@@ -160,7 +159,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
         if language == "Português":
             st.session_state['language'] = "pt"
 # We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input"):
+if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
 
     # Add our input to the session state
     st.session_state.messages.append(
