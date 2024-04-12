@@ -148,11 +148,7 @@ if st.session_state.disabled:
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
 
-
-# We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input"):
-
-    def set_language(language):
+ def set_language(language):
         if language == "English":
             st.session_state['language'] = "en"
         if language == "Espanol":
@@ -163,9 +159,9 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
             st.session_state['language'] = "de"
         if language == "Português":
             st.session_state['language'] = "pt"
-    
+# We take questions/instructions from the chat input to pass to the LLM
+if user_prompt := st.chat_input("Your message here", key="user_input"):
 
-    
     # Add our input to the session state
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
