@@ -3,10 +3,7 @@ from chain import LLM_Chain
 import time
 import json
 import translate as ts
-
 from transformers import AutoTokenizer
-
-import summary
 
 
 #Maximum desired chain length in characters
@@ -93,23 +90,6 @@ if "messages" not in st.session_state:
         {"role": "assistant", "content": "How may I help you today?"}
     ]
 
-def clear_history():
-   st.session_state.messages = [
-        {"role": "assistant", "content": "How may I help you today?"}]
-   st.session_state['llm_chain'] = create_chain(system_prompt)
-
-def summarize_chain(text):
-    filtered_text = text.replace(system_prompt,"")
-    response = summary.get_summary(filtered_text)
-    result = response.json()
-    if response.status_code == 200:
-        return result[0]
-    else:
-        print("Error During Summarization Code:" + response.status_code)
-        return -1
-
-
-
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
@@ -123,17 +103,6 @@ with st.sidebar:
     )
     st.button("Clear History", on_click=clear_history)
 
-
-
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "How may I help you today?"}
-    ]
-
-if "current_response" not in st.session_state:
-    st.session_state.current_response = ""
-
-
 # We loop through each message in the session state and render it as
 # a chat message.
 for message in st.session_state.messages:
@@ -146,21 +115,8 @@ if st.session_state.disabled:
     st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
-
- 
-# We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
-    def set_language(language):
-        if language == "English":
-            st.session_state['language'] = "en"
-        if language == "Espanol":
-            st.session_state['language'] = "es"
-        if language == "Français":
-            st.session_state['language'] = "fr"
-        if language == "Deutsch":
-            st.session_state['language'] = "de"
-        if language == "Português":
-            st.session_state['language'] = "pt"
+    
     # Add our input to the session state
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
@@ -236,11 +192,5 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             st.session_state.disabled = True
             st.rerun()
 
-    # if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
-    #     summary = summarize_chain(st.session_state['llm_chain'].chain)
-    #     if not summary == -1:
-    #         st.session_state['llm_chain'] = create_chain(system_prompt)
-    #         st.session_state['llm_chain'].chain += f"[INST]Use the following as a summary of previous conversation: \n{summary} [End of summary][/INST]"
-    #         print(summary)
 
 
