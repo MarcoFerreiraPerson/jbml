@@ -65,13 +65,25 @@ def get_citation(metadata):
 
 
     return citation
-    
+
+uploaded_files = []
+#is called whenever a file/files are uploaded
+def uploadFiles():
+    for x in uploaded_files:
+        pass
+
+
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
-        ["Chat", "Chat with JBML Documents!"],
+        ["Chat", "Chat with JBML Documents!","Chat with Uploaded Documents"],
         key="chat_choice",
         horizontal=True,
+    )
+    uploaded_files = st.file_uploader(
+        "Enter and PDF, CSV, or XLS file", 
+        accept_multiple_files=True,
+        on_change = uploadFiles
     )
     language = st.selectbox(
         "Select a Language",
@@ -91,7 +103,6 @@ if "current_response" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input"):
@@ -132,6 +143,11 @@ if user_prompt := st.chat_input("Your message here", key="user_input"):
             response = st.session_state['llm_chain'].call(translated_user_prompt)
         case 'Chat with JBML Documents!':
             response, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
+            citation = get_citation(metadata)
+            sources = ''.join(citation)
+            response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"
+        case "Chat with Uploaded Documents":
+            response, context, metadata = st.session_state['llm_chain'].call_uploaded(user_prompt)
             citation = get_citation(metadata)
             sources = ''.join(citation)
             response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"
