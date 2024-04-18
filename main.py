@@ -25,6 +25,7 @@ def clear_history():
         {"role": "assistant", "content": "How may I help you today?"}]
    st.session_state['llm_chain'] = create_chain(system_prompt)
    st.session_state.input_state=False
+   st.session_state.stt = ""
 
 def create_chain(system_prompt):
     llm_chain = LLM_Chain(system_prompt)
