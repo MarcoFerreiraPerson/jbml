@@ -122,7 +122,8 @@ if st.session_state.disabled:
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
-    
+
+   
     if st.session_state.stt != "" and st.session_state.stt != None:
         user_prompt = st.session_state.stt
 
@@ -185,7 +186,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             ai_response += char
             box.write(ai_response)
             time.sleep(0.007)
-    
+    st.session_state.stt = None
 
     #Check to see if the chain exceeds the maximum length
     if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH: 
