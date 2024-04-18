@@ -15,6 +15,7 @@ MAX_CHAIN_LENGTH = 8000
 MIN_SUM_LENGTH = 100
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
+
 language_dict = {
     "English": 0,
     "Espanol": 1,
@@ -22,12 +23,10 @@ language_dict = {
     "Deutsch": 3,
     "Português": 4
 }
-
-radio_dict = {
-        "Chat":"Chat",
-        "Chat With JBML Documents": "Chat With JBML Documents"
-    }
-
+radio_list = [
+    "Chat",
+    "Chat With JBML Documents"
+]
 system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
 If the AI does not know the answer to a question, it truthfully says it does not know. 
 You are made for the Joint Military Base in Lakehurst (JBML). Dont complete what I am saying, simply respond to it. Just respond like you were talking to another person. Do not do User: response formatting.
@@ -87,8 +86,9 @@ def update():
         st.session_state.header = ts.translate_to("JBML Chat", st.query_params.language)
         st.session_state.button_text = ts.translate_to("Clear History", st.query_params.language)
         st.session_state.radio_text = ts.translate_to("Select what type of chat you would like!", st.query_params.language)
-        st.session_state.radio_dict["Chat"] = ts.translate_to("Chat", st.query_params.language)
-        st.session_state.radio_dict["Chat With JBML Documents"] = ts.translate_to("Chat With JBML Documents", st.query_params.language)
+        st.session_state.radio_list = [ts.translate_to(radio_list[0], st.query_params.language),
+                                       ts.translate_to(radio_list[1], st.query_params.language)
+                                        ]
         st.session_state.select_box_text = ts.translate_to("Select a Language",st.query_params.language)
         st.session_state.chat_input_text = ts.translate_to("Your Message Here", st.query_params.language)
         st.session_state.warning_text = ts.translate_to("You have reached the end of this conversation. Please clear chat to continue.",st.query_params['language'])
@@ -128,11 +128,6 @@ def summarize_chain(text):
         print("Error During Summarization Code:" + response.status_code)
         return -1
 
-
-
-if 'radio_dict' not in st.session_state:
-    st.session_state.radio_dict = radio_dict
-
 update()
 
 st.set_page_config(
@@ -148,14 +143,14 @@ with st.sidebar:
     )
     st.radio(
        st.session_state.radio_text, 
-        st.session_state.radio_dict.values(),
+        st.session_state.radio_list,
         key="chat_choice",
         horizontal=True,
     )
     
     st.button(st.session_state.button_text, on_click=clear_history)
 st.header(st.session_state.header)
-    
+
 
 
 
@@ -196,10 +191,11 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     # Translate user prompt to English before calling model
     translated_user_prompt = ts.translate_from(user_prompt, st.query_params['language'])
     
-    match st.session_state['chat_choice']:
-        case 'Chat':
+    
+    match st.session_state.radio_list.index(st.session_state.chat_choice):
+        case 0:
             response = st.session_state['llm_chain'].call(translated_user_prompt)
-        case 'Chat with JBML Documents!':
+        case 1:
             response = ''
             airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
             citation = get_citation(metadata)
