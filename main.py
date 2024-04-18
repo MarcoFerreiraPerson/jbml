@@ -123,6 +123,8 @@ if st.session_state.disabled:
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
 
+    if user_prompt != None:
+       st.session_state.stt = ""
    
     if st.session_state.stt != "" and st.session_state.stt != None:
         user_prompt = st.session_state.stt
