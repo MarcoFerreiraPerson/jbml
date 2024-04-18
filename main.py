@@ -4,6 +4,7 @@ import time
 import json
 import translate as ts
 from transformers import AutoTokenizer
+from streamlit_mic_recorder import speech_to_text
 
 
 #Maximum desired chain length in characters
@@ -90,6 +91,9 @@ if "messages" not in st.session_state:
         {"role": "assistant", "content": "How may I help you today?"}
     ]
 
+if "stt" not in st.session_state:
+    st.session_state.stt = ""
+
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
@@ -101,6 +105,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
+    st.session_state.stt = speech_to_text()
     st.button("Clear History", on_click=clear_history)
 
 # We loop through each message in the session state and render it as
@@ -191,6 +196,8 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             #Disable chat input
             st.session_state.disabled = True
             st.rerun()
+
+st.session_state["user_input"] = st.session_state.stt
 
 
 
