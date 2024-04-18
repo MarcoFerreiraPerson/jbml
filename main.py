@@ -15,6 +15,19 @@ MAX_CHAIN_LENGTH = 8000
 MIN_SUM_LENGTH = 100
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
+language_dict = {
+    "English": 0,
+    "Espanol": 1,
+    "Français": 2,
+    "Deutsch": 3,
+    "Português": 4
+}
+
+radio_dict = {
+        "Chat":"Chat",
+        "Chat With JBML Documents": "Chat With JBML Documents"
+    }
+
 system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
 If the AI does not know the answer to a question, it truthfully says it does not know. 
 You are made for the Joint Military Base in Lakehurst (JBML). Dont complete what I am saying, simply respond to it. Just respond like you were talking to another person. Do not do User: response formatting.
@@ -63,18 +76,22 @@ def get_pubs():
     except json.JSONDecodeError:
         print(f"Error: Unable to parse JSON from '{file_path}'.")
         return {}
-    
 
 def remove_pdf_suffix(string):
     if string.endswith('.pdf'):
         return string[:-len('.pdf')]
     return string
 
-st.set_page_config(
-    page_title="JBML Chat"
-)
-
-st.header("JBML Chat")
+def update():
+        st.query_params.language = st.session_state.language
+        st.session_state.header = ts.translate_to("JBML Chat", st.query_params.language)
+        st.session_state.button_text = ts.translate_to("Clear History", st.query_params.language)
+        st.session_state.radio_text = ts.translate_to("Select what type of chat you would like!", st.query_params.language)
+        st.session_state.radio_dict["Chat"] = ts.translate_to("Chat", st.query_params.language)
+        st.session_state.radio_dict["Chat With JBML Documents"] = ts.translate_to("Chat With JBML Documents", st.query_params.language)
+        st.session_state.select_box_text = ts.translate_to("Select a Language",st.query_params.language)
+        st.session_state.chat_input_text = ts.translate_to("Your Message Here", st.query_params.language)
+        st.session_state.warning_text = ts.translate_to("You have reached the end of this conversation. Please clear chat to continue.",st.query_params['language'])
 
 if "current_response" not in st.session_state:
     st.session_state.current_response = ""
@@ -82,8 +99,11 @@ if "current_response" not in st.session_state:
 if "disabled" not in st.session_state:
     st.session_state.disabled = False
 
+if 'language' not in st.query_params:
+    st.query_params['language'] = 'English'
+    
 if 'language' not in st.session_state:
-    st.session_state['language'] = 'English'
+        st.session_state.language = "English"
 
 if 'llm_chain' not in st.session_state:
     st.session_state['llm_chain'] = create_chain(system_prompt)
@@ -92,7 +112,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
     ]
-=======
+
 def clear_history():
    st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}]
@@ -110,21 +130,35 @@ def summarize_chain(text):
 
 
 
+if 'radio_dict' not in st.session_state:
+    st.session_state.radio_dict = radio_dict
+
+update()
+
+st.set_page_config(
+    page_title=st.session_state.header
+)
+
 with st.sidebar:
+    st.selectbox (
+        st.session_state.select_box_text,
+        language_dict.keys(), 
+        key='language',
+        index = language_dict[st.session_state.language]
+    )
     st.radio(
-        "Select what type of chat you would like!",
-        ["Chat", "Chat with JBML Documents!"],
+       st.session_state.radio_text, 
+        st.session_state.radio_dict.values(),
         key="chat_choice",
         horizontal=True,
     )
-    st.session_state['language'] = st.selectbox(
-        "Select a Language",
-        ["English", "Espanol", "Français", "Deutsch", "Português"],
-    )
-    st.button("Clear History", on_click=clear_history)
+    
+    st.button(st.session_state.button_text, on_click=clear_history)
+st.header(st.session_state.header)
+    
 
 
-=======
+
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
@@ -138,33 +172,15 @@ if "current_response" not in st.session_state:
 # a chat message.
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+        st.markdown(ts.translate_to(message["content"],st.query_params['language']))
 
 
 #Push warning message to screen if chain length can no longer be shortened 
 if st.session_state.disabled:
-    st.warning("You have reached the end of this conversation. Please clear chat to continue.")
+    st.warning(st.session_state.warning_text)
 
 # We take questions/instructions from the chat input to pass to the LLM
-
-
-
-# We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
-
-    def set_language(language):
-        if language == "English":
-            st.session_state['language'] = "en"
-        if language == "Espanol":
-            st.session_state['language'] = "es"
-        if language == "Français":
-            st.session_state['language'] = "fr"
-        if language == "Deutsch":
-            st.session_state['language'] = "de"
-        if language == "Português":
-            st.session_state['language'] = "pt"
-    
-
+if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_input", disabled=st.session_state.disabled):
     
     # Add our input to the session state
     st.session_state.messages.append(
@@ -178,11 +194,8 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
     response = ''
     
     # Translate user prompt to English before calling model
-    if not st.session_state['language'] == "English":
-        translated_user_prompt = ts.translate_from(user_prompt, st.session_state['language'])
-    else:
-        translated_user_prompt = user_prompt
-
+    translated_user_prompt = ts.translate_from(user_prompt, st.query_params['language'])
+    
     match st.session_state['chat_choice']:
         case 'Chat':
             response = st.session_state['llm_chain'].call(translated_user_prompt)
@@ -200,19 +213,13 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             response += f"\n{sources} \n\n"
             response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
         case _:
-            response = 'An error has occured, please select a type of chat you would like'
+            response = ts.translate_to('An error has occured, please select a type of chat you would like', st.query_params.language)
     
     # Translate back to selected language after calling model
-    if not st.session_state['language'] == "English":
-        translated_response = ts.translate_to(response, st.session_state['language'])
-    else:
-        translated_response = response
-    try: 
-        response_char_list = [char for char in translated_response]
-    except:
-        response_char_list = [char for char in response]
-        translated_response = response
-        print(translated_response)
+    translated_response = ts.translate_to(response, st.query_params['language'])
+   
+    response_char_list = [char for char in translated_response]
+    
     # Add the response to the session state
     st.session_state.messages.append(
         {"role": "assistant", "content": translated_response}
@@ -241,11 +248,5 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             st.session_state.disabled = True
             st.rerun()
 
-    # if len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
-    #     summary = summarize_chain(st.session_state['llm_chain'].chain)
-    #     if not summary == -1:
-    #         st.session_state['llm_chain'] = create_chain(system_prompt)
-    #         st.session_state['llm_chain'].chain += f"[INST]Use the following as a summary of previous conversation: \n{summary} [End of summary][/INST]"
-    #         print(summary)
 
 
