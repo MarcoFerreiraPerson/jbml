@@ -120,8 +120,11 @@ if st.session_state.disabled:
     st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
+if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
     
+    if st.session_state.stt != "" and st.session_state.stt != None:
+        user_prompt = st.session_state.stt
+
     # Add our input to the session state
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
@@ -196,8 +199,6 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             #Disable chat input
             st.session_state.disabled = True
             st.rerun()
-
-st.session_state["user_input"] = st.session_state.stt
 
 
 
