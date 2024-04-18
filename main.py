@@ -4,6 +4,7 @@ import time
 import json
 import translate as ts
 from transformers import AutoTokenizer
+from streamlit_mic_recorder import speech_to_text
 
 
 #Maximum desired chain length in characters
@@ -90,6 +91,9 @@ if "messages" not in st.session_state:
         {"role": "assistant", "content": "How may I help you today?"}
     ]
 
+if "stt" not in st.session_state:
+    st.session_state.stt = ""
+
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
@@ -101,6 +105,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
+    st.session_state.stt = speech_to_text()
     st.button("Clear History", on_click=clear_history)
 
 # We loop through each message in the session state and render it as
@@ -115,8 +120,11 @@ if st.session_state.disabled:
     st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
+if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
     
+    if st.session_state.stt != "" and st.session_state.stt != None:
+        user_prompt = st.session_state.stt
+
     # Add our input to the session state
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
