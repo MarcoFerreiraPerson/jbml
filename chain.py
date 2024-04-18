@@ -10,6 +10,7 @@ tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
+summary_endpoint = '/summarize/'
 
 class LLM_Chain:
     def __init__(self, system_prompt) -> None:
