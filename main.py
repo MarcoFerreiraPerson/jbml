@@ -1,17 +1,16 @@
 import streamlit as st
 from chain import LLM_Chain
+from chain import get_len
 import time
 import json
 import translate as ts
-from transformers import AutoTokenizer
 from streamlit_mic_recorder import speech_to_text
 
 
 #Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 8000
+MAX_CHAIN_LENGTH = 7000
 #Minimum prompt length to allow summarization
 MIN_SUM_LENGTH = 100
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
 system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
 If the AI does not know the answer to a question, it truthfully says it does not know. 
@@ -105,7 +104,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
-    st.session_state.stt = speech_to_text()
+    st.session_state.stt = speech_to_text(just_once=True)
     st.button("Clear History", on_click=clear_history)
 
 # We loop through each message in the session state and render it as
@@ -183,17 +182,17 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
         for char in response_char_list:
             ai_response += char
             box.write(ai_response)
-            time.sleep(0.007)
+            time.sleep(0.0035)
     
 
     #Check to see if the chain exceeds the maximum length
-    if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH: 
+    if get_len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
         
         print("Summarizing Chain: \n")
         st.session_state['llm_chain'].summarize_chain(MIN_SUM_LENGTH)
         
         #Check to see if the chain still exceeds the maximum length
-        if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH:
+        if get_len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH:
             
             print("Chain Too Long - Ending Session")
             #Disable chat input
