@@ -105,7 +105,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
-    st.session_state.stt = speech_to_text()
+    st.session_state.stt = speech_to_text(just_once=True)
     st.button("Clear History", on_click=clear_history)
 
 # We loop through each message in the session state and render it as
