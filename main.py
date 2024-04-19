@@ -27,7 +27,6 @@ def clear_history():
 
 def create_chain(system_prompt):
     llm_chain = LLM_Chain(system_prompt)
-
     return llm_chain
 
 def get_citation(metadata):
@@ -68,7 +67,8 @@ def remove_pdf_suffix(string):
     return string
 
 st.set_page_config(
-    page_title="JBML Chat"
+    page_title="JBML Chat",
+    page_icon="images/logo.ico"
 )
 
 st.header("JBML Chat")
