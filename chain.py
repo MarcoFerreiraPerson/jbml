@@ -2,7 +2,7 @@ import requests
 from pprint import pprint
 import re
 import time
-
+from prompts import CHAT, RAG
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
@@ -12,10 +12,12 @@ len_endpoint = '/len/'
 
 
 class LLM_Chain:
-    def __init__(self, system_prompt) -> None:
-        self.chain = f"<s>[INST]{system_prompt}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
+    def __init__(self) -> None:
+        self.chain = f"<s>[INST]{CHAT}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
 
     def call(self, prompt):
+        
+        self.chain =self.chain.replace(RAG, CHAT, 1)
         self.chain += f"[INST]{prompt}[/INST]"
         encoded_prompt = requests.utils.quote(self.chain)
         response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
@@ -27,12 +29,24 @@ class LLM_Chain:
             result = None
         return result
     def call_jbml(self, prompt): 
+        
+        self.chain = self.chain.replace(CHAT, RAG, 1)
         context, metadata = get_rag_prompt(prompt)        
         source_str = ''
         for i, c in enumerate(context):
             source_str += f"Source {i}: {c} \n\n\n"
         
-        self.chain += f"[INST]{prompt} \nOnly use context from here for your response: \n{source_str} [End of context][/INST]"
+        self.chain += f"""
+        Context information is below.
+        ---------------------
+        {source_str}
+        ---------------------
+        Given the context information and not prior knowledge, answer the query. Please provide small andaccurate quotations of the text in your response
+        Query: {prompt}
+        Answer:
+        """
+        
+        
         encoded_prompt = requests.utils.quote(self.chain)
         response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
         if response.status_code == 200:
@@ -43,7 +57,8 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         return result, context, metadata
-    
+
+            
     @DeprecationWarning
     def stream(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"

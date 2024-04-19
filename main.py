@@ -12,21 +12,15 @@ MAX_CHAIN_LENGTH = 7000
 #Minimum prompt length to allow summarization
 MIN_SUM_LENGTH = 100
 
-system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
-If the AI does not know the answer to a question, it truthfully says it does not know. 
-You are made for the Joint Military Base in Lakehurst (JBML). Dont complete what I am saying, simply respond to it. Just respond like you were talking to another person. Do not do User: response formatting.
-You are simply answering the questions given based on the context given, if the context doesnt give enough information to answer the question then simply use your information and mention it is not mentioned in the text. Make sure you cite your sources as you go.
-If the prompt is unrelated to the text like a "thank you" then just respond to the prompt simply. Do not show your response to thinking, simply just respond to the prompt simply and consisely. 
-"""
 
 def clear_history():
    st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}]
-   st.session_state['llm_chain'] = create_chain(system_prompt)
+   st.session_state['llm_chain'] = create_chain()
    st.session_state.input_state=False
 
-def create_chain(system_prompt):
-    llm_chain = LLM_Chain(system_prompt)
+def create_chain():
+    llm_chain = LLM_Chain()
     return llm_chain
 
 def get_citation(metadata):
@@ -83,7 +77,7 @@ if 'language' not in st.session_state:
     st.session_state['language'] = 'English'
 
 if 'llm_chain' not in st.session_state:
-    st.session_state['llm_chain'] = create_chain(system_prompt)
+    st.session_state['llm_chain'] = create_chain()
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
