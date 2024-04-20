@@ -25,6 +25,11 @@ radio_list = [
     "Chat",
     "Chat With JBML Documents"
 ]
+stt_text = [
+    "Start Recording",
+    "Stop Recording"
+]
+
 
 def clear_history():
    st.session_state.messages = [
@@ -73,6 +78,7 @@ def remove_pdf_suffix(string):
     return string
 
 def update():
+        clear_history()
         st.query_params.language = st.session_state.language
         st.session_state.header = ts.translate_to("JBML Chat", st.query_params.language)
         st.session_state.button_text = ts.translate_to("Clear History", st.query_params.language)
@@ -83,6 +89,10 @@ def update():
         st.session_state.select_box_text = ts.translate_to("Select a Language",st.query_params.language)
         st.session_state.chat_input_text = ts.translate_to("Your Message Here", st.query_params.language)
         st.session_state.warning_text = ts.translate_to("You have reached the end of this conversation. Please clear chat to continue.",st.query_params['language'])
+        st.session_state.stt_text = stt_text
+        st.session_state.stt_text[0] = ts.translate_to(stt_text[0], st.query_params['language'])
+        st.session_state.stt_text[1] = ts.translate_to(stt_text[1], st.query_params['language'])
+
 
 
 if "current_response" not in st.session_state:
@@ -107,9 +117,8 @@ if "messages" not in st.session_state:
 
 if "stt" not in st.session_state:
     st.session_state.stt = ""
+    update()
 
-
-update()
 
 st.set_page_config(
     page_title="JBML Chat",
@@ -122,7 +131,8 @@ with st.sidebar:
         st.session_state.select_box_text,
         language_dict.keys(), 
         key='language',
-        index = language_dict[st.session_state.language]
+        index = language_dict[st.session_state.language],
+        on_change=update()
     )
     st.radio(
        st.session_state.radio_text, 
@@ -130,7 +140,7 @@ with st.sidebar:
         key="chat_choice",
         horizontal=True,
     )
-    st.session_state.stt = speech_to_text(just_once=True)
+    st.session_state.stt = speech_to_text(just_once=True, start_prompt=st.session_state.stt_text[0],stop_prompt=st.session_state.stt_text[1])
    
     st.button(st.session_state.button_text, on_click=clear_history)
 st.header(st.session_state.header)
@@ -189,7 +199,6 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     
     # Translate back to selected language after calling model
     translated_response = ts.translate_to(response, st.query_params['language'])
-   
     response_char_list = [char for char in translated_response]
     
     # Add the response to the session state

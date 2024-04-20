@@ -1,10 +1,13 @@
+import requests.utils
 import translators as ts
+import requests
 
 
 def translate_to(text, current_language):
     if not current_language == "English":
         try:
             output = ts.translate_text(text, 'google', 'auto', conv_language(current_language))
+            output = output.replace(r"`` `", "```")
             return output
         except:
             return text
