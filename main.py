@@ -12,8 +12,6 @@ MAX_CHAIN_LENGTH = 7000
 #Minimum prompt length to allow summarization
 MIN_SUM_LENGTH = 100
 
-
-
 language_dict = {
     "English": 0,
     "Espanol": 1,
@@ -29,6 +27,7 @@ stt_text = [
     "Start Recording",
     "Stop Recording"
 ]
+
 
 
 def clear_history():
@@ -77,6 +76,7 @@ def remove_pdf_suffix(string):
         return string[:-len('.pdf')]
     return string
 
+
 def update():
         clear_history()
         st.query_params.language = st.session_state.language
@@ -93,6 +93,11 @@ def update():
         st.session_state.stt_text[0] = ts.translate_to(stt_text[0], st.query_params['language'])
         st.session_state.stt_text[1] = ts.translate_to(stt_text[1], st.query_params['language'])
 
+
+st.set_page_config(
+    page_title="JBML Chat",
+    page_icon="images/logo.ico"
+)
 
 
 if "current_response" not in st.session_state:
@@ -140,10 +145,18 @@ with st.sidebar:
         key="chat_choice",
         horizontal=True,
     )
+
     st.session_state.stt = speech_to_text(just_once=True, start_prompt=st.session_state.stt_text[0],stop_prompt=st.session_state.stt_text[1])
    
     st.button(st.session_state.button_text, on_click=clear_history)
 st.header(st.session_state.header)
+
+
+    st.session_state['language'] = st.selectbox(
+        "Select a Language",
+        ["English", "Espanol", "Français", "Deutsch", "Português"],
+    )
+    st.button("Clear History", on_click=clear_history)
 
 
 # We loop through each message in the session state and render it as
