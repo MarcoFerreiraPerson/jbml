@@ -1,22 +1,23 @@
 import requests
-
+from pprint import pprint
 import re
-from transformers import AutoTokenizer
 import time
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
-
-
+from prompts import CHAT, RAG
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
 summary_endpoint = '/summarize/'
+len_endpoint = '/len/'
+
 
 class LLM_Chain:
-    def __init__(self, system_prompt) -> None:
-        self.chain = f"<s>[INST]{system_prompt}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
+    def __init__(self) -> None:
+        self.chain = f"<s>[INST]{CHAT}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
 
     def call(self, prompt):
+        
+        self.chain =self.chain.replace(RAG, CHAT, 1)
         self.chain += f"[INST]{prompt}[/INST]"
         encoded_prompt = requests.utils.quote(self.chain)
         response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
@@ -28,12 +29,24 @@ class LLM_Chain:
             result = None
         return result
     def call_jbml(self, prompt): 
+        
+        self.chain = self.chain.replace(CHAT, RAG, 1)
         context, metadata = get_rag_prompt(prompt)        
         source_str = ''
         for i, c in enumerate(context):
             source_str += f"Source {i}: {c} \n\n\n"
         
-        self.chain += f"[INST]{prompt} \nOnly use context from here for your response: \n{source_str} [End of context][/INST]"
+        self.chain += f"""
+        Context information is below.
+        ---------------------
+        {source_str}
+        ---------------------
+        Given the context information and not prior knowledge, answer the query. Please provide small andaccurate quotations of the text in your response
+        Query: {prompt}
+        Answer:
+        """
+        
+        
         encoded_prompt = requests.utils.quote(self.chain)
         response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
         if response.status_code == 200:
@@ -44,7 +57,8 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         return result, context, metadata
-    
+
+            
     @DeprecationWarning
     def stream(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"
@@ -59,7 +73,6 @@ class LLM_Chain:
             result = None
         yield result
 
-
     def summarize_chain(self,MIN_SUM_LENGTH):
         responses = list()
         responses = re.split(r"\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
@@ -68,7 +81,7 @@ class LLM_Chain:
         for i in range(3,len(responses)):
             
             #Check length of responce and summarize if neccessary
-            if len(tokenizer(responses[i])['input_ids']) > MIN_SUM_LENGTH:
+            if get_len(responses[i]) > MIN_SUM_LENGTH:
                 start = time.time()
                 summary_response = get_summary(responses[i])
                 end = time.time()
@@ -92,7 +105,7 @@ class LLM_Chain:
                     print("Summarization Error: " + summary_response.status_code)
             
             else:
-                print("Responce is below minimum summarization threshold: Continuing to next response\n")
+                print("Response is below minimum summarization threshold: Continuing to next response\n")
 
         #Print shortened Chain
         print("New Chain: " + self.chain)
@@ -132,3 +145,12 @@ def get_summary(text):
         response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
         return response
 
+def get_len(prompt):
+        encoded_prompt = requests.utils.quote(prompt)
+        response = requests.get(f"{server_url}{len_endpoint}?prompt={encoded_prompt}")
+        if response.status_code == 200:
+            result = int(response.json())
+        else:
+            print("Error:", response.status_code, response.text)
+            result = None
+        return result
