@@ -91,7 +91,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
     ]
-
+# model defaults to text input instead of speech input
 if "stt" not in st.session_state:
     st.session_state.stt = ""
 
@@ -106,6 +106,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
+    # Creates a button to start and stop the recording of speech input
     st.session_state.stt = speech_to_text()
     st.button("Clear History", on_click=clear_history)
 
@@ -123,9 +124,10 @@ if st.session_state.disabled:
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
 
+    # speech to text function not active when there is text input
     if user_prompt != None:
        st.session_state.stt = ""
-   
+    # speech to text function active when the recording button is pressed      
     if st.session_state.stt != "" and st.session_state.stt != None:
         user_prompt = st.session_state.stt
 
