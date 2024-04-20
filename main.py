@@ -78,7 +78,6 @@ def remove_pdf_suffix(string):
 
 
 def update():
-        clear_history()
         st.query_params.language = st.session_state.language
         st.session_state.header = ts.translate_to("JBML Chat", st.query_params.language)
         st.session_state.button_text = ts.translate_to("Clear History", st.query_params.language)
@@ -92,9 +91,8 @@ def update():
         st.session_state.stt_text = stt_text
         st.session_state.stt_text[0] = ts.translate_to(stt_text[0], st.query_params['language'])
         st.session_state.stt_text[1] = ts.translate_to(stt_text[1], st.query_params['language'])
-        st.session_state.messages = [
-        {"role": "assistant", "content": ts.translate_to("How may I help you today?",st.query_params.language)}
-    ]
+        st.session_state.messages[0] = {"role": "assistant", "content": ts.translate_to("How may I help you today?",st.query_params.language)}
+    
         
         
 
@@ -130,7 +128,6 @@ if 'select_box_text' not in st.session_state:
 if "stt" not in st.session_state:
     st.session_state.stt = ""
     update()
-
 st.header(st.session_state.header)
 with st.sidebar:
     st.selectbox (
@@ -158,7 +155,6 @@ with st.sidebar:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"],)
-
 
 #Push warning message to screen if chain length can no longer be shortened 
 if st.session_state.disabled:
