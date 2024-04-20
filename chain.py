@@ -2,6 +2,8 @@ import requests
 from pprint import pprint
 import re
 import time
+import FileAdder
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 from prompts import CHAT, RAG
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
@@ -12,8 +14,10 @@ len_endpoint = '/len/'
 
 
 class LLM_Chain:
+
     def __init__(self) -> None:
         self.chain = f"<s>[INST]{CHAT}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
+        self.app = FileAdder()
 
     def call(self, prompt):
         
@@ -57,8 +61,20 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         return result, context, metadata
+    
+    def call_uploaded(self, prompt):
+        context, metadata = get_file_prompt(prompt)
+        self.chain += f"[INST]{prompt} \nOnly use context from here for your response: \n{context} [End of context][/INST]"
+        encoded_prompt = requests.utils.quote(self.chain)
+        response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
+        if response.status_code == 200:
+            result = response.json()
+            self.chain += result           
+        else:
+            print("Error:", response.status_code, response.text)
+            result = None
+        return result
 
-            
     @DeprecationWarning
     def stream(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"
@@ -139,11 +155,19 @@ def get_rag_prompt(prompt):
         context, metadata = 'An error has occured', {}
     return context, metadata
 
-
 def get_summary(text):
-        encoded_text = requests.utils.quote(text)
-        response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
-        return response
+    encoded_text = requests.utils.quote(text)
+    response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
+    return response
+
+def get_file_prompt(self,prompt):
+    system_prompt = "You are an AI designed to take apart the important part of the prompt for Retrieval Search. Return the phrase or words that are unknown to you or you need more information about."
+    retrieval = f"<s>[INST]{system_prompt}[/INST] Model answer</s> [INST] Follow-up instruction [/INST]"
+    
+    
+    retrieval += f"[INST]{prompt}[/INST]"
+    context,metadata = self.app.getContext(prompt)
+    return context, metadata
 
 def get_len(prompt):
         encoded_prompt = requests.utils.quote(prompt)

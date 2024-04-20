@@ -40,6 +40,14 @@ def get_citation(metadata):
 
     return citation
 
+uploaded_files = []
+#is called whenever a file/files are uploaded
+def uploadFiles():
+    for x in uploaded_files:
+        pass
+
+
+
 @st.cache_resource
 def get_pubs():
     file_path = 'pubs.json'
@@ -90,9 +98,14 @@ if "stt" not in st.session_state:
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
-        ["Chat", "Chat with JBML Documents!"],
+        ["Chat", "Chat with JBML Documents!","Chat with Uploaded Documents"],
         key="chat_choice",
         horizontal=True,
+    )
+    uploaded_files = st.file_uploader(
+        "Enter and PDF, CSV, or XLS file", 
+        accept_multiple_files=True,
+        on_change = uploadFiles
     )
     st.session_state['language'] = st.selectbox(
         "Select a Language",
@@ -143,14 +156,7 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
             citation = get_citation(metadata)
             sources = ''.join(citation)
-            response = f"Quoted text:\n\n"
-            for c in context:
-                response += f"\n\n \"{c}\"\n\n"
-            
-            response +=  "Sources: \n"
-            
-            response += f"\n{sources} \n\n"
-            response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+            response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"
         case _:
             response = 'An error has occured, please select a type of chat you would like'
     
