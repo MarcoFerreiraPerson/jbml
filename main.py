@@ -1,33 +1,26 @@
 import streamlit as st
 from chain import LLM_Chain
+from chain import get_len
 import time
 import json
 import translate as ts
-from transformers import AutoTokenizer
+from streamlit_mic_recorder import speech_to_text
 
 
 #Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 8000
+MAX_CHAIN_LENGTH = 7000
 #Minimum prompt length to allow summarization
 MIN_SUM_LENGTH = 100
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
-system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
-If the AI does not know the answer to a question, it truthfully says it does not know. 
-You are made for the Joint Military Base in Lakehurst (JBML). Dont complete what I am saying, simply respond to it. Just respond like you were talking to another person. Do not do User: response formatting.
-You are simply answering the questions given based on the context given, if the context doesnt give enough information to answer the question then simply use your information and mention it is not mentioned in the text. Make sure you cite your sources as you go.
-If the prompt is unrelated to the text like a "thank you" then just respond to the prompt simply. Do not show your response to thinking, simply just respond to the prompt simply and consisely. 
-"""
 
 def clear_history():
    st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}]
-   st.session_state['llm_chain'] = create_chain(system_prompt)
+   st.session_state['llm_chain'] = create_chain()
    st.session_state.input_state=False
 
-def create_chain(system_prompt):
-    llm_chain = LLM_Chain(system_prompt)
-
+def create_chain():
+    llm_chain = LLM_Chain()
     return llm_chain
 
 def get_citation(metadata):
@@ -76,7 +69,8 @@ def remove_pdf_suffix(string):
     return string
 
 st.set_page_config(
-    page_title="JBML Chat"
+    page_title="JBML Chat",
+    page_icon="images/logo.ico"
 )
 
 st.header("JBML Chat")
@@ -91,12 +85,15 @@ if 'language' not in st.session_state:
     st.session_state['language'] = 'English'
 
 if 'llm_chain' not in st.session_state:
-    st.session_state['llm_chain'] = create_chain(system_prompt)
+    st.session_state['llm_chain'] = create_chain()
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
     ]
+
+if "stt" not in st.session_state:
+    st.session_state.stt = ""
 
 with st.sidebar:
     st.radio(
@@ -114,6 +111,7 @@ with st.sidebar:
         "Select a Language",
         ["English", "Espanol", "Français", "Deutsch", "Português"],
     )
+    st.session_state.stt = speech_to_text(just_once=True)
     st.button("Clear History", on_click=clear_history)
 
 # We loop through each message in the session state and render it as
@@ -128,8 +126,11 @@ if st.session_state.disabled:
     st.warning("You have reached the end of this conversation. Please clear chat to continue.")
 
 # We take questions/instructions from the chat input to pass to the LLM
-if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled):
+if user_prompt := st.chat_input("Your message here", key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
     
+    if st.session_state.stt != "" and st.session_state.stt != None:
+        user_prompt = st.session_state.stt
+
     # Add our input to the session state
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
@@ -181,17 +182,17 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
         for char in response_char_list:
             ai_response += char
             box.write(ai_response)
-            time.sleep(0.007)
+            time.sleep(0.0035)
     
 
     #Check to see if the chain exceeds the maximum length
-    if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH: 
+    if get_len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
         
         print("Summarizing Chain: \n")
         st.session_state['llm_chain'].summarize_chain(MIN_SUM_LENGTH)
         
         #Check to see if the chain still exceeds the maximum length
-        if len(tokenizer(st.session_state['llm_chain'].chain)['input_ids']) > MAX_CHAIN_LENGTH:
+        if get_len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH:
             
             print("Chain Too Long - Ending Session")
             #Disable chat input
