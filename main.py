@@ -134,37 +134,44 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
         translated_user_prompt = ts.translate_from(user_prompt, st.session_state['language'])
     else:
         translated_user_prompt = user_prompt
-
-    match st.session_state['chat_choice']:
-        case 'Chat':
-            response = st.session_state['llm_chain'].call(translated_user_prompt)
-        case 'Chat with JBML Documents!':
-            response = ''
-            airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
-            citation = get_citation(metadata)
-            sources = ''.join(citation)
-            response = f"Quoted text:\n\n"
-            for c in context:
-                response += f"\n\n \"{c}\"\n\n"
-            
-            response +=  "Sources: \n"
-            
-            response += f"\n{sources} \n\n"
-            response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
-        case _:
-            response = 'An error has occured, please select a type of chat you would like'
+    try:
+        match st.session_state['chat_choice']:
+            case 'Chat':
+                response = st.session_state['llm_chain'].call(translated_user_prompt)
+            case 'Chat with JBML Documents!':
+                response = ''
+                airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
+                citation = get_citation(metadata)
+                sources = ''.join(citation)
+                response = f"Quoted text:\n\n"
+                for c in context:
+                    response += f"\n\n \"{c}\"\n\n"
+                
+                response +=  "Sources: \n"
+                
+                response += f"\n{sources} \n\n"
+                response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+            case _:
+                response = 'An error has occured, please select a type of chat you would like'
     
-    # Translate back to selected language after calling model
-    if not st.session_state['language'] == "English":
-        translated_response = ts.translate_to(response, st.session_state['language'])
-    else:
-        translated_response = response
-    try: 
-        response_char_list = [char for char in translated_response]
+    
+        # Translate back to selected language after calling model
+        if not st.session_state['language'] == "English":
+            translated_response = ts.translate_to(response, st.session_state['language'])
+        else:
+            translated_response = response
+        try: 
+            response_char_list = [char for char in translated_response]
+        except:
+            response_char_list = [char for char in response]
+            translated_response = response
+            print(translated_response)
     except:
-        response_char_list = [char for char in response]
-        translated_response = response
-        print(translated_response)
+        translated_response = 'Oops! Something went wrong!'
+        response_char_list = [char for char in translated_response]
+        print(st.session_state['llm_chain'].chain)
+
+        st.warning("Chat JBML is currently down or under maintenance. Please try again later")
     # Add the response to the session state
     st.session_state.messages.append(
         {"role": "assistant", "content": translated_response}
