@@ -2,7 +2,6 @@ import requests
 import re
 from transformers import AutoTokenizer
 import time
-import FileAdder
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
@@ -13,7 +12,6 @@ summary_endpoint = '/summarize/'
 class LLM_Chain:
     def __init__(self, system_prompt) -> None:
         self.chain = f"<s>[INST]{system_prompt}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
-        self.app = FileAdder()
 
     def call(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"
@@ -44,8 +42,10 @@ class LLM_Chain:
             result = None
         return result, context, metadata
     
-    def call_uploaded(self, prompt):
-        context, metadata = get_file_prompt(prompt)
+    def call_uploaded(self, prompt, embeddings_context, embeddings_metadata):
+        context = embeddings_context
+        metadata = embeddings_metadata
+        
         self.chain += f"[INST]{prompt} \nOnly use context from here for your response: \n{context} [End of context][/INST]"
         encoded_prompt = requests.utils.quote(self.chain)
         response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
@@ -56,7 +56,7 @@ class LLM_Chain:
         else:
             print("Error:", response.status_code, response.text)
             result = None
-        return result
+        return result, context, metadata
     
     @DeprecationWarning
     def stream(self, prompt):
@@ -144,12 +144,4 @@ def get_summary(text):
     response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
     return response
 
-def get_file_prompt(self,prompt):
-    system_prompt = "You are an AI designed to take apart the important part of the prompt for Retrieval Search. Return the phrase or words that are unknown to you or you need more information about."
-    retrieval = f"<s>[INST]{system_prompt}[/INST] Model answer</s> [INST] Follow-up instruction [/INST]"
-    
-    
-    retrieval += f"[INST]{prompt}[/INST]"
-    context,metadata = self.app.getContext(prompt)
-    return context, metadata
 

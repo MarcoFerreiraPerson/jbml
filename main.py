@@ -3,6 +3,7 @@ from chain import LLM_Chain
 import time
 import json
 import translate as ts
+import FileAdder
 from transformers import AutoTokenizer
 
 
@@ -11,6 +12,7 @@ MAX_CHAIN_LENGTH = 8000
 #Minimum prompt length to allow summarization
 MIN_SUM_LENGTH = 100
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
+st.session_state.fileAdder = FileAdder()
 
 system_prompt = """The following is a friendly conversation between a human and an AI. The AI answers prompts given in a simple and consise manor that is full of important and related information. 
 If the AI does not know the answer to a question, it truthfully says it does not know. 
@@ -47,11 +49,11 @@ def get_citation(metadata):
 
     return citation
 
-uploaded_files = []
+st.session_state.uploaded_files = []
 #is called whenever a file/files are uploaded
 def uploadFiles():
     for x in uploaded_files:
-        pass
+        st.session_state.fileAdder.add(x)
 
 
 
@@ -153,6 +155,13 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
         case 'Chat with JBML Documents!':
             response = ''
             airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
+            citation = get_citation(metadata)
+            sources = ''.join(citation)
+            response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"
+        case "Chat with Uploaded Documents":
+            response = ''
+            embeddings_context, embeddings_metadata = st.session_state.fileAdder.app.getContext(user_prompt)
+            airesponse, context, metadata = st.session_state['llm_chain'].call_uploaded(user_prompt, embeddings_context, embeddings_metadata)
             citation = get_citation(metadata)
             sources = ''.join(citation)
             response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"

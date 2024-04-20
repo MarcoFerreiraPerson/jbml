@@ -2,7 +2,6 @@ from logging import NullHandler
 import os
 import io
 import pprint
-import pyexcel
 import pandas as pd
 from embedchain import App
 
@@ -12,12 +11,12 @@ class FileAdder:
         self.app = App.from_config(config_path="config.yaml")
 
     def add(self, uploadedFile):
-        fileName = uploadedFile.name
-        location = os.getcwd() + "\\UploadedFiles" + fileName
-        file = open(location, "wb")
-        file.write(uploadedFile.getValue())
-        file.close()   
         try:
+            fileName = uploadedFile.name
+            location = os.getcwd() + "\\UploadedFiles" + fileName
+            file = open(location, "wb")
+            file.write(uploadedFile.getValue())
+            file.close()   
 
             if(".pdf" in fileName):
 
