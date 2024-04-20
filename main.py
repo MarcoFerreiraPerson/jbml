@@ -86,12 +86,17 @@ def update():
         st.session_state.radio_list = [ts.translate_to(radio_list[0], st.query_params.language),
                                        ts.translate_to(radio_list[1], st.query_params.language)
                                         ]
-        st.session_state.select_box_text = ts.translate_to("Select a Language",st.query_params.language)
+    
         st.session_state.chat_input_text = ts.translate_to("Your Message Here", st.query_params.language)
         st.session_state.warning_text = ts.translate_to("You have reached the end of this conversation. Please clear chat to continue.",st.query_params['language'])
         st.session_state.stt_text = stt_text
         st.session_state.stt_text[0] = ts.translate_to(stt_text[0], st.query_params['language'])
         st.session_state.stt_text[1] = ts.translate_to(stt_text[1], st.query_params['language'])
+        st.session_state.messages = [
+        {"role": "assistant", "content": ts.translate_to("How may I help you today?",st.query_params.language)}
+    ]
+        
+        
 
 
 st.set_page_config(
@@ -119,21 +124,17 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
     ]
+if 'select_box_text' not in st.session_state:
+    st.session_state.select_box_text = "Select a Language"
 
 if "stt" not in st.session_state:
     st.session_state.stt = ""
     update()
 
-
-st.set_page_config(
-    page_title="JBML Chat",
-    page_icon="images/logo.ico"
-)
-
-
+st.header(st.session_state.header)
 with st.sidebar:
     st.selectbox (
-        st.session_state.select_box_text,
+        ts.translate_to(st.session_state.select_box_text, st.session_state.language),
         language_dict.keys(), 
         key='language',
         index = language_dict[st.session_state.language],
@@ -149,21 +150,14 @@ with st.sidebar:
     st.session_state.stt = speech_to_text(just_once=True, start_prompt=st.session_state.stt_text[0],stop_prompt=st.session_state.stt_text[1])
    
     st.button(st.session_state.button_text, on_click=clear_history)
-st.header(st.session_state.header)
 
-
-    st.session_state['language'] = st.selectbox(
-        "Select a Language",
-        ["English", "Espanol", "Français", "Deutsch", "Português"],
-    )
-    st.button("Clear History", on_click=clear_history)
 
 
 # We loop through each message in the session state and render it as
 # a chat message.
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        st.markdown(ts.translate_to(message["content"],st.query_params['language']))
+        st.markdown(message["content"],)
 
 
 #Push warning message to screen if chain length can no longer be shortened 
