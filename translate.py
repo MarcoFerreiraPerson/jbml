@@ -16,7 +16,7 @@ def translate_to(text, current_language):
             return output
         except:
             return text
-    else:
+      else:
         return text
     
 
@@ -28,8 +28,7 @@ def translate_from(text, current_language):
             return output
         except:
             return text
-    else:
-        return text
+    return text
 
 def conv_language(language):
     match language:
