@@ -4,20 +4,23 @@ import translators as ts
 
 
 def translate_to(text, current_language):
-    if not current_language == "English":
+        # Regular expression to match markdown code blocks
+        
+        converted_text = text
+        
+        special_code = "567876545678"
+        pattern = r'```(?:[^`]+|`(?!``))*```'
+        code_blocks = re.findall(pattern, text, re.DOTALL)
+        for code_block in code_blocks:
+            converted_text = converted_text.replace(code_block, special_code)
+    
         try:
-            markdown_list = re.split("(```.+?```)",text,flags=re.DOTALL)
-            output=""
-            for split in markdown_list:
-                if not split[0]== "`":
-                    output += ts.translate_text(split, 'google', 'auto', conv_language(current_language))
-                else:
-                    output+=split
+            output = ts.translate_text(converted_text, 'google', 'auto', conv_language(current_language))
+            for code_block in code_blocks: 
+                output = output.replace(special_code, code_block)
             return output
         except:
             return text
-    else:
-        return text
     
 
 
