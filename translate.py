@@ -1,18 +1,23 @@
 import re
 import translators as ts
-import requests
+
 
 
 def translate_to(text, current_language):
+    if not current_language == "English":
         try:
-            output = ts.translate_text(text, 'google', 'auto', conv_language(current_language))
-            output = re.sub(r"`` `","```",output,)
-            output = re.sub(r"```` ``","```",output)
-            output = re.sub(r"```Python", "```py",output)
-            output = re.sub(r"```Java", "```java",output)
+            markdown_list = re.split("(```.+?```)",text,flags=re.DOTALL)
+            output=""
+            for split in markdown_list:
+                if not split[0]== "`":
+                    output += ts.translate_text(split, 'google', 'auto', conv_language(current_language))
+                else:
+                    output+=split
             return output
         except:
             return text
+    else:
+        return text
     
 
 
