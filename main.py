@@ -65,7 +65,7 @@ def get_web_citation(metadata):
     for i, source in enumerate(metadata.keys()):
         try:
 
-            cite = f"\n\nSource {i+1}:\n\n {metadata[source]['title']} \n{metadata[source]['link']}\n"
+            cite = f"\n\nSource {i+1}:\n {metadata[source]['title']} \n{metadata[source]['link']}\n"
 
             citation.append(cite)
         except:
