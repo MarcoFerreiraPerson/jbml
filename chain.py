@@ -58,6 +58,31 @@ class LLM_Chain:
             result = None
         return result, context, metadata
 
+    def call_web(self, prompt, metadata):
+        sources = """
+        Here are some results relating to the question I will ask, using these sources, please provide a simple and consise response:
+
+        "\n============================================"
+        Here are the web results with a title, a summary, and a link as reference: \n"""
+
+        for i, source in enumerate(metadata.keys()):
+            sources += f"""
+            Source {i+1}:
+            Title: {metadata[source]['title']} 
+            Summary of the text: {metadata[source]['summary']}
+            Link: {metadata[source]['link']}
+            """
+
+        sources += f"""\n============================================
+        Question: {prompt}
+        Answer:
+        """
+
+        response = self.call(sources)
+
+        return response
+
+
             
     @DeprecationWarning
     def stream(self, prompt):

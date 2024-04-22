@@ -3,6 +3,8 @@ from chain import LLM_Chain
 from chain import get_len
 import time
 import json
+from webSearch import get_web_search
+from langchain_community.tools import DuckDuckGoSearchResults
 import translate as ts
 from streamlit_mic_recorder import speech_to_text
 
@@ -23,7 +25,7 @@ def create_chain():
     llm_chain = LLM_Chain()
     return llm_chain
 
-def get_citation(metadata):
+def get_jbml_citation(metadata):
     pubs = get_pubs()
     citation = []
     for i, meta in enumerate(metadata):
@@ -37,6 +39,19 @@ def get_citation(metadata):
         except:
             citation.append(f"Error grabbing source details: {meta['file_name']} page {meta['page_label']}")
 
+
+    return citation
+
+def get_web_citation(metadata):
+    citation = []
+    for i, source in enumerate(metadata.keys()):
+        try:
+
+            cite = f"\n\nSource {i+1}:\n\n {metadata[source]['title']} \n{metadata[source]['link']}\n"
+
+            citation.append(cite)
+        except:
+            citation.append(f"Error grabbing source details")
 
     return citation
 
@@ -79,6 +94,9 @@ if 'language' not in st.session_state:
 if 'llm_chain' not in st.session_state:
     st.session_state['llm_chain'] = create_chain()
 
+if 'web_engine' not in st.session_state:
+    st.session_state['web_engine'] = DuckDuckGoSearchResults()
+
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "How may I help you today?"}
@@ -90,7 +108,7 @@ if "stt" not in st.session_state:
 with st.sidebar:
     st.radio(
         "Select what type of chat you would like!",
-        ["Chat", "Chat with JBML Documents!"],
+        ["Chat", "Chat with JBML Documents!","Chat with the Web"],
         key="chat_choice",
         horizontal=True,
     )
@@ -141,9 +159,8 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
         case 'Chat with JBML Documents!':
             response = ''
             airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
-            citation = get_citation(metadata)
+            citation = get_jbml_citation(metadata)
             sources = ''.join(citation)
-            response = f"Quoted text:\n\n"
             for c in context:
                 response += f"\n\n \"{c}\"\n\n"
             
@@ -151,6 +168,21 @@ if user_prompt := st.chat_input("Your message here", key="user_input", disabled=
             
             response += f"\n{sources} \n\n"
             response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+        case 'Chat with the Web':
+            results, over_rate_limit = get_web_search(st.session_state['web_engine'] , user_prompt)
+
+
+
+            airesponse = st.session_state['llm_chain'].call_web(user_prompt, results)
+
+            citation = get_web_citation(results)
+            response = f"{ts.translate_to(airesponse, st.session_state['language'])}"
+            sources = ''.join(citation)
+            
+            response +=  "\n\nSources: \n"
+            
+            response += f"\n{sources} \n\n"
+            
         case _:
             response = 'An error has occured, please select a type of chat you would like'
     
