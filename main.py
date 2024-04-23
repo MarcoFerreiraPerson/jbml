@@ -93,7 +93,9 @@ def remove_pdf_suffix(string):
     return string
 
 
-def update():
+def update(isStartup):
+    if not st.session_state.language == st.query_params.language or isStartup:
+        clear_history()
         st.query_params.language = st.session_state.language
         st.session_state.header = ts.translate_to("JBML Chat", st.query_params.language)
         st.session_state.button_text = ts.translate_to("Clear History", st.query_params.language)
@@ -148,7 +150,8 @@ if 'select_box_text' not in st.session_state:
 
 if "stt" not in st.session_state:
     st.session_state.stt = ""
-    update()
+    update(True)
+
 st.header(st.session_state.header)
 with st.sidebar:
     st.selectbox (
@@ -156,7 +159,7 @@ with st.sidebar:
         language_dict.keys(), 
         key='language',
         index = language_dict[st.session_state.language],
-        on_change=update()
+        on_change=update(False)
     )
     st.radio(
        st.session_state.radio_text, 
