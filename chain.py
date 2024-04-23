@@ -60,6 +60,7 @@ class LLM_Chain:
 
     def call_web(self, prompt, metadata):
         sources = """
+        These are sources from the internet, these sources contain the most accurate, reliable, and latest data available. Please use these.
         Here are some results relating to the question I will ask, using these sources, please provide a simple and consise response:
 
         "\n============================================"
