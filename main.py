@@ -3,6 +3,8 @@ from chain import LLM_Chain
 from chain import get_len
 import time
 import json
+from webSearch import get_web_search
+from langchain_community.tools import DuckDuckGoSearchResults
 import translate as ts
 from streamlit_mic_recorder import speech_to_text
 import const
@@ -16,7 +18,7 @@ def create_chain():
     llm_chain = LLM_Chain()
     return llm_chain
 
-def get_citation(metadata):
+def get_jbml_citation(metadata):
     pubs = get_pubs()
     citation = []
     for i, meta in enumerate(metadata):
@@ -30,6 +32,19 @@ def get_citation(metadata):
         except:
             citation.append(f"Error grabbing source details: {meta['file_name']} page {meta['page_label']}")
 
+
+    return citation
+
+def get_web_citation(metadata):
+    citation = []
+    for i, source in enumerate(metadata.keys()):
+        try:
+
+            cite = f"\n\nSource {i+1}:\n {metadata[source]['title']} \n{metadata[source]['link']}\n"
+
+            citation.append(cite)
+        except:
+            citation.append(f"Error grabbing source details")
 
     return citation
 
@@ -53,7 +68,9 @@ def remove_pdf_suffix(string):
     return string
 
 
-def update():
+def update(isStartup):
+    if not st.session_state.language == st.query_params.language or isStartup:
+        clear_history()
         st.query_params.language = st.session_state.language
         st.session_state.button_text = const.button_text_dict[st.query_params.language]
         st.session_state.radio_text = const.radio_text_dict[st.query_params.language]
@@ -84,6 +101,9 @@ if 'language' not in st.session_state:
 
 if 'llm_chain' not in st.session_state:
     st.session_state['llm_chain'] = create_chain()
+
+if 'web_engine' not in st.session_state:
+    st.session_state['web_engine'] = DuckDuckGoSearchResults()
 
 if "messages" not in st.session_state:
     st.session_state.messages = const.messages_text_dict[st.session_state.language].copy()
