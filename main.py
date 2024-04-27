@@ -67,6 +67,7 @@ def remove_pdf_suffix(string):
         return string[:-len('.pdf')]
     return string
 
+
 def update(isStartup):
     if not st.session_state.language == st.query_params.language or isStartup:
         clear_history()
@@ -79,6 +80,7 @@ def update(isStartup):
         st.session_state.error_message = const.error_message_dict[st.query_params.language]
         st.session_state.stt_text = const.stt_text_dict[st.query_params.language]
         st.session_state.messages[0] = const.messages_text_dict[st.query_params.language][0]
+
     
 st.set_page_config(
     page_title="JBML Chat",
@@ -113,6 +115,7 @@ if 'select_box_text' not in st.session_state:
 if "stt" not in st.session_state:
     st.session_state.stt = ""
     update(True)
+
 
 st.header("JBML Chat")
 
@@ -183,6 +186,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
                 
                 response += f"\n{sources} \n\n"
                 response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+
             case "Chat with the Web":
                 results, over_rate_limit = get_web_search(st.session_state['web_engine'] , user_prompt)
 
@@ -209,7 +213,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
         st.session_state.messages.append(
             {"role": "assistant", "content": translated_response}
         )
-        
+
         with st.chat_message("assistant"):
             box = st.empty()
             ai_response = ""
