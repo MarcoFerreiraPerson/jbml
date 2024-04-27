@@ -67,7 +67,6 @@ def remove_pdf_suffix(string):
         return string[:-len('.pdf')]
     return string
 
-
 def update(isStartup):
     if not st.session_state.language == st.query_params.language or isStartup:
         clear_history()
@@ -134,7 +133,7 @@ with st.sidebar:
 
     st.session_state.stt = speech_to_text(just_once=True, start_prompt=st.session_state.stt_text[0],stop_prompt=st.session_state.stt_text[1])
    
-    st.button(st.session_state.button_text, on_click=clear_history())
+    st.button(st.session_state.button_text, on_click=clear_history)
 
 
 
@@ -150,7 +149,6 @@ if st.session_state.disabled:
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
-
     if st.session_state.stt != "" and st.session_state.stt != None:
         user_prompt = st.session_state.stt
 
@@ -158,7 +156,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
     )
-
+    
     # Add our input to the chat window
     with st.chat_message("user"):
         st.markdown(user_prompt)
@@ -211,7 +209,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
         st.session_state.messages.append(
             {"role": "assistant", "content": translated_response}
         )
-
+        
         with st.chat_message("assistant"):
             box = st.empty()
             ai_response = ""
@@ -234,7 +232,8 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
                 #Disable chat input
                 st.session_state.disabled = True
                 st.rerun()
+
     except:
         st.warning(st.session_state.error_message)
-
+    
 

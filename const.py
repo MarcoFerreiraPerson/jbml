@@ -55,15 +55,15 @@ stt_text_dict = {
 }
 messages_text_dict = {
     "English" : [{"role": "assistant", 
-                 "content": "How may I help you today?"}],
+                 "content": "How may I help you today?"},],
     "Espanol": [{"role": "assistant", 
-                "content": "¿Como puedo ayudarte hoy?"}],
+                "content": "¿Como puedo ayudarte hoy?"},],
     "Français": [{"role": "assistant", 
-                 "content": "Comment puis-je vous aider aujourd'hui?"}],
+                 "content": "Comment puis-je vous aider aujourd'hui?"},],
     "Deutsch": [{"role": "assistant", 
-                "content": "Hoe kan ik je vandaag helpen?"}],
+                "content": "Hoe kan ik je vandaag helpen?"},],
     "Português": [{"role": "assistant", 
-                  "content": "Como posso te ajudar, hoje?"}]
+                  "content": "Como posso te ajudar, hoje?"},]
 }
 error_message_dict = {
     "English": "Oops! Something went wrong! Please try again later",
