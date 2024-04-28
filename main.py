@@ -7,35 +7,10 @@ from webSearch import get_web_search
 from langchain_community.tools import DuckDuckGoSearchResults
 import translate as ts
 from streamlit_mic_recorder import speech_to_text
-
-
-#Maximum desired chain length in characters
-MAX_CHAIN_LENGTH = 7000
-#Minimum prompt length to allow summarization
-MIN_SUM_LENGTH = 100
-
-language_dict = {
-    "English": 0,
-    "Espanol": 1,
-    "Français": 2,
-    "Deutsch": 3,
-    "Português": 4
-}
-radio_list = [
-    "Chat",
-    "Chat With JBML Documents",
-    "Chat with the Web"
-]
-stt_text = [
-    "Start Recording",
-    "Stop Recording"
-]
-
-
+import const
 
 def clear_history():
-   st.session_state.messages = [
-        {"role": "assistant", "content": "How may I help you today?"}]
+   st.session_state.messages = const.messages_text_dict[st.session_state.language].copy()
    st.session_state['llm_chain'] = create_chain()
    st.session_state.input_state=False
 
@@ -97,26 +72,16 @@ def update(isStartup):
     if not st.session_state.language == st.query_params.language or isStartup:
         clear_history()
         st.query_params.language = st.session_state.language
-        st.session_state.header = ts.translate_to("JBML Chat", st.query_params.language)
-        st.session_state.button_text = ts.translate_to("Clear History", st.query_params.language)
-        st.session_state.radio_text = ts.translate_to("Select what type of chat you would like!", st.query_params.language)
-        st.session_state.radio_list = [ts.translate_to(radio_list[0], st.query_params.language),
-                                       ts.translate_to(radio_list[1], st.query_params.language),
-                                       ts.translate_to(radio_list[2], st.query_params.language)
-                                        ]
-    
-        st.session_state.chat_input_text = ts.translate_to("Your Message Here", st.query_params.language)
-        st.session_state.warning_text = ts.translate_to("You have reached the end of this conversation. Please clear chat to continue.",st.query_params['language'])
-        st.session_state.error = ts.translate_to("Oops! Something went wrong! Please try again later",st.query_params['language'])
-        st.session_state.stt_text = stt_text
-        st.session_state.stt_text[0] = ts.translate_to(stt_text[0], st.query_params['language'])
-        st.session_state.stt_text[1] = ts.translate_to(stt_text[1], st.query_params['language'])
-        st.session_state.messages[0] = {"role": "assistant", "content": ts.translate_to("How may I help you today?",st.query_params.language)}
-    
-        
-        
+        st.session_state.button_text = const.button_text_dict[st.query_params.language]
+        st.session_state.radio_text = const.radio_text_dict[st.query_params.language]
+        st.session_state.radio_list = const.radio_list_dict[st.query_params.language]
+        st.session_state.chat_input_text = const.chat_input_text_dict[st.query_params.language]
+        st.session_state.warning_text = const.warning_text_dict[st.query_params.language]
+        st.session_state.error_message = const.error_message_dict[st.query_params.language]
+        st.session_state.stt_text = const.stt_text_dict[st.query_params.language]
+        st.session_state.messages[0] = const.messages_text_dict[st.query_params.language][0]
 
-
+    
 st.set_page_config(
     page_title="JBML Chat",
     page_icon="images/logo.ico"
@@ -142,23 +107,24 @@ if 'web_engine' not in st.session_state:
     st.session_state['web_engine'] = DuckDuckGoSearchResults()
 
 if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "How may I help you today?"}
-    ]
+    st.session_state.messages = const.messages_text_dict[st.session_state.language].copy()
+
 if 'select_box_text' not in st.session_state:
-    st.session_state.select_box_text = "Select a Language"
+    st.session_state.select_box_text = const.select_box_text_dict[st.session_state.language]
 
 if "stt" not in st.session_state:
     st.session_state.stt = ""
     update(True)
 
-st.header(st.session_state.header)
+
+st.header("JBML Chat")
+
 with st.sidebar:
     st.selectbox (
-        ts.translate_to(st.session_state.select_box_text, st.session_state.language),
-        language_dict.keys(), 
+        const.select_box_text_dict[st.session_state.language],
+        const.language_dict.keys(), 
         key='language',
-        index = language_dict[st.session_state.language],
+        index = const.language_dict[st.session_state.language],
         on_change=update(False)
     )
     st.radio(
@@ -177,7 +143,7 @@ with st.sidebar:
 # We loop through each message in the session state and render it as
 # a chat message.
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    with st.chat_message(message['role']):
         st.markdown(message["content"],)
 
 #Push warning message to screen if chain length can no longer be shortened 
@@ -186,7 +152,6 @@ if st.session_state.disabled:
 
 # We take questions/instructions from the chat input to pass to the LLM
 if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_input", disabled=st.session_state.disabled) or st.session_state.stt != "" and st.session_state.stt != None:
-
     if st.session_state.stt != "" and st.session_state.stt != None:
         user_prompt = st.session_state.stt
 
@@ -194,7 +159,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     st.session_state.messages.append(
         {"role": "user", "content": user_prompt}
     )
-
+    
     # Add our input to the chat window
     with st.chat_message("user"):
         st.markdown(user_prompt)
@@ -205,10 +170,11 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     translated_user_prompt = ts.translate_from(user_prompt, st.query_params['language'])
     
     try: 
-        match st.session_state.radio_list.index(st.session_state.chat_choice):
-            case 0:
+        translated_chat_choice = const.radio_list_dict["English"][st.session_state.radio_list.index(st.session_state.chat_choice)]
+        match translated_chat_choice:
+            case "Chat":
                 response = st.session_state['llm_chain'].call(translated_user_prompt)
-            case 1:
+            case "Chat With JBML Documents":
                 response = ''
                 airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
                 citation = get_jbml_citation(metadata)
@@ -220,7 +186,8 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
                 
                 response += f"\n{sources} \n\n"
                 response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
-            case 2:
+
+            case "Chat with the Web":
                 results, over_rate_limit = get_web_search(st.session_state['web_engine'] , user_prompt)
 
 
@@ -236,7 +203,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
                 response += f"\n{sources} \n\n"
             
             case _:
-                response = ts.translate_to('An error has occured, please select a type of chat you would like', st.query_params.language)
+                response = const.chat_selection_error_dict[st.query_params.language]
         
         # Translate back to selected language after calling model
         translated_response = ts.translate_to(response, st.query_params['language'])
@@ -257,19 +224,20 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
         
 
         #Check to see if the chain exceeds the maximum length
-        if get_len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH: 
+        if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH: 
             
             print("Summarizing Chain: \n")
-            st.session_state['llm_chain'].summarize_chain(MIN_SUM_LENGTH)
+            st.session_state['llm_chain'].summarize_chain(const.MIN_SUM_LENGTH)
             
             #Check to see if the chain still exceeds the maximum length
-            if get_len(st.session_state['llm_chain'].chain) > MAX_CHAIN_LENGTH:
+            if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH:
                 
                 print("Chain Too Long - Ending Session")
                 #Disable chat input
                 st.session_state.disabled = True
                 st.rerun()
-    except:
-        st.warning(st.session_state.error)
 
+    except:
+        st.warning(st.session_state.error_message)
+    
 
