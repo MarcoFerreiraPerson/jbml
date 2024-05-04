@@ -10,11 +10,15 @@ from streamlit_mic_recorder import speech_to_text
 import const
 
 def clear_history():
+   """Clears session_state and chain.
+   """
    st.session_state.messages = const.messages_text_dict[st.session_state.language].copy()
    st.session_state['llm_chain'] = create_chain()
    st.session_state.input_state=False
 
 def create_chain():
+    """Creates a new chain for the session_state.
+    """
     llm_chain = LLM_Chain()
     return llm_chain
 
@@ -68,7 +72,9 @@ def remove_pdf_suffix(string):
     return string
 
 
-def update(isStartup):
+def update(isStartup: bool):
+    """Initializes session_state values on startup and updates page text upon language selection.
+    """
     if not st.session_state.language == st.query_params.language or isStartup:
         clear_history()
         st.query_params.language = st.session_state.language
@@ -81,13 +87,13 @@ def update(isStartup):
         st.session_state.stt_text = const.stt_text_dict[st.query_params.language]
         st.session_state.messages[0] = const.messages_text_dict[st.query_params.language][0]
 
-    
+
 st.set_page_config(
     page_title="JBML Chat",
     page_icon="images/logo.ico"
 )
 
-
+#Initializes session_state values on startup
 if "current_response" not in st.session_state:
     st.session_state.current_response = ""
 
@@ -116,10 +122,13 @@ if "stt" not in st.session_state:
     st.session_state.stt = ""
     update(True)
 
-
+#Sets page title text
 st.header("JBML Chat")
 
+#Creates sidebar
 with st.sidebar:
+    
+    #Creates language selection dropdown
     st.selectbox (
         const.select_box_text_dict[st.session_state.language],
         const.language_dict.keys(), 
@@ -127,6 +136,8 @@ with st.sidebar:
         index = const.language_dict[st.session_state.language],
         on_change=update(False)
     )
+   
+   #Creates "chat_choice" dropdown
     st.radio(
        st.session_state.radio_text, 
         st.session_state.radio_list,
@@ -134,8 +145,10 @@ with st.sidebar:
         horizontal=True,
     )
 
+    #Creates speach to text button
     st.session_state.stt = speech_to_text(just_once=True, start_prompt=st.session_state.stt_text[0],stop_prompt=st.session_state.stt_text[1])
    
+    #Creates clear history button
     st.button(st.session_state.button_text, on_click=clear_history)
 
 
@@ -170,10 +183,15 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     translated_user_prompt = ts.translate_from(user_prompt, st.query_params['language'])
     
     try: 
+
         translated_chat_choice = const.radio_list_dict["English"][st.session_state.radio_list.index(st.session_state.chat_choice)]
+        
+        #Selecting operating procedure based on "chat_choice"
         match translated_chat_choice:
+            
             case "Chat":
                 response = st.session_state['llm_chain'].call(translated_user_prompt)
+            
             case "Chat With JBML Documents":
                 response = ''
                 airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
