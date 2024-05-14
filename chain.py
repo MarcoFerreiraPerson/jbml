@@ -2,6 +2,7 @@ import requests
 from pprint import pprint
 import re
 import time
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 from prompts import CHAT, RAG
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
