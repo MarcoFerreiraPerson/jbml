@@ -8,6 +8,7 @@ from langchain_community.tools import DuckDuckGoSearchResults
 import translate as ts
 from streamlit_mic_recorder import speech_to_text
 import const
+from file_adder import *
 
 def clear_history():
    """Clears session_state and chain.
@@ -15,6 +16,12 @@ def clear_history():
    st.session_state.messages = const.messages_text_dict[st.session_state.language].copy()
    st.session_state['llm_chain'] = create_chain()
    st.session_state.input_state=False
+   st.session_state.uploaded_files = []
+   try:
+       if(st.session_state.file_adder is not None):
+            st.session_state.file_adder.reset() 
+   except:
+       pass
 
 def create_chain():
     """Creates a new chain for the session_state.
@@ -27,7 +34,7 @@ def get_jbml_citation(metadata):
     citation = []
     for i, meta in enumerate(metadata):
         try:
-            filename = remove_pdf_suffix(meta['file_name'])
+            filename = remove_suffix(meta['file_name'])
             page = meta['page_label']
 
             cite = f"\n\nSource {i+1}:\n\n{pubs[filename]['product_title']} page {page}\n\nPDF: [{pubs[filename]['product_number']}]({pubs[filename]['url']})\n"
@@ -52,6 +59,22 @@ def get_web_citation(metadata):
 
     return citation
 
+def get_uploaded_citation(metadata):
+    citation = []
+    for i, meta in enumerate(metadata):
+        try:
+            filename = remove_suffix(meta['file_name'])
+            page = meta['page_label']
+
+            cite = f"\n\nSource {i+1}: {filename} [{page}]\n"
+
+            citation.append(cite)
+        except:
+            citation.append(f"Error grabbing source details: {meta['file_name']} {meta['page_label']}")
+
+
+    return citation   
+
 @st.cache_resource
 def get_pubs():
     file_path = 'pubs.json'
@@ -66,9 +89,11 @@ def get_pubs():
         print(f"Error: Unable to parse JSON from '{file_path}'.")
         return {}
 
-def remove_pdf_suffix(string):
+def remove_suffix(string):
     if string.endswith('.pdf'):
         return string[:-len('.pdf')]
+    if string.endswith('.csv'):
+        return string[:-len('.csv')]
     return string
 
 
@@ -86,6 +111,8 @@ def update(isStartup: bool):
         st.session_state.error_message = const.error_message_dict[st.query_params.language]
         st.session_state.stt_text = const.stt_text_dict[st.query_params.language]
         st.session_state.messages[0] = const.messages_text_dict[st.query_params.language][0]
+        st.session_state.file_options = const.file_options_dict[st.query_params.language]
+        st.session_state.upload_button = const.upload_button_dict[st.query_params.language]
 
 
 st.set_page_config(
@@ -122,6 +149,13 @@ if "stt" not in st.session_state:
     st.session_state.stt = ""
     update(True)
 
+if 'file_adder' not in st.session_state:
+    st.session_state.file_adder = file_adder()
+    st.session_state.file_adder.reset()
+
+if 'uploded_files' not in st.session_state:
+    st.session_state.uploaded_files = []
+
 #Sets page title text
 st.header("JBML Chat")
 
@@ -144,6 +178,19 @@ with st.sidebar:
         key="chat_choice",
         horizontal=True,
     )
+
+    #Creates a form used to upload files
+    with st.form("upload_form", clear_on_submit=True):
+        st.session_state.uploaded_files = st.file_uploader(
+            st.session_state.file_options, 
+            accept_multiple_files=True,
+        )
+        submitted = st.form_submit_button(st.session_state.upload_button)
+
+        #adds the uploaded files to file_adder, which embeds them
+        if submitted and st.session_state.uploaded_files is not None:
+            for x in st.session_state.uploaded_files:
+                st.session_state.file_adder.add(x)
 
     #Creates speach to text button
     st.session_state.stt = speech_to_text(just_once=True, start_prompt=st.session_state.stt_text[0],stop_prompt=st.session_state.stt_text[1])
@@ -219,7 +266,23 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
                 response +=  "\n\nSources: \n"
                 
                 response += f"\n{sources} \n\n"
-            
+            case "Chat With Uploaded Documents":
+                response = ''
+                embeddings_info = st.session_state.file_adder.get_context(user_prompt)
+                airesponse = st.session_state['llm_chain'].call_uploaded(user_prompt, embeddings_info)
+                context = embeddings_info["context"]
+                metadata = embeddings_info["metadata"]
+                citation = get_uploaded_citation(metadata)
+                sources = ''.join(citation)
+                for c in context:
+                    response += f"\n\n \"{c}\"\n\n"
+                
+                response +=  "Sources: \n"
+                
+                response += f"\n{sources} \n\n"
+                
+                response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+ 
             case _:
                 response = const.chat_selection_error_dict[st.query_params.language]
         

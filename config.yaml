@@ -1,0 +1,10 @@
+embedder:
+  provider: huggingface
+  config:
+    model: 'sentence-transformers/all-mpnet-base-v2'
+vectordb:
+  provider: chroma
+  config:
+    collection_name: 'my-collection'
+    dir: db
+    allow_reset: true

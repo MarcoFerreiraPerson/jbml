@@ -104,7 +104,31 @@ class LLM_Chain:
 
         return response
 
+    def call_uploaded(self, prompt:str, context):
+        """Calls LLM with "chat with uploaded files" instructions
+        :param prompt: user input to model
+        :param context: 
 
+        :Returns: str: model response
+        """
+        sources = """
+        These are sources uploaded by the user, these sources contain the most accurate, reliable, and latest data available. Please use these.
+        Here are some results relating to the question I will ask, using these sources, please provide a simple and consise response:
+
+        "\n============================================"
+        Here are the uploaded results with a file name and summary as reference: \n"""
+        for i, source in enumerate(context["context"]):
+            sources += f"""
+            Source {i+1}:
+            Information to be used: {source}
+            """
+
+        sources += f"""\n============================================
+        Question: {prompt}
+        Answer:
+        """
+        response = self.call(sources)
+        return response
             
     @DeprecationWarning
     def stream(self, prompt):
