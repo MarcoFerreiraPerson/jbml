@@ -39,6 +39,7 @@ def get_jbml_citation(metadata):
 
     return citation
 
+<<<<<<< main
 def get_web_citation(metadata):
     citation = []
     for i, source in enumerate(metadata.keys()):
@@ -51,6 +52,15 @@ def get_web_citation(metadata):
             citation.append(f"Error grabbing source details")
 
     return citation
+=======
+uploaded_files = []
+#is called whenever a file/files are uploaded
+def uploadFiles():
+    for x in uploaded_files:
+        pass
+
+
+>>>>>>> UploadFiles
 
 @st.cache_resource
 def get_pubs():
@@ -139,6 +149,7 @@ with st.sidebar:
    
    #Creates "chat_choice" dropdown
     st.radio(
+<<<<<<< main
        st.session_state.radio_text, 
         st.session_state.radio_list,
         key="chat_choice",
@@ -152,6 +163,24 @@ with st.sidebar:
     st.button(st.session_state.button_text, on_click=clear_history)
 
 
+=======
+        "Select what type of chat you would like!",
+        ["Chat", "Chat with JBML Documents!","Chat with Uploaded Documents"],
+        key="chat_choice",
+        horizontal=True,
+    )
+    uploaded_files = st.file_uploader(
+        "Enter and PDF, CSV, or XLS file", 
+        accept_multiple_files=True,
+        on_change = uploadFiles
+    )
+    st.session_state['language'] = st.selectbox(
+        "Select a Language",
+        ["English", "Espanol", "Français", "Deutsch", "Português"],
+    )
+    st.session_state.stt = speech_to_text(just_once=True)
+    st.button("Clear History", on_click=clear_history)
+>>>>>>> UploadFiles
 
 # We loop through each message in the session state and render it as
 # a chat message.
@@ -180,7 +209,26 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     response = ''
     
     # Translate user prompt to English before calling model
+<<<<<<< main
     translated_user_prompt = ts.translate_from(user_prompt, st.query_params['language'])
+=======
+    if not st.session_state['language'] == "English":
+        translated_user_prompt = ts.translate_from(user_prompt, st.session_state['language'])
+    else:
+        translated_user_prompt = user_prompt
+
+    match st.session_state['chat_choice']:
+        case 'Chat':
+            response = st.session_state['llm_chain'].call(translated_user_prompt)
+        case 'Chat with JBML Documents!':
+            response = ''
+            airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
+            citation = get_citation(metadata)
+            sources = ''.join(citation)
+            response = f"Quoted text:\n\n \"{context}\"\n\n Sources: \n{sources} \n\n{ts.translate_to(response, st.session_state['language'])}"
+        case _:
+            response = 'An error has occured, please select a type of chat you would like'
+>>>>>>> UploadFiles
     
     try: 
 
