@@ -14,13 +14,27 @@ len_endpoint = '/len/'
 
 
 class LLM_Chain:
+<<<<<<< main
+    """Creates a chain for the LLM
+    """
+=======
 
+>>>>>>> UploadFiles
     def __init__(self) -> None:
+        """Initializes Chain with "chat" instructions
+        """
         self.chain = f"<s>[INST]{CHAT}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
         self.app = FileAdder()
 
-    def call(self, prompt):
-        
+    def call(self, prompt:str):
+        """Calls the LLM
+        :param prompt: user input to model
+
+        :Returns: 
+                str: model response
+                str: context for response
+                dict: metadata from response
+        """
         self.chain =self.chain.replace(RAG, CHAT, 1)
         self.chain += f"[INST]{prompt}[/INST]"
         encoded_prompt = requests.utils.quote(self.chain)
@@ -32,8 +46,12 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         return result
-    def call_jbml(self, prompt): 
-        
+    def call_jbml(self, prompt:str): 
+        """Calls LLM with "chat with JBML documents instructions
+        :param prompt: user input to model
+
+        :Returns str: model response with citations
+        """
         self.chain = self.chain.replace(CHAT, RAG, 1)
         context, metadata = get_rag_prompt(prompt)        
         source_str = ''
@@ -45,7 +63,7 @@ class LLM_Chain:
         ---------------------
         {source_str}
         ---------------------
-        Given the context information and not prior knowledge, answer the query. Please provide small andaccurate quotations of the text in your response
+        Given the context information and not prior knowledge, answer the query. Please provide small and accurate quotations of the text in your response
         Query: {prompt}
         Answer:
         """
@@ -75,6 +93,42 @@ class LLM_Chain:
             result = None
         return result
 
+<<<<<<< main
+    def call_web(self, prompt:str, metadata):
+        """Calls LLM with "chat with web" instructions
+        :param prompt: user input to model
+        :param metadata: 
+
+        :Returns: str: model response
+        """
+        sources = """
+        These are sources from the internet, these sources contain the most accurate, reliable, and latest data available. Please use these.
+        Here are some results relating to the question I will ask, using these sources, please provide a simple and consise response:
+
+        "\n============================================"
+        Here are the web results with a title, a summary, and a link as reference: \n"""
+
+        for i, source in enumerate(metadata.keys()):
+            sources += f"""
+            Source {i+1}:
+            Title: {metadata[source]['title']} 
+            Summary of the text: {metadata[source]['summary']}
+            Link: {metadata[source]['link']}
+            """
+
+        sources += f"""\n============================================
+        Question: {prompt}
+        Answer:
+        """
+
+        response = self.call(sources)
+
+        return response
+
+
+            
+=======
+>>>>>>> UploadFiles
     @DeprecationWarning
     def stream(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"
@@ -89,7 +143,10 @@ class LLM_Chain:
             result = None
         yield result
 
-    def summarize_chain(self,MIN_SUM_LENGTH):
+    def summarize_chain(self,MIN_SUM_LENGTH:int):
+        """Summarizes chain to decrease memory usage
+        :param MIN_SUM_LENGTH: minimum token length required to summarize response in chain
+        """
         responses = list()
         responses = re.split(r"\[INST\].+?\[/INST\]", self.chain,flags=re.DOTALL)
         
@@ -155,6 +212,18 @@ def get_rag_prompt(prompt):
         context, metadata = 'An error has occured', {}
     return context, metadata
 
+<<<<<<< main
+
+def get_summary(text:str):
+        """Summarizes text
+        :param text: text to summarize
+
+        :Returns str: summarized text
+        """
+        encoded_text = requests.utils.quote(text)
+        response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
+        return response
+=======
 def get_summary(text):
     encoded_text = requests.utils.quote(text)
     response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
@@ -168,8 +237,14 @@ def get_file_prompt(self,prompt):
     retrieval += f"[INST]{prompt}[/INST]"
     context,metadata = self.app.getContext(prompt)
     return context, metadata
+>>>>>>> UploadFiles
 
-def get_len(prompt):
+def get_len(prompt:str):
+        """Gets token count of text
+        :param prompt: text 
+
+        :Returns int: token length of prompt
+        """
         encoded_prompt = requests.utils.quote(prompt)
         response = requests.get(f"{server_url}{len_endpoint}?prompt={encoded_prompt}")
         if response.status_code == 200:
