@@ -3,7 +3,6 @@ from pprint import pprint
 import re
 import time
 import FileAdder
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
 from prompts import CHAT, RAG
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
@@ -14,12 +13,8 @@ len_endpoint = '/len/'
 
 
 class LLM_Chain:
-<<<<<<< main
     """Creates a chain for the LLM
     """
-=======
-
->>>>>>> UploadFiles
     def __init__(self) -> None:
         """Initializes Chain with "chat" instructions
         """
@@ -93,7 +88,6 @@ class LLM_Chain:
             result = None
         return result
 
-<<<<<<< main
     def call_web(self, prompt:str, metadata):
         """Calls LLM with "chat with web" instructions
         :param prompt: user input to model
@@ -126,9 +120,6 @@ class LLM_Chain:
         return response
 
 
-            
-=======
->>>>>>> UploadFiles
     @DeprecationWarning
     def stream(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"
@@ -211,9 +202,7 @@ def get_rag_prompt(prompt):
         print("Error:", context.status_code, context.text)
         context, metadata = 'An error has occured', {}
     return context, metadata
-
-<<<<<<< main
-
+    
 def get_summary(text:str):
         """Summarizes text
         :param text: text to summarize
@@ -223,7 +212,7 @@ def get_summary(text:str):
         encoded_text = requests.utils.quote(text)
         response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
         return response
-=======
+
 def get_summary(text):
     encoded_text = requests.utils.quote(text)
     response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
@@ -237,7 +226,6 @@ def get_file_prompt(self,prompt):
     retrieval += f"[INST]{prompt}[/INST]"
     context,metadata = self.app.getContext(prompt)
     return context, metadata
->>>>>>> UploadFiles
 
 def get_len(prompt:str):
         """Gets token count of text
