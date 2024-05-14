@@ -19,6 +19,7 @@ class LLM_Chain:
         """Initializes Chain with "chat" instructions
         """
         self.chain = f"<s>[INST]{CHAT}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
+        self.app = FileAdder()
 
     def call(self, prompt:str):
         """Calls the LLM
@@ -73,6 +74,19 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         return result, context, metadata
+    
+    def call_uploaded(self, prompt):
+        context, metadata = get_file_prompt(prompt)
+        self.chain += f"[INST]{prompt} \nOnly use context from here for your response: \n{context} [End of context][/INST]"
+        encoded_prompt = requests.utils.quote(self.chain)
+        response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
+        if response.status_code == 200:
+            result = response.json()
+            self.chain += result           
+        else:
+            print("Error:", response.status_code, response.text)
+            result = None
+        return result
 
     def call_web(self, prompt:str, metadata):
         """Calls LLM with "chat with web" instructions
