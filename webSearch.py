@@ -131,7 +131,7 @@ def wiki(user_query, results_dict):
     return results_dict
 
 def remove_invalid(results):
-       '''
+    """
      Takes in the results once completed, and removes any items in the dictionary that 
      does not have a link or proper result.
 
@@ -142,7 +142,7 @@ def remove_invalid(results):
        Returns:
            num_results (dict): A updated version of the results dictionary that was passed in with the invalid results removed. 
        
-    '''
+    """
     new_results = {}
     for result in results:
         if results[result]['link'] == "https://www.semrush.com/blog/what-does-error-404-not-found-mean/":
@@ -161,7 +161,7 @@ def remove_invalid(results):
 
 def get_web_search(engine, query):
     
-    '''
+    """
      Takes in the user's query and the search engine to be used to conduct the search.
 
      Parameters:
@@ -175,7 +175,7 @@ def get_web_search(engine, query):
         over_rate_limit (boolean): 
             Keeps track of whether or not the user has reached the search rate limit
 
-    '''
+    """
     
     over_rate_limit = False
     
