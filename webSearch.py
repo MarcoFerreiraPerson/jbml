@@ -1,12 +1,6 @@
 import wikipedia
 
 from pprint import pprint
-#need error handling for empty set mod gui
-
-
-#sample results to test formatting
-#raw_results = "[snippet: The lawsuit, which comes on the heels of significant antitrust cases against Apple outside the U.S., is a wide-ranging and complicated affair, but we're covering the ins and outs of the DOJ's ..., title: Apple vs US antitrust lawsuit: Everything we know so far on the DOJ's ..., link: https://techcrunch.com/2024/03/22/apple-vs-us-antitrust-lawsuit-everything-we-know-so-far-on-the-dojs-iphone-case/], [snippet: Apple will pay up to $90 each to millions of iPhone owners who filed claims against it for software throttling that slowed down their devices. The settlement comes after a judge dismissed Apple's appeal and a class-action lawsuit was dismissed in 2017. The payouts will go to users of pre-2018 models who updated their iPhones with iOS 10.2.1 or later or 11.2 or later before Dec. 21, 2017., title: Millions of Apple customers to get payments of up to $90 in iPhone ..., link: https://www.cbsnews.com/news/apple-iphone-payment-500-million-settlement-what-to-know/], [snippet: The US Justice Department and more than a dozen states filed a blockbuster antitrust lawsuit against Apple on Thursday, accusing the giant company of illegally monopolizing the smartphone market., title: Apple sued in a landmark iPhone monopoly lawsuit - CNN, link: https://www.cnn.com/2024/03/21/tech/apple-sued-antitrust-doj/index.html], [snippet: The lawsuit caps years of regulatory scrutiny of Apple's wildly popular suite of devices and services, which have fueled its growth into a nearly $3 trillion public company. transcript Attorney ..., title: U.S. Sues Apple, Accusing It of Maintaining an iPhone Monopoly, link: https://www.nytimes.com/2024/03/21/technology/apple-doj-lawsuit-antitrust.html]"
-
 
 def format_results(raw_res): 
     """
@@ -108,7 +102,7 @@ def print_res(result_dicts):
 def wiki(user_query, results_dict):
     """
      Takes in the user input, search for the result on wikipedia, and save 
-     the summary, title, and url into a dictionary
+     the summary, title, and URL into a dictionary
 
      Parameters:
         user_query (str): 
@@ -137,6 +131,18 @@ def wiki(user_query, results_dict):
     return results_dict
 
 def remove_invalid(results):
+       '''
+     Takes in the results once completed, and removes any items in the dictionary that 
+     does not have a link or proper result.
+
+     Parameters:
+         results (dict): 
+            A dictionary that contains nested dictionary with results, their titles, and URLs
+            (including any possible invalid results)
+       Returns:
+           num_results (dict): A updated version of the results dictionary that was passed in with the invalid results removed. 
+       
+    '''
     new_results = {}
     for result in results:
         if results[result]['link'] == "https://www.semrush.com/blog/what-does-error-404-not-found-mean/":
@@ -165,7 +171,7 @@ def get_web_search(engine, query):
             Search engine to be used for searching information.
      Returns:
         results (dict): 
-            A dictionary that contains nested dictionary with results, their titles, and urls.
+            A dictionary that contains nested dictionary with results, their titles, and URLs.
         over_rate_limit (boolean): 
             Keeps track of whether or not the user has reached the search rate limit
 
