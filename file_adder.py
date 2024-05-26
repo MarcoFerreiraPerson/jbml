@@ -29,9 +29,9 @@ class FileAdder:
         #code = ''.join(random.choices(String.ascii_uppercase + String.ascii_lowercase))
         file_name = uploadedFile.name
         location = "UploadedFiles\\" + file_name
-        file = open(location, "wb")
-        file.write(uploadedFile.getbuffer())
-        file.close()
+
+        with open(location, "wb") as file:
+            file.write(uploadedFile.getbuffer())
 
         try:
 
