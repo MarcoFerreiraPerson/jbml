@@ -1,4 +1,0 @@
-embedder:
-  provider: huggingface
-  config:
-    model: 'sentence-transformers/all-mpnet-base-v2'
