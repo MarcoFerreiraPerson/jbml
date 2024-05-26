@@ -39,11 +39,11 @@ radio_text_dict = {
     "Português": "Selecione que tipo de bate-papo você gostaria!"
 }
 radio_list_dict = {
-    "English": ["Chat", "Chat With JBML Documents", "Chat with the Web"],
-    "Espanol": ["Charlar", "Chat con documentos JBML", "Chatea con la Web"],
-    "Français": ["Bavarder", "Discutez avec des documents JBML", "Discutez avec le Web"],
-    "Deutsch": ["Praten", "Chat met JBML-documenten", "Chatten met internet"],
-    "Português": ["Conversar", "Converse com documentos JBML", "Converse com a Web"],
+    "English": ["Chat", "Chat With JBML Documents", "Chat With Uploaded Documents", "Chat with the Web"],
+    "Espanol": ["Charlar", "Chat con documentos JBML", "Chatear con documentos cargados", "Chatea con la Web"],
+    "Français": ["Bavarder", "Discutez avec des documents JBML", "Discutez avec des documents téléchargés", "Discutez avec le Web"],
+    "Deutsch": ["Praten", "Chat met JBML-documenten", "Chatten Sie mit hochgeladenen Dokumenten", "Chatten met internet"],
+    "Português": ["Conversar", "Converse com documentos JBML", "Converse com documentos enviados", "Converse com a Web"],
  
 }
 stt_text_dict = {
@@ -85,4 +85,18 @@ chat_input_text_dict = {
     "Français": "Votre message ici",
     "Deutsch": "Jouw bericht hier",
     "Português": "Sua mensagem aqui"
+}
+file_options_dict = {
+    "English": "Enter PDF, CSV, or XLS files",
+    "Espanol": "Ingrese archivos PDF, CSV o XLS",
+    "Français": "Saisissez des fichiers PDF, CSV ou XLS",
+    "Deutsch": "Geben Sie PDF-, CSV- oder XLS-Dateien ein",
+    "Português": "Insira arquivos PDF, CSV ou XLS"
+}
+upload_button_dict = {
+    "English": "UPLOAD",
+    "Espanol": "SUBIR",
+    "Français": "TÉLÉCHARGER",
+    "Deutsch": "HOCHLADEN",
+    "Português": "CARREGAR"
 }
