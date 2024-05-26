@@ -238,124 +238,124 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
     
     # try: 
 
-  translated_chat_choice = const.radio_list_dict["English"][st.session_state.radio_list.index(st.session_state.chat_choice)]
+    translated_chat_choice = const.radio_list_dict["English"][st.session_state.radio_list.index(st.session_state.chat_choice)]
+    
+    #Selecting operating procedure based on "chat_choice"
+    match translated_chat_choice:
+        
+        case "Chat":
+            response = st.session_state['llm_chain'].call(translated_user_prompt)
+        
+        case "Chat With JBML Documents":
+            response = ''
+            airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
+            citation = get_jbml_citation(metadata)
+            sources = ''.join(citation)
+            for c in context:
+                response += f"\n\n \"{c}\"\n\n"
+            
+            response +=  "Sources: \n"
+            
+            response += f"\n{sources} \n\n"
+            response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+
+        case "Chat with the Web":
+            results, over_rate_limit = get_web_search(st.session_state['web_engine'] , user_prompt)
+
+
+
+            airesponse = st.session_state['llm_chain'].call_web(user_prompt, results)
+            airesponse = st.session_state['llm_chain'].call_web(user_prompt, results)
+
+            citation = get_web_citation(results)
+            response = f"{ts.translate_to(airesponse, st.session_state['language'])}"
+            sources = ''.join(citation)
+            
+            response +=  "\n\nSources: \n"
+            
+            response += f"\n{sources} \n\n"
+        case "Chat With Uploaded Documents":
+            response = ''
+            info = st.session_state.file_adder.get_stored()
+            if len(info) == 0:
+                response = "I can not answer a document question without any uploaded documents. Please upload some documents before asking me again."
+            else:
+                json_data = {"query":user_prompt, "docs":[]}
+                location = ""
+                for doc in info:
+                    if "row" in doc.metadata:
+                        location = "Row: " + str(doc.metadata["row"])
+                    elif "page" in doc.metadata:
+                        location = "Page: " + str(doc.metadata["page"])
+                    else:
+                        location = "unknown"
+                    json_data["docs"].append({"page_content":doc.page_content,"metadata":{"source":doc.metadata["source"], "location":location}})
+                
+                airesponse, relevant_data = st.session_state['llm_chain'].call_uploaded(user_prompt, json_data)
+                context = []
+                metadata = []
+                for data in relevant_data["docs"]:
+                    context.append(data["page_content"])
+                    metadata.append(data["metadata"])
+                citation = get_uploaded_citation(metadata)
+                sources = ''.join(citation)
+                for c in context:
+                    response += f"\n\n \"{c}\"\n\n"
+                
+                response +=  "Sources: \n"
+                
+                response += f"\n{sources} \n\n"
+                
+                response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+
+
+        case _:
+            response = const.chat_selection_error_dict[st.query_params.language]
   
-  #Selecting operating procedure based on "chat_choice"
-  match translated_chat_choice:
-      
-      case "Chat":
-          response = st.session_state['llm_chain'].call(translated_user_prompt)
-      
-      case "Chat With JBML Documents":
-          response = ''
-          airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
-          citation = get_jbml_citation(metadata)
-          sources = ''.join(citation)
-          for c in context:
-              response += f"\n\n \"{c}\"\n\n"
-          
-          response +=  "Sources: \n"
-          
-          response += f"\n{sources} \n\n"
-          response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
+    # Translate back to selected language after calling model
+    translated_response = ts.translate_to(response, st.query_params['language'])
+    response_char_list = [char for char in translated_response]
+    
+    # Add the response to the session state
+    st.session_state.messages.append(
+        {"role": "assistant", "content": translated_response}
+    )
 
-      case "Chat with the Web":
-          results, over_rate_limit = get_web_search(st.session_state['web_engine'] , user_prompt)
+    with st.chat_message("assistant"):
+        box = st.empty()
+        ai_response = ""
+        for char in response_char_list:
+            ai_response += char
+            box.write(ai_response)
+            time.sleep(0.0035)
+    
 
-
-
-          airesponse = st.session_state['llm_chain'].call_web(user_prompt, results)
-          airesponse = st.session_state['llm_chain'].call_web(user_prompt, results)
-
-          citation = get_web_citation(results)
-          response = f"{ts.translate_to(airesponse, st.session_state['language'])}"
-          sources = ''.join(citation)
-          
-          response +=  "\n\nSources: \n"
-          
-          response += f"\n{sources} \n\n"
-      case "Chat With Uploaded Documents":
-          response = ''
-          info = st.session_state.file_adder.get_stored()
-          if len(info) == 0:
-              response = "I can not answer a document question without any uploaded documents. Please upload some documents before asking me again."
-          else:
-              json_data = {"query":user_prompt, "docs":[]}
-              location = ""
-              for doc in info:
-                  if "row" in doc.metadata:
-                      location = "Row: " + str(doc.metadata["row"])
-                  elif "page" in doc.metadata:
-                      location = "Page: " + str(doc.metadata["page"])
-                  else:
-                      location = "unknown"
-                  json_data["docs"].append({"page_content":doc.page_content,"metadata":{"source":doc.metadata["source"], "location":location}})
-              
-              airesponse, relevant_data = st.session_state['llm_chain'].call_uploaded(user_prompt, json_data)
-              context = []
-              metadata = []
-              for data in relevant_data["docs"]:
-                  context.append(data["page_content"])
-                  metadata.append(data["metadata"])
-              citation = get_uploaded_citation(metadata)
-              sources = ''.join(citation)
-              for c in context:
-                  response += f"\n\n \"{c}\"\n\n"
-              
-              response +=  "Sources: \n"
-              
-              response += f"\n{sources} \n\n"
-              
-              response += f"\n\n{ts.translate_to(airesponse, st.session_state['language'])}"
-
-
-      case _:
-          response = const.chat_selection_error_dict[st.query_params.language]
-  
-  # Translate back to selected language after calling model
-  translated_response = ts.translate_to(response, st.query_params['language'])
-  response_char_list = [char for char in translated_response]
-  
-  # Add the response to the session state
-  st.session_state.messages.append(
-      {"role": "assistant", "content": translated_response}
-  )
-
-  with st.chat_message("assistant"):
-      box = st.empty()
-      ai_response = ""
-      for char in response_char_list:
-          ai_response += char
-          box.write(ai_response)
-          time.sleep(0.0035)
-  
-
-  #Check to see if the chain exceeds the maximum length
-  if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH: 
-      
-      print("Summarizing Chain: \n")
-      st.session_state['llm_chain'].summarize_chain(const.MIN_SUM_LENGTH)
-      
-      #Check to see if the chain still exceeds the maximum length
-      if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH:
-          
-          print("Chain Too Long - Ending Session")
-          #Disable chat input
-          st.session_state.disabled = True
-          st.rerun()
-  #Check to see if the chain exceeds the maximum length
-  if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH: 
-      
-      print("Summarizing Chain: \n")
-      st.session_state['llm_chain'].summarize_chain(const.MIN_SUM_LENGTH)
-      
-      #Check to see if the chain still exceeds the maximum length
-      if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH:
-          
-          print("Chain Too Long - Ending Session")
-          #Disable chat input
-          st.session_state.disabled = True
-          st.rerun()
+    #Check to see if the chain exceeds the maximum length
+    if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH: 
+        
+        print("Summarizing Chain: \n")
+        st.session_state['llm_chain'].summarize_chain(const.MIN_SUM_LENGTH)
+        
+        #Check to see if the chain still exceeds the maximum length
+        if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH:
+            
+            print("Chain Too Long - Ending Session")
+            #Disable chat input
+            st.session_state.disabled = True
+            st.rerun()
+    #Check to see if the chain exceeds the maximum length
+    if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH: 
+        
+        print("Summarizing Chain: \n")
+        st.session_state['llm_chain'].summarize_chain(const.MIN_SUM_LENGTH)
+        
+        #Check to see if the chain still exceeds the maximum length
+        if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH:
+            
+            print("Chain Too Long - Ending Session")
+            #Disable chat input
+            st.session_state.disabled = True
+            st.rerun()
 
     # except:
     #     st.warning(st.session_state.error_message)
