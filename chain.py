@@ -2,7 +2,6 @@ import requests
 from pprint import pprint
 import re
 import time
-import FileAdder
 from prompts import CHAT, RAG
 
 server_url = "https://penguin-true-cow.ngrok-free.app"
@@ -10,7 +9,7 @@ endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
 summary_endpoint = '/summarize/'
 len_endpoint = '/len/'
-
+upload_endpoint = '/query_user_embeddings/'
 
 class LLM_Chain:
     """Creates a chain for the LLM
@@ -19,7 +18,6 @@ class LLM_Chain:
         """Initializes Chain with "chat" instructions
         """
         self.chain = f"<s>[INST]{CHAT}[/INST]Model answer</s> [INST] Follow-up instruction [/INST]"
-        self.app = FileAdder()
 
     def call(self, prompt:str):
         """Calls the LLM
@@ -74,19 +72,6 @@ class LLM_Chain:
             print("Error:", response.status_code, response.text)
             result = None
         return result, context, metadata
-    
-    def call_uploaded(self, prompt):
-        context, metadata = get_file_prompt(prompt)
-        self.chain += f"[INST]{prompt} \nOnly use context from here for your response: \n{context} [End of context][/INST]"
-        encoded_prompt = requests.utils.quote(self.chain)
-        response = requests.get(f"{server_url}{endpoint}?prompt={encoded_prompt}")
-        if response.status_code == 200:
-            result = response.json()
-            self.chain += result           
-        else:
-            print("Error:", response.status_code, response.text)
-            result = None
-        return result
 
     def call_web(self, prompt:str, metadata):
         """Calls LLM with "chat with web" instructions
@@ -119,7 +104,40 @@ class LLM_Chain:
 
         return response
 
+    def call_uploaded(self, prompt:str, payload):
+        """Calls LLM with "chat with uploaded files" instructions
+        :param prompt: user input to model
+        :param context: 
 
+        :Returns: str: model response
+        """
+        #print("Payload" + str(payload))
+        response = requests.post(f"{server_url}{upload_endpoint}",json=payload)
+        if response.status_code == 200:
+            result = response.json()
+            print(result)
+        else:
+            print("Error:", response.status_code, response.text)
+            result = None
+        sources = """
+        These are sources uploaded by the user, these sources contain the most accurate, reliable, and latest data available. Please use these.
+        Here are some results relating to the question I will ask, using these sources, please provide a simple and consise response:
+
+        "\n============================================"
+        Here are the uploaded results with a file name and summary as reference: \n"""
+        for i, source in enumerate(result["docs"]):
+            sources += f"""
+            Source {i+1}:
+            Information to be used: {source["page_content"]}
+            """
+
+        sources += f"""\n============================================
+        Question: {prompt}
+        Answer:
+        """
+        response = self.call(sources)
+        return response, result
+            
     @DeprecationWarning
     def stream(self, prompt):
         self.chain += f"[INST]{prompt}[/INST]"
@@ -202,7 +220,8 @@ def get_rag_prompt(prompt):
         print("Error:", context.status_code, context.text)
         context, metadata = 'An error has occured', {}
     return context, metadata
-    
+
+
 def get_summary(text:str):
         """Summarizes text
         :param text: text to summarize
@@ -212,20 +231,6 @@ def get_summary(text:str):
         encoded_text = requests.utils.quote(text)
         response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
         return response
-
-def get_summary(text):
-    encoded_text = requests.utils.quote(text)
-    response = requests.get(f"{server_url}{summary_endpoint}?prompt={encoded_text}")
-    return response
-
-def get_file_prompt(self,prompt):
-    system_prompt = "You are an AI designed to take apart the important part of the prompt for Retrieval Search. Return the phrase or words that are unknown to you or you need more information about."
-    retrieval = f"<s>[INST]{system_prompt}[/INST] Model answer</s> [INST] Follow-up instruction [/INST]"
-    
-    
-    retrieval += f"[INST]{prompt}[/INST]"
-    context,metadata = self.app.getContext(prompt)
-    return context, metadata
 
 def get_len(prompt:str):
         """Gets token count of text
