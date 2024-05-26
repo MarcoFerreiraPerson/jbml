@@ -87,7 +87,7 @@ chat_input_text_dict = {
     "Português": "Sua mensagem aqui"
 }
 file_options_dict = {
-    "English": "Enter PDF, CSV, or XLS files",
+    "English": "Enter PDF, CSV, or XLSX files",
     "Espanol": "Ingrese archivos PDF, CSV o XLS",
     "Français": "Saisissez des fichiers PDF, CSV ou XLS",
     "Deutsch": "Geben Sie PDF-, CSV- oder XLS-Dateien ein",
