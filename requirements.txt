@@ -45,7 +45,7 @@ docstring_parser==0.16
 distro==1.9.0
 dnspython==2.6.1
 docstring_parser==0.16
-duckduckgo_search==5.3.0
+duckduckgo-search-6.1.2
 email_validator==2.1.1
 embedchain==0.1.103
 et-xmlfile==1.1.0
