@@ -10,7 +10,7 @@ from langchain.docstore.document import Document
 
 #Given the App in question and files, it adds said files to the embeddings model
 class FileAdder:
-    def __init__(self, chunk=2500, overlap=150):
+    def __init__(self, chunk=800, overlap=150):
         self.stored_info = []
         
         self.text_splitter = RecursiveCharacterTextSplitter(
