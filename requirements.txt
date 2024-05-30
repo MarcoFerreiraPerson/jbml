@@ -45,7 +45,7 @@ docstring_parser==0.16
 distro==1.9.0
 dnspython==2.6.1
 docstring_parser==0.16
-duckduckgo-search-6.1.2
+duckduckgo-search==6.1.2
 email_validator==2.1.1
 embedchain==0.1.103
 et-xmlfile==1.1.0
@@ -221,6 +221,7 @@ pypdf==4.2.0
 PyPika==0.48.9
 pyproject_hooks==1.1.0
 pyreadline3==3.4.1
+pyreqwest-impersonate==0.4.6
 pysbd==0.3.4
 Pygments==2.18.0
 pypdf==4.2.0
