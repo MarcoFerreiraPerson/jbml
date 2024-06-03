@@ -56,7 +56,7 @@ class LLM_Chain:
         ---------------------
         {source_str}
         ---------------------
-        Given the context information and not prior knowledge, answer the query. Please provide small and accurate quotations of the text in your response
+        Given the context information and not prior knowledge, answer the query. Please provide small and accurate quotations of the text in your response. Do not put your answer in markdown
         Query: {prompt}
         Answer:
         """
