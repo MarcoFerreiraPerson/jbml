@@ -4,7 +4,10 @@ import re
 import time
 from prompts import CHAT, RAG
 
-server_url = "https://penguin-true-cow.ngrok-free.app"
+server_url = "http://jbml.asuscomm.com:8000"
+
+#server_url = "https://penguin-true-cow.ngrok-free.app"
+
 endpoint = "/generate/"
 retrieve_endpoint = '/jbml_retrieve/'
 summary_endpoint = '/summarize/'
