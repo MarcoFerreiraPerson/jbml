@@ -4,7 +4,7 @@ import re
 import time
 from prompts import CHAT, RAG
 
-server_url = "http://jbml.asuscomm.com:8000"
+server_url = "http://jbmdl.asuscomm.com:8000"
 
 #server_url = "https://penguin-true-cow.ngrok-free.app"
 
