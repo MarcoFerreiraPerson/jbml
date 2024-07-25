@@ -312,23 +312,21 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
         case _:
             response = const.chat_selection_error_dict[st.query_params.language]
   
-    # Translate back to selected language after calling model
+   #Translate back to selected language after calling model
     translated_response = ts.translate_to(response, st.query_params['language'])
-    response_char_list = [char for char in translated_response]
-    
-    # Add the response to the session state
+    def stream_data():
+        for word in translated_response.split(" "):
+            yield word + " "
+            time.sleep(0.01)
+
+   #Add the response to the session state
     st.session_state.messages.append(
         {"role": "assistant", "content": translated_response}
     )
 
     with st.chat_message("assistant"):
         box = st.empty()
-        ai_response = ""
-        for char in response_char_list:
-            ai_response += char
-            box.write(ai_response)
-            time.sleep(0.0035)
-    
+        box.write_stream(stream_data)
 
     #Check to see if the chain exceeds the maximum length
     if get_len(st.session_state['llm_chain'].chain) > const.MAX_CHAIN_LENGTH: 
