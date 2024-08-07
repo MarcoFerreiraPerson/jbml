@@ -39,11 +39,11 @@ radio_text_dict = {
     "Português": "Selecione que tipo de bate-papo você gostaria!"
 }
 radio_list_dict = {
-    "English": ["Chat", "Chat With JBML Documents", "Chat With Uploaded Documents", "Chat with the Web"],
-    "Espanol": ["Charlar", "Chat con documentos JBML", "Chatear con documentos cargados", "Chatea con la Web"],
-    "Français": ["Bavarder", "Discutez avec des documents JBML", "Discutez avec des documents téléchargés", "Discutez avec le Web"],
-    "Deutsch": ["Praten", "Chat met JBML-documenten", "Chatten Sie mit hochgeladenen Dokumenten", "Chatten met internet"],
-    "Português": ["Conversar", "Converse com documentos JBML", "Converse com documentos enviados", "Converse com a Web"],
+    "English": ["Chat", "Chat With JBMDL Documents", "Chat With Uploaded Documents", "Chat with the Web"],
+    "Espanol": ["Charlar", "Chat con documentos JBMDL", "Chatear con documentos cargados", "Chatea con la Web"],
+    "Français": ["Bavarder", "Discutez avec des documents JBMDL", "Discutez avec des documents téléchargés", "Discutez avec le Web"],
+    "Deutsch": ["Praten", "Chat met JBMDL-documenten", "Chatten Sie mit hochgeladenen Dokumenten", "Chatten met internet"],
+    "Português": ["Conversar", "Converse com documentos JBMDL", "Converse com documentos enviados", "Converse com a Web"],
  
 }
 stt_text_dict = {

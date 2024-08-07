@@ -123,7 +123,7 @@ def update(isStartup: bool):
 
 
 st.set_page_config(
-    page_title="JBML Chat",
+    page_title="JBMDL Chat",
     page_icon="images/logo.ico"
 )
 
@@ -164,7 +164,7 @@ if 'uploded_files' not in st.session_state:
     st.session_state.uploaded_files = []
 
 #Sets page title text
-st.header("JBML Chat")
+st.header("JBMDL Chat")
 
 #Creates sidebar
 with st.sidebar:
@@ -246,7 +246,7 @@ if user_prompt := st.chat_input(st.session_state.chat_input_text, key="user_inpu
         case "Chat":
             response = st.session_state['llm_chain'].call(translated_user_prompt)
         
-        case "Chat With JBML Documents":
+        case "Chat With JBMDL Documents":
             response = ''
             airesponse, context, metadata = st.session_state['llm_chain'].call_jbml(user_prompt)
             citation = get_jbml_citation(metadata)
